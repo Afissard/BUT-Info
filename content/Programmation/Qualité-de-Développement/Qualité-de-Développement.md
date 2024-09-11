@@ -5,8 +5,4 @@ tags:
   - Qualité-de-Développement
 ---
 # Qualité-de-Développement Overview
- 
-```ccard
-type: folder_brief_live
-```
- 
+[gitlab de la ressource](https://gitlab.univ-nantes.fr/iut.info2.qdev.dp)

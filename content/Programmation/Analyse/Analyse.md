@@ -5,8 +5,3 @@ tags:
   - Analyse
 ---
 # Analyse Overview
- 
-```ccard
-type: folder_brief_live
-```
- 

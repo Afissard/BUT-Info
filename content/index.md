@@ -1,7 +1,7 @@
 ---
 title: Cours BUT Informatique
 draft: false
-description: page d’accueil du site
+description: Mes cours de BUT Informatique
 ---
 Je compte publier ici, toutes mes prise de notes de mes cours de BUT Informatique.
 # Index du site
