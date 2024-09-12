@@ -1,7 +1,8 @@
 ---
-title: "{{title}}"
+title: Web
 draft: 
-description:
+description: 
+tags:
+  - Web
 ---
-
-# Web Overview
+# Index Web

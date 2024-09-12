@@ -1,7 +1,8 @@
 ---
-title: "{{title}}"
+title: Ressources
 draft: 
-description:
+description: 
+tags:
+  - Ressources
 ---
-
-# Ressources Overview
+# Index Ressources

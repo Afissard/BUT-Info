@@ -1,7 +1,8 @@
 ---
-title: "{{title}}"
+title: Mathématiques
 draft: 
-description:
+description: 
+tags:
+  - Mathématiques
 ---
-
-# Mathématiques Overview
+# Index Mathématiques

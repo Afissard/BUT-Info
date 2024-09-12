@@ -1,7 +1,8 @@
 ---
-title: "{{title}}"
+title: Gestion-de-Projet
 draft: 
-description:
+description: 
+tags:
+  - Gestion-de-Projet
 ---
-
-# Gestion-de-Projet Overview
+# Index Gestion-de-Projet

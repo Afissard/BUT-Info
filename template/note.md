@@ -1,5 +1,6 @@
 ---
 title: "{{title}}"
 draft: 
-description:
+description: 
+tags:
 ---

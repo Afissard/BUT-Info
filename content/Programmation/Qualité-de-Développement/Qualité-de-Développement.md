@@ -1,8 +1,9 @@
 ---
 title: Qualité-de-Développement
-draft: false
+draft: 
+description: 
 tags:
   - Qualité-de-Développement
 ---
-# Qualité-de-Développement Overview
+# Index Qualité-de-Développement
 [gitlab de la ressource](https://gitlab.univ-nantes.fr/iut.info2.qdev.dp)
