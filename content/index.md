@@ -4,6 +4,7 @@ draft: false
 description: Mes cours de BUT Informatique
 ---
 Je compte publier ici, toutes mes prise de notes de mes cours de BUT Informatique.
+([repository github du site](https://github.com/Afissard/BUT-Info))
 # Index du site
 - [[Programmation]]
 
