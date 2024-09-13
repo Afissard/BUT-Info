@@ -11,8 +11,8 @@ tags:
 - Cours
 	- [[CM1-Trigger]]
 - TD
-	- [[TD-1]]
-	- [[TD-2]]
+	- [[Rapport TD-1]]
+	- [[Rapport TD-2]]
 # Résumé / Introduction
 La différence entre SQL avec un langage de programmation et un langage de programmation, SQL permet de conservé un historique des modification des variable avec un système similaire à git.
 
