@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: Communication
 draft: false
 description: 
 tags:
