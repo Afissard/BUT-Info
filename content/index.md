@@ -3,10 +3,22 @@ title: Cours BUT Informatique
 draft: false
 description: Mes cours de BUT Informatique
 ---
+>[!warning]
+> L'entièreté du contenu est encore *WIP*, toutes contribution est appréciés.
+
 Je compte publier ici, toutes mes prise de notes de mes cours de BUT Informatique.
 ([repository github du site](https://github.com/Afissard/BUT-Info))
 # Index du site
+- [[Base-de-Données]]
+- [[Communication]]
+- [[Gestion-de-Projet]]
+- [[Mathématiques]]
 - [[Programmation]]
+- [[Réseau]]
+- [[Ressources]]
+- [[SAE]]
+- [[Système]]
+- [[Web]]
 
 # Liens utiles
 - [Gitlab de l'université](https://gitlab.univ-nantes.fr/pub/but) 
