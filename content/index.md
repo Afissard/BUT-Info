@@ -10,7 +10,7 @@ Je compte publier ici, toutes mes prise de notes de mes cours de BUT Informatiqu
 # Index du site
 - [[Base-de-Données]]
 - [[Communication]]
-- [[Gestion-de-Projet]]
+- [[Gestion-de-Projet-&-Entreprise]]
 - [[Mathématiques]]
 - [[Programmation]]
 - [[Réseau]]

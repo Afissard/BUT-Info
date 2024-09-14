@@ -9,11 +9,11 @@ CONCERNE : (nuserv,nuproj)
 -- 1 Contraintes d'intégrité
 
 -- Reset
-DROP TABLE concerne;
-DROP TABLE travail;
-DROP TABLE projet;
-DROP TABLE employe;
-DROP TABLE service;
+DROP TABLE concerne CASCADE CONSTRAINTS PURGE;
+DROP TABLE travail CASCADE CONSTRAINTS PURGE;
+DROP TABLE projet CASCADE CONSTRAINTS PURGE;
+DROP TABLE employe CASCADE CONSTRAINTS PURGE;
+DROP TABLE service CASCADE CONSTRAINTS PURGE;
 
 -- Creation des tables
 -- employe
@@ -66,10 +66,14 @@ de créer la contrainte Unique (nuempl, nuproj) de la table travail, car les deu
 attributs forment déjà la clé primaire. Par contre la contrainte (resp, nuproj) est une clé 
 étrangère différée vers la clé primaire de la table travail.
 */
+ALTER TABLE projet add CONSTRAINT FK_resp FOREIGN KEY (resp, nuproj) REFERENCES travail (nuempl, nuproj) DEFERRABLE;
 
 /*
-La durée hebdomadaire d'un employé est inférieure ou égale à 35h.
+La durée (temps de travail) hebdomadaire d'un employé est inférieure ou égale à 35h.
 */
+ALTER TABLE employe add CONSTRAINT temps_trav_max CHECK (hebdo <=35) DEFERRABLE;
+
+COMMIT;
 
 -- Test des contraites
 INSERT INTO EMPLOYE VALUES(20, 'toto', 35, 1);
@@ -92,10 +96,27 @@ UPDATE EMPLOYE
 SET SALAIRE = 1999
 WHERE NUEMPL NOT IN ((SELECT CHEF FROM SERVICE) UNION (SELECT RESP FROM PROJET));
 
-
--- TODO: le select doit rendre un tableau vide
+/*
+La somme des durées d'un employé (de la table travail) doit être inférieur à la durée hebdomadaire `(Sum(duree) <= hebdo)`. 
+Affichez les employés qui ne respectent pas cette contrainte. Vous modifiez les données de la table travail(update sur la 
+durée) ou la table employé (update sur hebdo)jusqu'à ce que la requête précédente retourne un ensemble vide.
+*/
 SELECT * FROM employe e
 WHERE (
     SELECT sum(duree) FROM travail t
     WHERE e.NUEMPL = t.NUEMPL
 ) > e.HEBDO ;
+
+/*
+Un employé ne peut être responsable de plus de 3 projets. Idem que la contrainte précédente, trouvez 
+les employés qui ne respectent pas la contrainte et modifiez les données.
+*/
+
+/*
+Le chef d’un service gagne plus que les employés du service. Idem que la contrainte précédente, 
+trouvez les employés qui ne respectent pas la contrainte et modifiez les données.
+*/
+
+/*
+Un service ne peut être concerné par plus de 3 projets.
+*/
