@@ -4,7 +4,7 @@ draft: false
 description: Mes cours de BUT Informatique
 ---
 >[!warning]
-> L'entièreté du contenu est encore *WIP*, toutes contribution est appréciés.
+> L'entièreté du contenu est encore *WIP*, toutes contributions est appréciés.
 
 Je compte publier ici, toutes mes prise de notes de mes cours de BUT Informatique.
 # Index du site
