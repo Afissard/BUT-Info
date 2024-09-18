@@ -12,14 +12,10 @@ Sacha Machiavel
 mail : sacha.machiavelique@etu.univ-nantes.fr
 tel : 01.36.30.36.30
 address : 90°N
-# profile / summary of strong points for the post (tech skills, exp and qualities)
-*Last thing to write, to summarize what is said in the CV*
+# profile/ summary of strong points for the post (tech skills, exp and qualities)
 # technical skills
 # education: degree + coursework highlights (relevant modules)
 # internship / work experience
-Student jobs (20224, 2023)
-School Stage
 # academic or personal projects
 # (personal interests)
 # references
-*who to call to get opinion about you in enterprise*

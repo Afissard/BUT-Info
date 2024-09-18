@@ -4,14 +4,13 @@ draft: false
 description: Mes cours de BUT Informatique
 ---
 >[!warning]
-> L'entièreté du contenu est encore *WIP*, toutes contribution est appréciés.
+> L'entièreté du contenu est encore *WIP*, toutes contributions est appréciés.
 
 Je compte publier ici, toutes mes prise de notes de mes cours de BUT Informatique.
-([repository github du site](https://github.com/Afissard/BUT-Info))
 # Index du site
 - [[Base-de-Données]]
 - [[Communication]]
-- [[Gestion-de-Projet]]
+- [[Gestion-de-Projet-&-Entreprise]]
 - [[Mathématiques]]
 - [[Programmation]]
 - [[Réseau]]

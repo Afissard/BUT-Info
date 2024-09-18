@@ -287,9 +287,7 @@ wget https://gitlab.univ-nantes.fr/iut.info2.r3_06/r3_06.tp1/-/raw/main/r3_06.tp
 
 ### Fichier par défaut / Gestion des permissions
 
-Comme vous le constatez, la page `index.html` est chargée automatiquement. En fait, une requête sur un répertoire induit
-les opérations suivantes (dans cet ordre) :
-
+Comme vous le constatez, la page `index.html` est chargée automatiquement. En fait, une requête sur un répertoire induit les opérations suivantes (dans cet ordre) :
 1. chercher dans le répertoire un des fichiers donnés par la
    directive [`DirectoryIndex`](https://httpd.apache.org/docs/2.4/fr/mod/mod_dir.html#directoryindex) (dans l'ordre
    indiqué) et le renvoyer
@@ -306,7 +304,7 @@ La directive [`Options`](https://httpd.apache.org/docs/2.4/fr/mod/core.html#opti
 
 
 Dans la configuration du site, avec les directives `<Directory>`, `DirectoryIndex` et `Options`, assurez les fonctionnalités suivantes : 
-*  faites en sorte que le listing du contenu du répertoire `listing` soit affiché (toujours). Testez.
+* faites en sorte que le listing du contenu du répertoire `listing` soit affiché (toujours). Testez.
 * Pour le répertoire `bizarre`, aucun listing ne doit s'afficher et `default.html` est prioritaire sur `index.html` 
 * Pas de listing, ni de contenu par défaut pour le répertoire `rien`
 
@@ -433,6 +431,3 @@ Apache peut modifier les requêtes entrantes pour les faire correspondre à des 
 `http://wwwX.fai.com/bd/9782723477055`
 en `http://wwwX.fai.com/test.php?cat=bd&isbn=9782723477055`
 (avec cat pouvant être par exemple : roman, scolaire, bd, ...)
-
-
-
