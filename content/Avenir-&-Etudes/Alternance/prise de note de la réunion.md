@@ -1,0 +1,13 @@
+presentation des apports de l'alternance
+- l'argent
+- experience professionnelle
+- le CV
+- application concrète de ce qui à été appris
+- attention il y a des devoir vous êtes un salarié -> justification des absences => arrêt maladie etc
+- attention il faut pouvoir rattraper les cours => plus de volume horaire avec l'investisment personnel
+- pas toujours autant de vacances (vari selon la convention)
+- même diplôme
+- avantage de l'apprentiasage : argent, expérience, avoir un projet à réalisé (travail concret demandé) 
+- ça créer du réseau
+- contrat -> engagement => droit / devoir
+- donne de l'expérience mais permet aussi de tester le domaine, milieu professionnel

@@ -13,6 +13,7 @@ tags:
 	- [[CV for internship]]
 - Job Interview
 	- [[What to do in a job interview]]
+	- [[Research about Intel AI projet]]
 # Module assignment
 1. Written application (CV + written justification)
 2. Job interview (week 40 & 41)
