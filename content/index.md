@@ -8,6 +8,7 @@ description: Mes cours de BUT Informatique
 
 Je compte publier ici, toutes mes prise de notes de mes cours de BUT Informatique.
 # Index du site
+- [[Avenir-&-Etudes]]
 - [[Base-de-Données]]
 - [[Communication]]
 - [[Gestion-de-Projet-&-Entreprise]]
