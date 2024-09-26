@@ -1,8 +1,9 @@
 ---
-title: "PPP"
+title: PPP
 draft: 
 description: 
 tags:
+  - PPP
 ---
 # Index PPP
 - Partie 1
