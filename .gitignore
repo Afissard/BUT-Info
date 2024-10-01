@@ -10,3 +10,6 @@ private/
 .replit
 replit.nix
 .vscode/
+
+#python stuff
+venv/

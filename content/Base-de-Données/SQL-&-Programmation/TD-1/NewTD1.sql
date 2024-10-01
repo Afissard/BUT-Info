@@ -6,8 +6,6 @@ TRAVAIL : (nuempl,nuproj,duree)
 CONCERNE : (nuserv,nuproj)
 */
 
--- 1 Contraintes d'intégrité
-
 -- Reset
 DROP TABLE concerne CASCADE CONSTRAINTS PURGE;
 DROP TABLE travail CASCADE CONSTRAINTS PURGE;
@@ -42,12 +40,8 @@ ALTER TABLE concerne ADD CONSTRAINT PK_concerne PRIMARY KEY (nuserv, nuproj);
 SELECT * FROM concerne;
 
 
--- Ajout des clefs étranères
-/*
-Contraintes implicites
-*/
-ALTER TABLE employe add CONSTRAINT FK_affect FOREIGN KEY (affect) REFERENCES service (nuserv);
-ALTER TABLE travail add CONSTRAINT FK_employe_travail FOREIGN KEY (nuempl) REFERENCES employe(nuempl) DEFERRABLE;
+-- Clefs Etrangères
+ALTER TABLE travail add CONSTRAINT FK_employe_travail FOREIGN KEY (nuempl) REFERENCES employe(nuempl);
 ALTER TABLE travail add CONSTRAINT FK_projet_travail FOREIGN KEY (nuproj) REFERENCES projet(nuproj);
 ALTER TABLE concerne add CONSTRAINT FK_service_concerne FOREIGN KEY (nuserv) REFERENCES service(nuserv);
 ALTER TABLE concerne add CONSTRAINT FK_projet_concerne FOREIGN KEY (nuproj) REFERENCES projet(nuproj);
@@ -58,7 +52,21 @@ de clé étrangère Affect et Chef se croisent. Dans ce cas, vous devriez créer
 contrainte unique (nuempl, affect) et une contrainte différée(initially deferred) de la 
 table service (chef,nuserv) vers cette contrainte unique(nuempl, affect).
 */
-ALTER TABLE service add CONSTRAINT FK_chef FOREIGN KEY (chef) REFERENCES employe (nuempl) DEFERRABLE;
+
+-- Ajouter la contrainte unique sur (nuempl, affect)
+ALTER TABLE employe 
+ADD CONSTRAINT UNQ_employe_affect UNIQUE (nuempl, affect);
+
+-- Ajouter la contrainte étrangère pour "chef" différée
+ALTER TABLE service 
+ADD CONSTRAINT FK_chef FOREIGN KEY (chef, nuserv) 
+REFERENCES employe (nuempl, affect) DEFERRABLE INITIALLY DEFERRED;
+
+-- Ajouter la contrainte étrangère pour "affect" 
+ALTER TABLE employe 
+ADD CONSTRAINT FK_affect FOREIGN KEY (affect) 
+REFERENCES service (nuserv);
+
 
 /*
 Un responsable de projet doit travailler sur le projet. Dans ce cas vous n'avez pas besoin 
@@ -66,18 +74,16 @@ de créer la contrainte Unique (nuempl, nuproj) de la table travail, car les deu
 attributs forment déjà la clé primaire. Par contre la contrainte (resp, nuproj) est une clé 
 étrangère différée vers la clé primaire de la table travail.
 */
-ALTER TABLE projet add CONSTRAINT FK_resp FOREIGN KEY (resp, nuproj) REFERENCES travail (nuempl, nuproj) DEFERRABLE;
+ALTER TABLE projet 
+ADD CONSTRAINT FK_resp FOREIGN KEY (resp, nuproj) 
+REFERENCES travail (nuempl, nuproj) DEFERRABLE INITIALLY DEFERRED;
 
 /*
 La durée (temps de travail) hebdomadaire d'un employé est inférieure ou égale à 35h.
 */
-ALTER TABLE employe add CONSTRAINT temps_trav_max CHECK (hebdo <=35) DEFERRABLE;
+ALTER TABLE employe ADD CONSTRAINT temps_trav_max CHECK (hebdo <= 35);
 
 COMMIT;
-
--- Test des contraites
-INSERT INTO EMPLOYE VALUES(20, 'toto', 35, 1);
-
 
 -- 2 Mise à jour des données:
 
@@ -149,7 +155,7 @@ FROM employe e
 JOIN projet p ON e.NUEMPL = p.RESP
 GROUP BY e.NUEMPL, e.NOMEMPL
 HAVING COUNT(p.NUPROJ) > 3;
--- Déjà bon
+
 
 /*
 Le chef d’un service gagne plus que les employés du service. Idem que la contrainte précédente, 

@@ -25,10 +25,12 @@ BEGIN
       RAISE_APPLICATION_ERROR(-20101, 'salaire non diminuable');
     END IF;
 END;
+COMMIT;
 
 -- tests :
-UPDATE EMPLOYE SET salaire = 0 WHERE nuempl = 20; -- ne passe pas le trigger
-UPDATE EMPLOYE Set salaire = 3501 WHERE nuempl = 23; -- passe le trigger
+-- UPDATE EMPLOYE SET salaire = 0 WHERE nuempl = 20; -- ne passe pas le trigger
+-- UPDATE EMPLOYE Set salaire = 3501 WHERE nuempl = 23; -- passe le trigger
+-- ROLLBACK;
 
 /*
 Il y a une autre contrainte qui n'est pas spécifiée "la durée hebdomadaire 
@@ -43,10 +45,12 @@ BEGIN
     RAISE_APPLICATION_ERROR(-20102, 'hebdo non augmentable');
   END IF;
 END;
+COMMIT;
 
 -- tests
-UPDATE EMPLOYE SET hebdo = 30 WHERE nuempl = 23; -- active le trigger
-UPDATE EMPLOYE SET hebdo = 20 WHERE nuempl = 23; -- active  pas le trigger
+-- UPDATE EMPLOYE SET hebdo = 30 WHERE nuempl = 23; -- active le trigger
+-- UPDATE EMPLOYE SET hebdo = 20 WHERE nuempl = 23; -- active  pas le trigger
+-- ROLLBACK;
 
 /*
 La spécification de l'opération supprimer_employe impose que la suppression 
@@ -58,19 +62,49 @@ Attention : la suppression des employés de la table travail n’est possible qu
 si l’employé n’est pas chef de service ou responsable de projet
 */
 
-/* 
---#TODO
-CREATE or REPLACE TRIGGER supprimer_employe AFTER DELETE on EMPLOYE
+-- CREATE or REPLACE TRIGGER supprimer_employe BEFORE DELETE on EMPLOYE
+-- BEGIN
+--   DELETE FROM TRAVAIL
+--   WHERE 
+--     NUEMPL NOT IN (SELECT chef from SERVICE)
+--     AND NUEMPL NOT IN (SELECT resp from PROJET);
+-- END;
+
+CREATE OR REPLACE TRIGGER supprimer_employe
+BEFORE DELETE ON employe
+FOR EACH ROW
+DECLARE
+    emp_chef_count NUMBER;
+    emp_resp_count NUMBER;
 BEGIN
-  DELETE FROM TRAVAIL
-  WHERE 
-    NUEMPL NOT IN (SELECT chef from SERVICE)
-    AND NUEMPL NOT IN (SELECT resp from PROJET);
+    -- Vérification si l'employé est chef de service
+    SELECT COUNT(*) INTO emp_chef_count
+    FROM service
+    WHERE chef = :OLD.nuempl;
+    
+    -- Vérification si l'employé est responsable de projet
+    SELECT COUNT(*) INTO emp_resp_count
+    FROM projet
+    WHERE resp = :OLD.nuempl;
+    
+    -- Si l'employé est chef de service ou responsable de projet, empêcher la suppression
+    IF emp_chef_count > 0 THEN
+        RAISE_APPLICATION_ERROR(-20201, 'erreur: employé est chef de service.');
+    ELSIF emp_resp_count > 0 THEN
+        RAISE_APPLICATION_ERROR(-20201, 'erreur: employé est responsable de projet.');
+    END IF;
+    
+    -- Suppression des lignes associées à l'employé dans la table travail
+    DELETE FROM travail WHERE nuempl = :OLD.nuempl;
 END;
 
-DELETE FROM EMPLOYE WHERE nuempl = 23; -- ne fonctionneras pas
-DELETE FROM EMPLOYE WHERE nuempl = 20; -- fonctionneras
-*/
+-- -- marche
+-- DELETE FROM employe WHERE nuempl = 37; -- employé n'étant ni chef ni responsable.
+-- DELETE FROM employe WHERE nuempl = 48; -- employé avec des lignes dans `travail`.
+-- -- retourne une erreur (attendu)
+-- DELETE FROM employe WHERE nuempl = 17; -- employé chef de service.
+-- DELETE FROM employe WHERE nuempl = 20; -- employé responsable de projet.
+-- ROLLBACK;
 
 /*
 La spécification de l'opération supprimer_projet impose que la suppression 
@@ -79,6 +113,18 @@ la table concerne correspondantes. Mettez en place un trigger table qui effectue
 cela. (pas de problème si on a déclaré "deferred" la contrainte FK_nuproj de 
 la table travail et de la table concerne vers la table projet).
 */
+CREATE OR REPLACE TRIGGER supprimer_projet
+BEFORE DELETE ON projet
+FOR EACH ROW
+BEGIN
+    -- Suppression des lignes dans la table travail associées au projet
+    DELETE FROM travail WHERE nuproj = :OLD.nuproj;
+
+    -- Suppression des lignes dans la table concerne associées au projet
+    DELETE FROM concerne WHERE nuproj = :OLD.nuproj;
+END;
+
+
 
 /*
 Il y a une contrainte qui n'est pas spécifiée "la somme des durées de travail 
@@ -117,11 +163,11 @@ BEGIN
 END;
 
 -- 6 tests à faire
-UPDATE TRAVAIL SET DUREE = 40 WHERE NUEMPL = 20; -- active le trigger (temps invalide)
-UPDATE TRAVAIL SET DUREE = 10 WHERE NUEMPL > 20; -- active le trigger  (large séléction)
-UPDATE TRAVAIL SET DUREE = 1 WHERE NUEMPL = 20; -- active pas le trigger (-> mais ne marche pas) 
+-- UPDATE TRAVAIL SET DUREE = 40 WHERE NUEMPL = 20; -- active le trigger (temps invalide)
+-- UPDATE TRAVAIL SET DUREE = 10 WHERE NUEMPL > 20; -- active le trigger  (large séléction)
+-- UPDATE TRAVAIL SET DUREE = 1 WHERE NUEMPL = 20; -- active pas le trigger (-> mais ne marche pas) 
 
-INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'Hades', 2, 1, 1); -- employé de test
-INSERT INTO TRAVAIL (NUEMPL, NUPROJ, DUREE) VALUES (1, 103, 3); -- test du trigger -> temps trop grand
-INSERT INTO TRAVAIL (NUEMPL, NUPROJ, DUREE) VALUES (1, 103, 1); -- test du trigger -> temps trop faible
-INSERT INTO TRAVAIL (NUEMPL, NUPROJ, DUREE) VALUES (1, 103, 2); -- test du trigger -> bon mais erreur
+-- INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'Hades', 2, 1, 1); -- employé de test
+-- INSERT INTO TRAVAIL (NUEMPL, NUPROJ, DUREE) VALUES (1, 103, 3); -- test du trigger -> temps trop grand
+-- INSERT INTO TRAVAIL (NUEMPL, NUPROJ, DUREE) VALUES (1, 103, 1); -- test du trigger -> temps trop faible
+-- INSERT INTO TRAVAIL (NUEMPL, NUPROJ, DUREE) VALUES (1, 103, 2); -- test du trigger -> bon mais erreur
