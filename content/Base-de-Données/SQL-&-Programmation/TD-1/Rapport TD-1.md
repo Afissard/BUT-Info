@@ -8,13 +8,13 @@ tags:
 ---
 # Base de données
 
-| Nom table | clefs primaire | autres colones         |
-| --------- | -------------- | ---------------------- |
-| employe   | nuempl         | nomempl, hebdo, affect |
-| service   | nuserv         | nomserv, chef          |
-| projet    | nuproj         | nomproj, resp          |
-| travail   | nuempl, nuproj | duree                  |
-| concerne  | nuserv, nuproj |                        |
+| Nom table | clefs primaire | autres colones                  |
+| --------- | -------------- | ------------------------------- |
+| employe   | nuempl         | nomempl, hebdo, affect, salaire |
+| service   | nuserv         | nomserv, chef                   |
+| projet    | nuproj         | nomproj, resp                   |
+| travail   | nuempl, nuproj | duree                           |
+| concerne  | nuserv, nuproj |                                 |
 
 # Création des tables
 ```sql

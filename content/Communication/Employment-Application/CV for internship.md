@@ -10,3 +10,4 @@ tags:
 # Image of the Resume
 ![[Capture-CV_Sacha-Machiavel.png]]
 # Resume
+#TODO 

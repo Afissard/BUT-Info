@@ -50,6 +50,11 @@ cela. (pas de problème si on a déclaré "deferred" la contrainte FK_nuproj de
 la table travail et de la table concerne vers la table projet).
 */
 
+DELETE FROM projet WHERE nuproj = 160; -- projet ayant des lignes dans travail et concerne.
+DELETE FROM projet WHERE nuproj = 492; -- projet ayant uniquement des lignes dans travail.
+DELETE FROM projet WHERE nuproj = 103; -- projet responsable par un employé spécifique.
+ROLLBACK;
+
 /*
 Il y a une contrainte qui n'est pas spécifiée "la somme des durées de travail 
 d'un employé ne doit pas excéder son temps de travail hebdomadaire", elle n'est 
