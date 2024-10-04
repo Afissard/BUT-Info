@@ -17,6 +17,7 @@ Je compte publier ici, toutes mes prise de notes de mes cours de BUT Informatiqu
 - [[Réseau]]
 - [[Ressources]]
 - [[SAE]]
+- [[Stage]]
 - [[Système]]
 - [[Web]]
 
@@ -26,6 +27,7 @@ Je compte publier ici, toutes mes prise de notes de mes cours de BUT Informatiqu
 - [Gitlab de M. Faucou](https://gitlab.univ-nantes.fr/faucou-s/)
 
 # Outils utilisé
+- [Madoc](https://madoc.univ-nantes.fr/my/)
 - Logiciel de prise de note : [Obsidian](https://obsidian.md/)
 - Génération du site web : [Quartz](https://quartz.jzhao.xyz)
 - Host du site web : [Github page](https://pages.github.com/)
