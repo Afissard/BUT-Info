@@ -131,31 +131,133 @@ Il y a une contrainte qui n'est pas spécifiée "la somme des durées de travail
 | :---------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
 |             |                       |                        |           |                          |
 
-#TODO 
+Code du trigger
+```sql
+CREATE OR REPLACE TRIGGER duree_trav_invalide
+	AFTER INSERT OR UPDATE OF duree ON TRAVAIL
+	DECLARE rec_t EMPLOYE%ROWTYPE;
+BEGIN
+	SELECT *
+	INTO rec_t
+	FROM EMPLOYE e
+	WHERE (
+		SELECT SUM(duree)
+		FROM TRAVAIL t
+		WHERE e.NUEMPL = t.NUEMPL
+	) > e.HEBDO;
 
-Ecrire un trigger qui vérifie la contrainte suivante: « un employé est responsable au plus sur 3 projets ». Idem que la question précédente, vous utilisez la requête suivante pour construire votre trigger : `Select * from employe e where (select count(*) from projet p where e.nuempl=p.resp)> 3 ;`
+	RAISE_APPLICATION_ERROR(-20301, 'temps travail invalide');
+	EXCEPTION
+		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20301, 'temps travail invalide');
+END;
+```
+Tests du trigger #TODO 
+```sql
+--TODO
+```
 
-| nom trigger | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
-| :---------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
-|             |                       |                        |           |                          |
+Ecrire un trigger qui vérifie la contrainte suivante: "un employé est responsable au plus sur 3 projets. Idem que la question précédente, vous utilisez la requête suivante pour construire votre trigger : `SELECT * FROM EMPLOYE e WHERE (SELECT COUNT(*) FROM PROJET p WHERE e.nuempl=p.resp)> 3;`
 
-#TODO 
+|  nom trigger  | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
+| :-----------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
+| resp_max_proj |         after         |    insert ou update    |  projet   |           non            |
 
-Ecrire un trigger qui vérifie la contrainte suivante : « un service ne peut être concerné par plus de 3 projets »
+Code du trigger
+```sql
+CREATE OR REPLACE TRIGGER resp_max_proj
+	AFTER INSERT OR UPDATE OF resp ON PROJET
+	DECLARE rec EMPLOYE%ROWTYPE;
+BEGIN
+	SELECT *
+	INTO rec
+	FROM EMPLOYE e
+	WHERE (
+		SELECT COUNT(*)
+		FROM PROJET p
+		WHERE e.nuempl=p.resp
+	)> 3;
 
-| nom trigger | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
-| :---------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
-|             |                       |                        |           |                          |
+	RAISE_APPLICATION_ERROR(-20302, 'employe resp sur plus de 3 projets');
+	EXCEPTION
+		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20302, 'employe resp sur plus de 3 projets');
+	END;
+```
+Tests du trigger
+```sql
+INSERT INTO PROJET (NUPROJ, NOMPROJ, RESP) VALUES (100, 'percephone', 30); -- Créer un nouveau projet et y ajoute un employe déjà responsable 3 fois
+INSERT INTO PROJET (NUPROJ, NOMPROJ, RESP) VALUES (100, 'hades', 20); -- Créer un nouveau projet et y ajoute un employe déjà responsable 1 fois
+UPDATE PROJET SET RESP = 30 WHERE RESP = 20; -- assigne la responsabilité du projet de n20 à n30
+UPDATE PROJET SET RESP = 57 WHERE RESP = 20; -- assigne la responsabilité du projet de n20 à n57
+```
 
-#TODO 
+Ecrire un trigger qui vérifie la contrainte suivante : "un service ne peut être concerné par plus de 3 projets"
 
-Ecrire un trigger qui vérifie la contrainte suivante : « un chef de service gagne plus que les employés de son service.
+|   nom trigger    | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
+| :--------------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
+| serv_max_concern |         after         |    insert ou update    | concerne  |           non            |
 
-| nom trigger | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
-| :---------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
-|             |                       |                        |           |                          |
+Code du trigger
+```sql
+CREATE OR REPLACE TRIGGER serv_max_concern
+	AFTER INSERT OR UPDATE OF NUSERV ON CONCERNE
+	DECLARE rec CONCERNE%ROWTYPE;
+BEGIN
+	SELECT *
+	INTO rec
+	FROM CONCERNE c
+	WHERE (
+		SELECT COUNT(*)
+		FROM CONCERNE cc
+		WHERE cc.NUSERV = c.NUSERV
+	)>3;
+	RAISE_APPLICATION_ERROR(-20303, 'un service ne peut être concerné par plus de 3 projets');
+	EXCEPTION
+		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20303, 'un service ne peut être concerné par plus de 3 projets');
+END;
+```
+Tests du trigger
+```sql
+UPDATE CONCERNE SET NUSERV = 1 WHERE NUPROJ = 160 AND NUSERV = 2; -- ajoute un projet à un service qui possède déjà 3 autre service
+UPDATE CONCERNE SET NUSERV = 5 WHERE NUPROJ = 103 AND NUSERV = 1; -- ajoute un projet à un service qui possède moins 3 autre service
+INSERT INTO CONCERNE (NUSERV, NUPROJ) VALUES (1, 160); -- ajoute un projet à un service qui possède déjà 3 autre service
+INSERT INTO CONCERNE (NUSERV, NUPROJ) VALUES (5, 103); -- ajoute un projet à un service qui possède moins 3 autre service
+```
 
-#TODO 
+Ecrire un trigger qui vérifie la contrainte suivante : "un chef de service gagne plus que les employés de son service".
+
+|  nom trigger   | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
+| :------------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
+| chef_plus_paye |         after         |    insert ou update    |  employe  |           non            |
+
+Code du trigger
+```sql
+CREATE OR REPLACE TRIGGER chef_plus_paye
+	AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE
+	DECLARE rec SERVICE%ROWTYPE;
+BEGIN
+	SELECT s.NUSERV, s.NOMSERV, s.CHEF
+	INTO rec
+	FROM service s
+	JOIN employe e ON s.CHEF = e.NUEMPL -- Chef du service
+	JOIN employe e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
+	WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
+
+	RAISE_APPLICATION_ERROR(-20304, 'un chef de service ne gagne pas plus que les employés de son service');
+	EXCEPTION
+		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20304, 'un chef de service ne gagne pas plus que les employés de son service');
+END;
+```
+Tests du trigger
+```sql
+UPDATE EMPLOYE SET SALAIRE = 4000 WHERE AFFECT = 1 AND NUEMPL != 41; -- augmente le salaire d'un employé pour depassez le chef
+UPDATE EMPLOYE SET SALAIRE = 2500 WHERE AFFECT = 1 AND NUEMPL = 39; -- augmente le salaire d'un employé sans depassez le chef
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 4000); -- créer un employer mieux payer que son chef
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 1500); -- créer un employer moins bien payer que son chef
+```
 
 Est-il possible de regrouper les deux derniers « trigger »
 

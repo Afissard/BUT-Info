@@ -53,24 +53,40 @@ SELECT * FROM concerne;
 ```
 # Contraintes d'intégrité
 ```sql
--- Ajout des clefs étranères
+-- Clefs Etrangères
 ALTER TABLE travail add CONSTRAINT FK_employe_travail FOREIGN KEY (nuempl) REFERENCES employe(nuempl);
 ALTER TABLE travail add CONSTRAINT FK_projet_travail FOREIGN KEY (nuproj) REFERENCES projet(nuproj);
 ALTER TABLE concerne add CONSTRAINT FK_service_concerne FOREIGN KEY (nuserv) REFERENCES service(nuserv);
 ALTER TABLE concerne add CONSTRAINT FK_projet_concerne FOREIGN KEY (nuproj) REFERENCES projet(nuproj);
 ```
+
 Le chef d'un service est un employé affecté au même service. Attention les contraintes de clé étrangère `Affect` et `Chef` se croisent. Dans ce cas, vous devriez créer une contrainte unique `(nuempl, affect)` et une contrainte différée (initially deferred) de la table `service` `(chef,nuserv)` vers cette contrainte unique `(nuempl, affect)`.
 ```sql
-ALTER TABLE employe add CONSTRAINT FK_affect FOREIGN KEY (affect) REFERENCES service (nuserv);
-ALTER TABLE service add CONSTRAINT FK_chef FOREIGN KEY (chef) REFERENCES employe (nuempl) DEFERRABLE;
+-- Ajouter la contrainte unique sur (nuempl, affect)
+ALTER TABLE employe
+ADD CONSTRAINT UNQ_employe_affect UNIQUE (nuempl, affect);
+
+-- Ajouter la contrainte étrangère pour "chef" différée
+ALTER TABLE service
+ADD CONSTRAINT FK_chef FOREIGN KEY (chef, nuserv)
+REFERENCES employe (nuempl, affect) DEFERRABLE INITIALLY DEFERRED;
+
+-- Ajouter la contrainte étrangère pour "affect"
+ALTER TABLE employe
+ADD CONSTRAINT FK_affect FOREIGN KEY (affect)
+REFERENCES service (nuserv);
 ```
+
 Un responsable de projet doit travailler sur le projet. Dans ce cas vous n'avez pas besoin de créer la contrainte Unique `(nuempl, nuproj)` de la table `travail`, car les deux attributs forment déjà la clé primaire. Par contre la contrainte `(resp, nuproj)` est une clé étrangère différée vers la clé primaire de la table `travail`.
 ```sql
-ALTER TABLE projet add CONSTRAINT FK_resp FOREIGN KEY (resp, nuproj) REFERENCES travail (nuempl, nuproj) DEFERRABLE;
+ALTER TABLE projet
+ADD CONSTRAINT FK_resp FOREIGN KEY (resp, nuproj)
+REFERENCES travail (nuempl, nuproj) DEFERRABLE INITIALLY DEFERRED;
 ```
+
 La durée (temps de travail) hebdomadaire d'un employé est inférieure ou égale à 35h.
 ```sql
-ALTER TABLE employe add CONSTRAINT temps_trav_max CHECK (hebdo <=35) DEFERRABLE;
+ALTER TABLE employe ADD CONSTRAINT temps_trav_max CHECK (hebdo <= 35);
 ```
 
 ## Table des contraintes
@@ -80,14 +96,17 @@ ALTER TABLE employe add CONSTRAINT temps_trav_max CHECK (hebdo <=35) DEFERRABLE;
 | Employe   | PK_employe          | Clé primaire       | non             |
 | Service   | PK_service          | Clé primaire       | non             |
 | Projet    | PK_projet           | Clé primaire       | non             |
-| Employe   | FK_affect           | Clé étrangère      | non             |
+| Travail   | PK_travail          | Clé primaire       | non             |
+| Concerne  | PK_concerne         | Clé primaire       | non             |
 | Travail   | FK_employe_travail  | Clé étrangère      | non             |
 | Travail   | FK_projet_travail   | Clé étrangère      | non             |
 | Concerne  | FK_service_concerne | Clé étrangère      | non             |
 | Concerne  | FK_projet_concerne  | Clé étrangère      | non             |
+| Employe   | UNQ_employe_affect  | Clé unique         | non             |
 | Service   | FK_chef             | Clé étrangère      | oui             |
+| Employe   | FK_affect           | Clé étrangère      | non             |
 | Projet    | FK_resp             | Clé étrangère      | oui             |
-| Employe   | temps_trav_max      | ?                  | oui             |
+| Employe   | temps_trav_max      | Check              | non             |
 
 ## Tests des contraintes
 
@@ -106,7 +125,8 @@ Faites les modifications suivantes, à chaque fois avec une seule requête:
 - Les chefs de service gagnent au moins 3500 euros.  
 - Les autres employés gagnent un salaire < 2000 euros.
 ```sql
-ALTER TABLE EMPLOYE ADD SALAIRE NUMBER;
+ALTER TABLE EMPLOYE ADD
+SALAIRE NUMBER;
 
 UPDATE EMPLOYE
 SET SALAIRE = 2500
@@ -119,6 +139,8 @@ WHERE NUEMPL IN (SELECT CHEF FROM SERVICE);
 UPDATE EMPLOYE
 SET SALAIRE = 1999
 WHERE NUEMPL NOT IN ((SELECT CHEF FROM SERVICE) UNION (SELECT RESP FROM PROJET));
+
+COMMIT;
 ```
 
 La somme des durées d'un employé (de la table travail) doit être inférieur à la durée hebdomadaire `(Sum(duree) <= hebdo)`. Affichez les employés qui ne respectent pas cette contrainte. Vous modifiez les données de la table travail(update sur la durée) ou la table employé (update sur hebdo)jusqu'à ce que la requête précédente retourne un ensemble vide.
@@ -177,7 +199,6 @@ JOIN employe e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
 WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
 
 -- déjà bon mais voici un update au cas où
-
 UPDATE employe
 SET salaire = salaire + 1
 WHERE nuempl IN (

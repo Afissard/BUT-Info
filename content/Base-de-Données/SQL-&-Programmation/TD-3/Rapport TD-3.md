@@ -73,7 +73,7 @@ EXECUTE MAJ.CREER_EMPLOYE(100, 'boby', 31, 66, 2000);
 EXECUTE MAJ.CREER_EMPLOYE(100, 'Boby', 66, 1, 2000);
 EXECUTE MAJ.CREER_EMPLOYE(100, 'Boby', 31, 1000000000000000000000000000000000000000, 2000);
 EXECUTE MAJ.CREER_EMPLOYE(100, 'Jugemu Jugemu Unko Nageki Ototoi no Shin-chan no Pantsu Shinpachi no Jinsei Barumunku Fezarion Aizakku Shunaidaa Sanbun no Ichi no Junjou na Kanjou no Nokotta Sanbun no Ni wa Sakamuke ga Kininaru Kanjou Uragiri wa Boku no Namae wo Shitteiru you de Shiranai no wo Boku wa Shitteiru Rusu Surume Medaka Kazunoko Koedame Medaka... Kono Medaka wa Sakki to Chigau Yatsu Dakara Ikeno Medaka no Hou Dakara Raayu Yuuteimiyaoukimukou Pepepepepepepepepepepepe Bichiguso Maru', 31, 1, 2000);
-EXECUTE MAJ.CREER_EMPLOYE(100, 'boby', 31, 1, 66666); --TODO
+EXECUTE MAJ.CREER_EMPLOYE(100, 'boby', 31, 1, 66666); --TODO FIX
 ```
 # Exercice 2
 Chaque procédure doit traiter les erreurs provoquées par oracle(voir TD1) ou les erreurs qui proviennent de vos trigger (voir TD2). Vous devriez créer un nouveau tableau pour chacune des procédures.

@@ -151,7 +151,8 @@ CREATE OR REPLACE TRIGGER duree_trav_invalide
   AFTER INSERT OR UPDATE OF duree ON TRAVAIL
   DECLARE rec_t EMPLOYE%ROWTYPE;
 BEGIN
-  SELECT * INTO rec_t
+  SELECT * 
+  INTO rec_t
   FROM EMPLOYE e 
   WHERE (
     SELECT SUM(duree)
@@ -170,7 +171,88 @@ END;
 -- UPDATE TRAVAIL SET DUREE = 10 WHERE NUEMPL > 20; -- active le trigger  (large séléction)
 -- UPDATE TRAVAIL SET DUREE = 1 WHERE NUEMPL = 20; -- active pas le trigger (-> mais ne marche pas) 
 
--- INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'Hades', 2, 1, 1); -- employé de test
--- INSERT INTO TRAVAIL (NUEMPL, NUPROJ, DUREE) VALUES (1, 103, 3); -- test du trigger -> temps trop grand
--- INSERT INTO TRAVAIL (NUEMPL, NUPROJ, DUREE) VALUES (1, 103, 1); -- test du trigger -> temps trop faible
--- INSERT INTO TRAVAIL (NUEMPL, NUPROJ, DUREE) VALUES (1, 103, 2); -- test du trigger -> bon mais erreur
+/*
+Ecrire un trigger qui vérifie la contrainte suivante: "un employé est responsable au plus sur 3 projets". 
+Idem que la question précédente, vous utilisez la requête suivante pour construire votre trigger : 
+SELECT * FROM EMPLOYE e 
+WHERE (
+  SELECT COUNT(*) 
+  FROM PROJET p 
+  WHERE e.nuempl=p.resp
+)> 3;
+*/
+CREATE OR REPLACE TRIGGER resp_max_proj
+  AFTER INSERT OR UPDATE OF resp ON PROJET
+  DECLARE rec EMPLOYE%ROWTYPE;
+BEGIN
+  SELECT * 
+  INTO rec
+  FROM EMPLOYE e 
+  WHERE (
+    SELECT COUNT(*) 
+    FROM PROJET p 
+    WHERE e.nuempl=p.resp
+  )> 3;
+
+  RAISE_APPLICATION_ERROR(-20302, 'employe resp sur plus de 3 projets');
+  EXCEPTION 
+		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20302, 'employe resp sur plus de 3 projets');
+END;
+
+/*
+Ecrire un trigger qui vérifie la contrainte suivante : "un service ne peut être concerné par plus de 3 projets"
+*/
+
+CREATE OR REPLACE TRIGGER serv_max_concern
+  AFTER INSERT OR UPDATE OF NUSERV ON CONCERNE
+  DECLARE rec CONCERNE%ROWTYPE;
+BEGIN
+  SELECT *
+  INTO rec
+  FROM CONCERNE c
+  WHERE (
+    SELECT COUNT(*)
+    FROM CONCERNE cc
+    WHERE cc.NUSERV = c.NUSERV
+  )>3;
+  
+  RAISE_APPLICATION_ERROR(-20303, 'un service ne peut être concerné par plus de 3 projets');
+  EXCEPTION 
+		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20303, 'un service ne peut être concerné par plus de 3 projets');
+END;
+
+/*
+Ecrire un trigger qui vérifie la contrainte suivante : "un chef de service gagne plus que les employés de son service".
+*/
+
+CREATE OR REPLACE TRIGGER chef_plus_paye
+  AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE
+  DECLARE rec SERVICE%ROWTYPE;
+BEGIN
+  SELECT s.NUSERV, s.NOMSERV, s.CHEF
+  INTO rec
+  FROM service s
+  JOIN employe e ON s.CHEF = e.NUEMPL -- Chef du service
+  JOIN employe e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
+  WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
+
+  RAISE_APPLICATION_ERROR(-20304, 'un chef de service ne gagne pas plus que les employés de son service');
+  EXCEPTION 
+		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20304, 'un chef de service ne gagne pas plus que les employés de son service');
+END;
+
+/*
+Est-il possible de regrouper les deux derniers trigger
+
+-> oui faire une fusion des WHERE
+*/
+--TODO
+
+/*
+Lors d'augmentation de salaire ou d'embauche, l'entreprise veut enregistrer les employés (dans la table 
+`EMPLOYE_ALERTE` idem que `EMPLOYE`) avec un salaire qui dépassent les 5000 euros. Ecrire un trigger 
+qui permet de remplir cette table.
+*/

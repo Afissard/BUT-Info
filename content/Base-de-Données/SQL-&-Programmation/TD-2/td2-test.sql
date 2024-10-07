@@ -72,3 +72,47 @@ WHERE (
   FROM TRAVAIL t where e.NUEMPL = t.NUEMPL
 ) > e.HEBDO;
 */
+--TODO
+
+/*
+Ecrire un trigger qui vérifie la contrainte suivante: "un employé est responsable au plus sur 3 projets". 
+Idem que la question précédente, vous utilisez la requête suivante pour construire votre trigger : 
+SELECT * FROM EMPLOYE e 
+WHERE (
+  SELECT COUNT(*) 
+  FROM PROJET p 
+  WHERE e.nuempl=p.resp
+)> 3;
+*/
+INSERT INTO PROJET (NUPROJ, NOMPROJ, RESP) VALUES (100, 'percephone', 30); -- Créer un nouveau projet et y ajoute un employe déjà responsable 3 fois
+INSERT INTO PROJET (NUPROJ, NOMPROJ, RESP) VALUES (100, 'hades', 20); -- Créer un nouveau projet et y ajoute un employe déjà responsable 1 fois
+UPDATE PROJET SET RESP = 30 WHERE RESP = 20; -- assigne la responsabilité du projet de n20 à n30
+UPDATE PROJET SET RESP = 57 WHERE RESP = 20; -- assigne la responsabilité du projet de n20 à n57
+ROLLBACK;
+
+/*
+Ecrire un trigger qui vérifie la contrainte suivante : "un service ne peut être concerné par plus de 3 projets"
+*/
+UPDATE CONCERNE SET NUSERV = 1 WHERE NUPROJ = 160 AND NUSERV = 2; -- ajoute un projet à un service qui possède déjà 3 autre service
+UPDATE CONCERNE SET NUSERV = 5 WHERE NUPROJ = 103 AND NUSERV = 1; -- ajoute un projet à un service qui possède moins 3 autre service 
+INSERT INTO CONCERNE (NUSERV, NUPROJ) VALUES (1, 160); -- ajoute un projet à un service qui possède déjà 3 autre service
+INSERT INTO CONCERNE (NUSERV, NUPROJ) VALUES (5, 103); -- ajoute un projet à un service qui possède moins 3 autre service
+ROLLBACK;
+
+/*
+Ecrire un trigger qui vérifie la contrainte suivante : "un chef de service gagne plus que les employés de son service".
+*/
+UPDATE EMPLOYE SET SALAIRE = 4000 WHERE AFFECT = 1 AND NUEMPL != 41; -- augmente le salaire d'un employé pour depassez le chef
+UPDATE EMPLOYE SET SALAIRE = 2500 WHERE AFFECT = 1 AND NUEMPL = 39; -- augmente le salaire d'un employé sans depassez le chef
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 4000); -- créer un employer mieux payer que son chef
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 1500); -- créer un employer moins bien payer que son chef
+ROLLBACK;
+/*
+Est-il possible de regrouper les deux derniers trigger
+*/
+
+/*
+Lors d'augmentation de salaire ou d'embauche, l'entreprise veut enregistrer les employés (dans la table 
+`EMPLOYE_ALERTE` idem que `EMPLOYE`) avec un salaire qui dépassent les 5000 euros. Ecrire un trigger 
+qui permet de remplir cette table.
+*/
