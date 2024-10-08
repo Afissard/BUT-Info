@@ -25,6 +25,7 @@ BEGIN
       RAISE_APPLICATION_ERROR(-20101, 'salaire non diminuable');
     END IF;
 END;
+
 COMMIT;
 
 -- tests :
@@ -162,7 +163,7 @@ BEGIN
 
   RAISE_APPLICATION_ERROR(-20301, 'temps travail invalide');
   EXCEPTION 
-		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN no_data_found THEN null;
 		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20301, 'temps travail invalide');
 END;
 
@@ -196,7 +197,7 @@ BEGIN
 
   RAISE_APPLICATION_ERROR(-20302, 'employe resp sur plus de 3 projets');
   EXCEPTION 
-		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN no_data_found THEN null;
 		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20302, 'employe resp sur plus de 3 projets');
 END;
 
@@ -219,7 +220,7 @@ BEGIN
   
   RAISE_APPLICATION_ERROR(-20303, 'un service ne peut être concerné par plus de 3 projets');
   EXCEPTION 
-		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN no_data_found THEN null;
 		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20303, 'un service ne peut être concerné par plus de 3 projets');
 END;
 
@@ -233,26 +234,87 @@ CREATE OR REPLACE TRIGGER chef_plus_paye
 BEGIN
   SELECT s.NUSERV, s.NOMSERV, s.CHEF
   INTO rec
-  FROM service s
-  JOIN employe e ON s.CHEF = e.NUEMPL -- Chef du service
-  JOIN employe e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
+  FROM SERVICE s
+  JOIN EMPLOYE e ON s.CHEF = e.NUEMPL -- Chef du service
+  JOIN EMPLOYE e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
   WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
 
-  RAISE_APPLICATION_ERROR(-20304, 'un chef de service ne gagne pas plus que les employés de son service');
+  RAISE_APPLICATION_ERROR(-20304, 'un chef de service gagne plus que les employés de son service');
   EXCEPTION 
-		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
-		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20304, 'un chef de service ne gagne pas plus que les employés de son service');
+		WHEN no_data_found THEN null;
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20304, 'un chef de service gagne plus que les employés de son service');
+END;
+
+/*
+Ecrire un trigger qui vérifie la contrainte suivante : "un chef de service gagne plus que les employés responsables de projets".
+*/
+
+CREATE OR REPLACE TRIGGER chef_paye_sup_resp
+  AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE
+  DECLARE rec SERVICE%ROWTYPE;
+BEGIN
+  SELECT s.NUSERV, s.NOMSERV, s.CHEF
+  INTO rec
+  FROM SERVICE s
+  JOIN EMPLOYE e ON s.CHEF = e.NUEMPL -- Chef du service
+  JOIN EMPLOYE e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
+  JOIN PROJET p ON p.RESP = e2.NUEMPL -- Employé responsable de projet
+  WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
+
+  RAISE_APPLICATION_ERROR(-20305, 'un chef de service gagne plus que les employés responsables de projets');
+  EXCEPTION 
+		WHEN no_data_found THEN null;
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20305, 'un chef de service gagne plus que les employés responsables de projets');
 END;
 
 /*
 Est-il possible de regrouper les deux derniers trigger
-
--> oui faire une fusion des WHERE
 */
---TODO
+
+CREATE OR REPLACE TRIGGER chef_plus_paye_emp_et_resp
+  AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE
+  DECLARE rec SERVICE%ROWTYPE;
+BEGIN
+  -- trigger 1
+  SELECT s.NUSERV, s.NOMSERV, s.CHEF
+  INTO rec
+  FROM SERVICE s
+  JOIN EMPLOYE e ON s.CHEF = e.NUEMPL -- Chef du service
+  JOIN EMPLOYE e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
+  WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
+  -- trigger 2
+  SELECT s.NUSERV, s.NOMSERV, s.CHEF
+  INTO rec
+  FROM SERVICE s
+  JOIN EMPLOYE e ON s.CHEF = e.NUEMPL -- Chef du service
+  JOIN EMPLOYE e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
+  JOIN PROJET p ON p.RESP = e2.NUEMPL -- -- Employé responsable de projet
+  WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
+
+  RAISE_APPLICATION_ERROR(-20306, 'un chef de service gagne plus que les employés de son service');
+  EXCEPTION 
+		WHEN no_data_found THEN null;
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20306, 'un chef de service gagne plus que les employés de son service');
+END;
+
 
 /*
 Lors d'augmentation de salaire ou d'embauche, l'entreprise veut enregistrer les employés (dans la table 
 `EMPLOYE_ALERTE` idem que `EMPLOYE`) avec un salaire qui dépassent les 5000 euros. Ecrire un trigger 
 qui permet de remplir cette table.
 */
+
+-- DROP TABLE EMPLOYE_ALERTE CASCADE CONSTRAINTS PURGE;
+CREATE table EMPLOYE_ALERTE AS SELECT * FROM EMPLOYE;
+
+CREATE OR REPLACE TRIGGER REMPLIS_EMPLOYE_ALERTE 
+  AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE
+  FOR EACH ROW 
+    WHEN ( NEW.SALAIRE > 5000) 
+BEGIN 
+	INSERT INTO EMPLOYE_ALERTE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) 
+  VALUES (:NEW.NUEMPL, :NEW.NOMEMPL, :NEW.HEBDO, :NEW.AFFECT, :NEW.SALAIRE); 
+
+  EXCEPTION 
+		WHEN no_data_found THEN null;
+END;

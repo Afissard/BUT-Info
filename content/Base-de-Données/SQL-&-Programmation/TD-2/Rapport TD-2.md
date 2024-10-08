@@ -148,7 +148,7 @@ BEGIN
 
 	RAISE_APPLICATION_ERROR(-20301, 'temps travail invalide');
 	EXCEPTION
-		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN no_data_found THEN null;
 		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20301, 'temps travail invalide');
 END;
 ```
@@ -180,9 +180,9 @@ BEGIN
 
 	RAISE_APPLICATION_ERROR(-20302, 'employe resp sur plus de 3 projets');
 	EXCEPTION
-		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN no_data_found THEN null;
 		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20302, 'employe resp sur plus de 3 projets');
-	END;
+END;
 ```
 Tests du trigger
 ```sql
@@ -214,7 +214,7 @@ BEGIN
 	)>3;
 	RAISE_APPLICATION_ERROR(-20303, 'un service ne peut être concerné par plus de 3 projets');
 	EXCEPTION
-		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN no_data_found THEN null;
 		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20303, 'un service ne peut être concerné par plus de 3 projets');
 END;
 ```
@@ -247,7 +247,7 @@ BEGIN
 
 	RAISE_APPLICATION_ERROR(-20304, 'un chef de service ne gagne pas plus que les employés de son service');
 	EXCEPTION
-		WHEN no_data_found THEN null; -- aucun employé ne travail plus qu'autorisé
+		WHEN no_data_found THEN null;
 		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20304, 'un chef de service ne gagne pas plus que les employés de son service');
 END;
 ```
@@ -259,20 +259,118 @@ INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse
 INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 1500); -- créer un employer moins bien payer que son chef
 ```
 
+Ecrire un trigger qui vérifie la contrainte suivante : "un chef de service gagne plus que les employés responsables de projets".
+
+|    nom trigger     | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
+| :----------------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
+| chef_paye_sup_resp |         after         |    insert ou update    |  employe  |           non            |
+
+Code du trigger
+```sql
+CREATE OR REPLACE TRIGGER chef_paye_sup_resp
+	AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE
+	DECLARE rec SERVICE%ROWTYPE;
+BEGIN
+	SELECT s.NUSERV, s.NOMSERV, s.CHEF
+	INTO rec
+	FROM SERVICE s
+	JOIN EMPLOYE e ON s.CHEF = e.NUEMPL -- Chef du service
+	JOIN EMPLOYE e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
+	JOIN PROJET p ON p.RESP = e2.NUEMPL -- Employé responsable de projet
+WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
+
+	RAISE_APPLICATION_ERROR(-20305, 'un chef de service gagne plus que les employés responsables de projets');
+	EXCEPTION
+		WHEN no_data_found THEN null;
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20305, 'un chef de service gagne plus que les employés responsables de projets');
+END;
+```
+Tests du triggers
+```sql
+-- SELECT * FROM EMPLOYE WHERE AFFECT = 2 ORDER BY SALAIRE DESC;
+UPDATE EMPLOYE SET SALAIRE = 4000 WHERE AFFECT = 2 AND NUEMPL = 57; -- augment le salaire d'un resp pour depasser le chef
+UPDATE EMPLOYE SET SALAIRE = 3000 WHERE AFFECT = 2 AND NUEMPL = 57; -- augment le salaire d'un resp sans depasser le chef
+-- pour les insert allez chercher un employé dejà resp ailleur
+```
+
+
 Est-il possible de regrouper les deux derniers « trigger »
 
-| nom trigger | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
-| :---------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
-|             |                       |                        |           |                          |
+|        nom trigger         | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
+| :------------------------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
+| chef_plus_paye_emp_et_resp |         after         |    insert ou update    |  employe  |           non            |
 
-#TODO 
-
+Code du trigger
+```sql
+CREATE OR REPLACE TRIGGER chef_plus_paye_emp_et_resp
+	AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE
+	DECLARE rec SERVICE%ROWTYPE;
+BEGIN
+	-- trigger 1
+	SELECT s.NUSERV, s.NOMSERV, s.CHEF
+	INTO rec
+	FROM SERVICE s
+	JOIN EMPLOYE e ON s.CHEF = e.NUEMPL -- Chef du service
+	JOIN EMPLOYE e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
+	WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
+	-- trigger 2
+	SELECT s.NUSERV, s.NOMSERV, s.CHEF
+	INTO rec
+	FROM SERVICE s
+	JOIN EMPLOYE e ON s.CHEF = e.NUEMPL -- Chef du service
+	JOIN EMPLOYE e2 ON e2.AFFECT = s.NUSERV -- Employés du même service
+	JOIN PROJET p ON p.RESP = e2.NUEMPL -- -- Employé responsable de projet
+	WHERE e.SALAIRE <= e2.SALAIRE AND e2.NUEMPL != e.NUEMPL; -- Ne compare pas le chef à lui-même
+	
+	RAISE_APPLICATION_ERROR(-20306, 'un chef de service gagne plus que les employés de son service');
+	EXCEPTION
+		WHEN no_data_found THEN null;
+		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20306, 'un chef de service gagne plus que les employés de son service');
+END;
+```
+Tests du trigger
+```sql
+-- trigger 1
+UPDATE EMPLOYE SET SALAIRE = 4000 WHERE AFFECT = 1 AND NUEMPL != 41; -- augmente le salaire d'un employé pour depassez le chef
+UPDATE EMPLOYE SET SALAIRE = 2500 WHERE AFFECT = 1 AND NUEMPL = 39; -- augmente le salaire d'un employé sans depassez le chef
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 4000); -- créer un employer mieux payer que son chef
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 1500); -- créer un employer moins bien payer que son chef
+-- trigger 2
+UPDATE EMPLOYE SET SALAIRE = 4000 WHERE AFFECT = 2 AND NUEMPL = 57; -- augment le salaire d'un resp pour depasser le chef
+UPDATE EMPLOYE SET SALAIRE = 3000 WHERE AFFECT = 2 AND NUEMPL = 57; -- augment le salaire d'un resp sans depasser le chef
+-- pour les insert allez chercher un employé dejà resp ailleur
+```
 # Exercice 4
 
 Lors d'augmentation de salaire ou d'embauche, l'entreprise veut enregistrer les employés (dans la table `EMPLOYE_ALERTE` idem que `EMPLOYE`) avec un salaire qui dépassent les 5000 euros. Ecrire un trigger qui permet de remplir cette table.
 
-| nom trigger | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
-| :---------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
-|             |                       |                        |           |                          |
+|      nom trigger       | type : before / after | Insert, delete, update | nom table | for each row : oui / non |
+| :--------------------: | :-------------------: | :--------------------: | :-------: | :----------------------: |
+| remplis_employe_alerte |         after         |    insert ou update    |  employe  |           oui            |
 
-#TODO 
+Code du trigger
+```sql
+CREATE table EMPLOYE_ALERTE AS SELECT * FROM EMPLOYE;
+
+CREATE OR REPLACE TRIGGER remplis_employe_alerte
+	AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE
+	FOR EACH ROW WHEN ( NEW.SALAIRE > 5000)
+BEGIN
+	INSERT INTO EMPLOYE_ALERTE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE)
+	VALUES (:NEW.NUEMPL, :NEW.NOMEMPL, :NEW.HEBDO, :NEW.AFFECT, :NEW.SALAIRE);
+
+	EXCEPTION
+		WHEN no_data_found THEN null;
+END;
+```
+Tests du trigger
+```sql
+alter trigger "CHEF_PAYE_SUP_RESP" disable;
+alter trigger "CHEF_PLUS_PAYE" disable;
+alter trigger "CHEF_PLUS_PAYE_EMP_ET_RESP" disable;
+
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'cresus', 10, 1, 50000); -- créer un employer payé plus de 5000
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (2, 'diogene', 10, 1, 1); -- créer un employer payé moins de 5000
+UPDATE EMPLOYE SET SALAIRE = 50000 WHERE AFFECT = 1 AND NUEMPL != 41; -- créer un employer payé plus de 5000
+ROLLBACK;
+```

@@ -107,12 +107,42 @@ UPDATE EMPLOYE SET SALAIRE = 2500 WHERE AFFECT = 1 AND NUEMPL = 39; -- augmente 
 INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 4000); -- créer un employer mieux payer que son chef
 INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 1500); -- créer un employer moins bien payer que son chef
 ROLLBACK;
+
+/*
+Ecrire un trigger qui vérifie la contrainte suivante : "un chef de service gagne plus que les employés responsables de projets".
+*/
+-- SELECT * FROM EMPLOYE WHERE AFFECT = 2 ORDER BY SALAIRE DESC;
+UPDATE EMPLOYE SET SALAIRE = 4000 WHERE AFFECT = 2 AND NUEMPL = 57; -- augment le salaire d'un resp pour depasser le chef
+UPDATE EMPLOYE SET SALAIRE = 3000 WHERE AFFECT = 2 AND NUEMPL = 57; -- augment le salaire d'un resp sans depasser le chef
+-- pour les insert allez chercher un employé dejà resp ailleur
+ROLLBACK;
+
 /*
 Est-il possible de regrouper les deux derniers trigger
 */
+
+-- trigger 1
+UPDATE EMPLOYE SET SALAIRE = 4000 WHERE AFFECT = 1 AND NUEMPL != 41; -- augmente le salaire d'un employé pour depassez le chef
+UPDATE EMPLOYE SET SALAIRE = 2500 WHERE AFFECT = 1 AND NUEMPL = 39; -- augmente le salaire d'un employé sans depassez le chef
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 4000); -- créer un employer mieux payer que son chef
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'ulysse', 10, 1, 1500); -- créer un employer moins bien payer que son chef
+-- trigger 2
+UPDATE EMPLOYE SET SALAIRE = 4000 WHERE AFFECT = 2 AND NUEMPL = 57; -- augment le salaire d'un resp pour depasser le chef
+UPDATE EMPLOYE SET SALAIRE = 3000 WHERE AFFECT = 2 AND NUEMPL = 57; -- augment le salaire d'un resp sans depasser le chef
+-- pour les insert allez chercher un employé dejà resp ailleur
+ROLLBACK;
+
 
 /*
 Lors d'augmentation de salaire ou d'embauche, l'entreprise veut enregistrer les employés (dans la table 
 `EMPLOYE_ALERTE` idem que `EMPLOYE`) avec un salaire qui dépassent les 5000 euros. Ecrire un trigger 
 qui permet de remplir cette table.
 */
+alter trigger "CHEF_PAYE_SUP_RESP" disable;
+alter trigger "CHEF_PLUS_PAYE" disable;
+alter trigger "CHEF_PLUS_PAYE_EMP_ET_RESP" disable;
+
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'cresus', 10, 1, 50000); -- créer un employer payé plus de 5000
+INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (2, 'diogene', 10, 1, 1); -- créer un employer payé moins de 5000
+UPDATE EMPLOYE SET SALAIRE = 50000 WHERE AFFECT = 1 AND NUEMPL != 41; -- créer un employer payé plus de 5000
+ROLLBACK;
