@@ -72,7 +72,10 @@ WHERE (
   FROM TRAVAIL t where e.NUEMPL = t.NUEMPL
 ) > e.HEBDO;
 */
---TODO
+UPDATE TRAVAIL SET DUREE = 50 WHERE NUEMPL = 23 AND NUPROJ = 237;
+UPDATE TRAVAIL SET DUREE = 50 WHERE NUEMPL > 23;
+UPDATE TRAVAIL SET DUREE = 5 WHERE NUEMPL = 23 AND NUPROJ = 237;
+
 
 /*
 Ecrire un trigger qui vérifie la contrainte suivante: "un employé est responsable au plus sur 3 projets". 
@@ -141,8 +144,15 @@ qui permet de remplir cette table.
 alter trigger "CHEF_PAYE_SUP_RESP" disable;
 alter trigger "CHEF_PLUS_PAYE" disable;
 alter trigger "CHEF_PLUS_PAYE_EMP_ET_RESP" disable;
+alter trigger "REMPLIS_EMPLOYE_ALERTE" enable;
 
 INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'cresus', 10, 1, 50000); -- créer un employer payé plus de 5000
 INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (2, 'diogene', 10, 1, 1); -- créer un employer payé moins de 5000
-UPDATE EMPLOYE SET SALAIRE = 50000 WHERE AFFECT = 1 AND NUEMPL != 41; -- créer un employer payé plus de 5000
+--UPDATE EMPLOYE SET SALAIRE = 50000 WHERE NUEMPL = 20; -- créer un employer payé plus de 5000
 ROLLBACK;
+
+alter trigger "CHEF_PAYE_SUP_RESP" enable;
+alter trigger "CHEF_PLUS_PAYE" enable;
+alter trigger "CHEF_PLUS_PAYE_EMP_ET_RESP" enable;
+alter trigger "REMPLIS_EMPLOYE_ALERTE" DISABLE;
+

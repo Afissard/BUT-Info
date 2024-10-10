@@ -152,9 +152,11 @@ BEGIN
 		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20301, 'temps travail invalide');
 END;
 ```
-Tests du trigger #TODO 
+Tests du trigger
 ```sql
---TODO
+UPDATE TRAVAIL SET DUREE = 50 WHERE NUEMPL = 23 AND NUPROJ = 237;
+UPDATE TRAVAIL SET DUREE = 50 WHERE NUEMPL > 23;
+UPDATE TRAVAIL SET DUREE = 5 WHERE NUEMPL = 23 AND NUPROJ = 237;
 ```
 
 Ecrire un trigger qui vérifie la contrainte suivante: "un employé est responsable au plus sur 3 projets. Idem que la question précédente, vous utilisez la requête suivante pour construire votre trigger : `SELECT * FROM EMPLOYE e WHERE (SELECT COUNT(*) FROM PROJET p WHERE e.nuempl=p.resp)> 3;`
@@ -351,6 +353,7 @@ Lors d'augmentation de salaire ou d'embauche, l'entreprise veut enregistrer les 
 Code du trigger
 ```sql
 CREATE table EMPLOYE_ALERTE AS SELECT * FROM EMPLOYE;
+ALTER TABLE EMPLOYE_ALERTE ADD CONSTRAINT PK_employe_alerte PRIMARY KEY (nuempl);
 
 CREATE OR REPLACE TRIGGER remplis_employe_alerte
 	AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE
@@ -371,6 +374,5 @@ alter trigger "CHEF_PLUS_PAYE_EMP_ET_RESP" disable;
 
 INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (1, 'cresus', 10, 1, 50000); -- créer un employer payé plus de 5000
 INSERT INTO EMPLOYE (NUEMPL, NOMEMPL, HEBDO, AFFECT, SALAIRE) VALUES (2, 'diogene', 10, 1, 1); -- créer un employer payé moins de 5000
-UPDATE EMPLOYE SET SALAIRE = 50000 WHERE AFFECT = 1 AND NUEMPL != 41; -- créer un employer payé plus de 5000
-ROLLBACK;
+--UPDATE EMPLOYE SET SALAIRE = 50000 WHERE NUEMPL = 41; -- créer un employer payé plus de 5000
 ```

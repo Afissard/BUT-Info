@@ -110,11 +110,21 @@ ALTER TABLE employe ADD CONSTRAINT temps_trav_max CHECK (hebdo <= 35);
 
 ## Tests des contraintes
 
-| nom table  | requête                                                                                | code d'erreur | message d'erreur            |
-| ---------- | -------------------------------------------------------------------------------------- | ------------- | --------------------------- |
-| PK_employe | `Insert into employe values(20,'toto',35,1); --insertion d'un employé qui existe déjà` | `-0001`       | Vilolation de la contrainte |
-|            |                                                                                        |               |                             |
-#TODO
+| nom table           | requête                                                                                              | code d'erreur | message d'erreur                               |
+| ------------------- | ---------------------------------------------------------------------------------------------------- | ------------- | ---------------------------------------------- |
+| PK_employe          | `INSERT INTO employe VALUES (20, 'toto', 35, 1, 1500); -- Insertion d'un employé qui existe déjà`    | ORA-00001     | Violation de la contrainte PK_employe          |
+| PK_service          | `INSERT INTO service VALUES (1, 'service_test'); -- Insertion d'un service qui existe déjà`          | ORA-00001     | Violation de la contrainte PK_service          |
+| PK_projet           | `INSERT INTO projet VALUES (103, 'projet_test', 200); -- Insertion d'un projet déjà existant`        | ORA-00001     | Violation de la contrainte PK_projet           |
+| PK_travail          | `INSERT INTO travail VALUES (20, 492, 10); -- Insertion d'une ligne qui existe déjà dans travail`    | ORA-00001     | Violation de la contrainte PK_travail          |
+| FK_employe_travail  | `INSERT INTO travail VALUES (999, 492, 10); -- Insertion avec un employé qui n'existe pas`           | ORA-02291     | Violation de la contrainte FK_employe_travail  |
+| FK_projet_travail   | `INSERT INTO travail VALUES (20, 999, 10); -- Insertion avec un projet qui n'existe pas`             | ORA-02291     | Violation de la contrainte FK_projet_travail   |
+| FK_service_concerne | `INSERT INTO concerne VALUES (99, 103); -- Service inexistant`                                       | ORA-02291     | Violation de la contrainte FK_service_concerne |
+| FK_projet_concerne  | `INSERT INTO concerne VALUES (1, 999); -- Projet inexistant`                                         | ORA-02291     | Violation de la contrainte FK_projet_concerne  |
+| UNQ_employe_affect  | `INSERT INTO employe VALUES (30, 'jeSuisNouveau', 35, 1, 1500); -- Affectation unique déjà utilisée` | ORA-00001     | Violation de la contrainte UNQ_employe_affect  |
+| FK_chef             | `UPDATE service SET chef = 999 WHERE nuserv = 1; -- Chef inexistant`                                 | ORA-02291     | Violation de la contrainte FK_chef             |
+| FK_affect           | `UPDATE employe SET affect = 99 WHERE nuempl = 20; -- Service affecté inexistant`                    | ORA-02291     | Violation de la contrainte FK_affect           |
+| FK_resp             | `UPDATE projet SET resp = 999 WHERE nuproj = 100; -- Responsable inexistant dans travail`            | ORA-02291     | Violation de la contrainte FK_resp             |
+| temps_trav_max      | `INSERT INTO employe VALUES (40, 'heurs_supp', 40, 1, 1500); -- Hebdo supérieur à 35h`               | ORA-02290     | Violation de la contrainte temps_trav_max      |
 
 # Mise à jour des données
 La table employé contient un attribut salaire de type number. Vous rajoutez cet attribut  

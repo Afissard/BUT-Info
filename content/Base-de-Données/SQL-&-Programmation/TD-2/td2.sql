@@ -167,10 +167,26 @@ BEGIN
 		WHEN too_many_rows THEN RAISE_APPLICATION_ERROR(-20301, 'temps travail invalide');
 END;
 
--- 6 tests à faire
--- UPDATE TRAVAIL SET DUREE = 40 WHERE NUEMPL = 20; -- active le trigger (temps invalide)
--- UPDATE TRAVAIL SET DUREE = 10 WHERE NUEMPL > 20; -- active le trigger  (large séléction)
--- UPDATE TRAVAIL SET DUREE = 1 WHERE NUEMPL = 20; -- active pas le trigger (-> mais ne marche pas) 
+
+CREATE OR REPLACE TRIGGER SUM_DUREE 
+After INSERT OR UPDATE OF duree ON TRAVAIL
+DECLARE
+  HEBDOEMPLOYE EMPLOYE%ROWTYPE;
+BEGIN
+  Select * 
+  INTO HEBDOEMPLOYE 
+  from employe e
+  where (
+    select sum(duree) 
+    from travail t 
+    where e.nuempl=t.nuempl
+    )> hebdo ;
+  
+  RAISE_APPLICATION_ERROR(-20301,'viol de la regle la somme des durees ne peut pas etre supérieur a la duree hebdo d un employe');
+  EXCEPTION
+    WHEN NO_DATA_FOUND then null;
+    WHEN TOO_MANY_ROWS then RAISE_APPLICATION_ERROR(-20304,'TROP DE LIGNE A MON GOUT');
+END;
 
 /*
 Ecrire un trigger qui vérifie la contrainte suivante: "un employé est responsable au plus sur 3 projets". 
@@ -306,6 +322,7 @@ qui permet de remplir cette table.
 
 -- DROP TABLE EMPLOYE_ALERTE CASCADE CONSTRAINTS PURGE;
 CREATE table EMPLOYE_ALERTE AS SELECT * FROM EMPLOYE;
+ALTER TABLE EMPLOYE_ALERTE ADD CONSTRAINT PK_employe_alerte PRIMARY KEY (nuempl);
 
 CREATE OR REPLACE TRIGGER REMPLIS_EMPLOYE_ALERTE 
   AFTER INSERT OR UPDATE OF SALAIRE ON EMPLOYE

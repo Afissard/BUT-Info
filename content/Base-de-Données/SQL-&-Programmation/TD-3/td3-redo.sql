@@ -13,24 +13,25 @@ create or replace package  BODY MAJ is
 
 PROCEDURE CREER_EMPLOYE (LE_NUEMPL IN NUMBER, LE_NOMEMPL IN VARCHAR2, LE_HEBDO IN NUMBER, LE_AFFECT IN NUMBER,LE_SALAIRE IN NUMBER) is
 BEGIN
-SET TRANSACTION READ WRITE;
-INSERT INTO employe VALUES(LE_NUEMPL, LE_NOMEMPL, LE_HEBDO, LE_AFFECT,LE_SALAIRE);
-COMMIT;
-EXCEPTION WHEN OTHERS THEN ROLLBACK;
-IF SQLCODE=-00001 THEN ROLLBACK;
-      RAISE_APPLICATION_ERROR (-20401, 'Un employe avec le meme numero existe deja');
-ELSIF SQLCODE=-2291 THEN ROLLBACK;
-      RAISE_APPLICATION_ERROR (-20402, 'Le service auquel il est affecté n"existe pas');
-ELSIF SQLCODE=-02290 THEN ROLLBACK;
-      RAISE_APPLICATION_ERROR (-20403, 'la durée hebdomadaire d"un employe doit être inférieur ou égale à 35h');
-ELSIF SQLCODE=-1438 THEN ROLLBACK;
-      RAISE_APPLICATION_ERROR (-20404, 'Une valeur(nombre)dépasse le nombre de caractère autorisés');
-ELSIF SQLCODE=-12899 THEN ROLLBACK;
-      RAISE_APPLICATION_ERROR (-20405, 'Une valeur(chaine de caractère) dépasse le nombre de caractère autorisés');
-ELSIF SQLCODE=-20406 THEN ROLLBACK;
-      RAISE_APPLICATION_ERROR (-20406, 'Le salaire de cet emplyé dépasse celui de son chef de service');
-ELSE RAISE_APPLICATION_ERROR (-20999,'Erreur inconnue'||SQLcode);
-END IF; 
+      SET TRANSACTION READ WRITE;
+      INSERT INTO employe VALUES(LE_NUEMPL, LE_NOMEMPL, LE_HEBDO, LE_AFFECT,LE_SALAIRE);
+      COMMIT;
+      
+      EXCEPTION WHEN OTHERS THEN ROLLBACK;
+      IF SQLCODE=-00001 THEN ROLLBACK;
+            RAISE_APPLICATION_ERROR (-20401, 'Un employe avec le meme numero existe deja');
+      ELSIF SQLCODE=-2291 THEN ROLLBACK;
+            RAISE_APPLICATION_ERROR (-20402, 'Le service auquel il est affecté n"existe pas');
+      ELSIF SQLCODE=-02290 THEN ROLLBACK;
+            RAISE_APPLICATION_ERROR (-20403, 'la durée hebdomadaire d"un employe doit être inférieur ou égale à 35h');
+      ELSIF SQLCODE=-1438 THEN ROLLBACK;
+            RAISE_APPLICATION_ERROR (-20404, 'Une valeur(nombre)dépasse le nombre de caractère autorisés');
+      ELSIF SQLCODE=-12899 THEN ROLLBACK;
+            RAISE_APPLICATION_ERROR (-20405, 'Une valeur(chaine de caractère) dépasse le nombre de caractère autorisés');
+      ELSIF SQLCODE=-20406 THEN ROLLBACK;
+            RAISE_APPLICATION_ERROR (-20406, 'Le salaire de cet emplyé dépasse celui de son chef de service');
+      ELSE RAISE_APPLICATION_ERROR (-20999,'Erreur inconnue'||SQLcode);
+      END IF; 
 END;
 
 
