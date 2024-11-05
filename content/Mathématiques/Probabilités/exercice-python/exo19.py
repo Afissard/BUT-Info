@@ -1,4 +1,4 @@
-import math, numpy as np, matplotlib.pyplot as plt
+import math, numpy as np, matplotlib.pyplot as plt, random
 
 def showLaw(x, xName=""):
     temp = xName + "\n"
@@ -64,6 +64,39 @@ def sumLaw(l1, l2):
                 res[1][k] = res[1][k] + l1[1][i] * l2[1][j]
     return res
 
+def mergeResByMean(a, b):
+    # potentiellement hautement inutile
+    res = np.zeros((2,1))
+    for i in range(a):
+        for j in range(a[i]):
+            res[i][j] = np.mean([a[i][j], b[i][j]])
+    return res
+
+def simLaw(l, n):
+    # nop
+    res = []
+    for _ in range(n):
+        ball = random.uniform(0, 1)
+        point = np.sum(l[0]) # supérieur au nombre de points possible
+        for i in range(len(l)):
+            if ball <= l[1][i] : # point >= l[0][i] and
+                point = l[0][i]
+                ball = l[1][i]
+                print(point, ball)
+            res.append(point)
+    return res
+    
+def simCorriger(h, n=1000):
+    # cassé
+    simH = np.zeros(n)
+    alea = np.random.rand(n)
+    for i in range(n):
+        for j in range(len(h.cum(0))):
+            if alea[i]<h.cum[1][j]:
+                simH[i] = h.cum[0][j]
+                break
+    return simH
+
 if __name__ == "__main__":
     f = law(ballThrow(), FProba, FValue)
     e = law(ballThrow(), EProba, EValue)
@@ -75,3 +108,6 @@ if __name__ == "__main__":
     showLaw(fe, "FE")
     h = sumLaw(fe, t)
     showLaw(h, "H")
+    
+    # print(simLaw(h, 10))
+    # print(simCorriger(h, 1000)) # cassé

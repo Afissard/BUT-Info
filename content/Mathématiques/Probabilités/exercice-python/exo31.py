@@ -64,12 +64,23 @@ def tirage_corriger2(n, nbb):
     test = np.count_nonzero(simu<0.7, axis=1)
     # print(test)
     return np.count_nonzero(test==nbb)/n
+
+def comp_algo(n, nbb):
+    print("Algo 1\tAlgo 2\n{}\t{}\n{}\t{}".format(tirage_corriger1(1000,2), tirage_corriger2(1000,2), 1-tirage_corriger1(1000,2), 1-tirage_corriger2(1000,2)))
     
 if __name__ == "__main__":
     # print(tirage(100, 2))
     
-    print(tirage_corriger1(100,2))
-    print(1-tirage_corriger1(100,2))
+    # print(tirage_corriger1(100,2))
+    # print(1-tirage_corriger1(100,2))
     
-    print(tirage_corriger2(100,2))
-    print(1-tirage_corriger2(100,2))
+    # print(tirage_corriger2(100,2))
+    # print(1-tirage_corriger2(100,2))
+    
+    # print(tirage_corriger1(1000,2))
+    # print(1-tirage_corriger1(1000,2))
+    # print(tirage_corriger2(1000,2))
+    # print(1-tirage_corriger2(1000,2))
+    
+    comp_algo(1000, 2)
+    comp_algo(10000, 2)

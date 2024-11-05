@@ -7,3 +7,5 @@ tags:
 ---
 # Index Communication-Professionnelle
 - Projet [[Création d'une entreprise]]
+- [[Exposé-Actualité&Tech]]
+

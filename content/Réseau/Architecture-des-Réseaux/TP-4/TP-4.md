@@ -14,7 +14,7 @@ Pour rappel, les plages d'adresses IPv4 privées définies dans la RFC 1918 sont
 * 192.168/16
 
 
-![Situation](fig.svg "")
+![Situation](Réseau/Architecture-des-Réseaux/TP-4/fig.svg "")
 
 Dans cette situation, figurent trois hôtes : E (Externe), I (Interne) et P (Passerelle). Le réseau `192.168.X.0/24` est **considéré** comme étant le réseau public. 
 

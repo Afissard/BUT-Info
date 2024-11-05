@@ -5,7 +5,7 @@ description:
 tags:
   - SAE
 ---
-https://madoc.univ-nantes.fr/course/view.php?id=54043
+[[SAÉ 3.Real.01 _ Développement d’une application_2024-2025.pdf]]
 Construire et dev un site de vente pour une société, à 5 personnes (~100h).
 - Produit de nos choix
 - hébergé sur des serveur
@@ -21,3 +21,9 @@ Matière
 - Stratégie commercial, etc commerce
 - Présentation oral du site en anglais avec jury composé de professeur et d'étudiant GEA
 - Communication professionnel -> création d'un dossier de communication
+
+```plantuml
+@startuml
+Bob -> Alice : hello
+@enduml
+```

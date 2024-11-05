@@ -9,4 +9,6 @@ tags:
 - [[Sujet Semestre 3]]
 - [[Aldente e no pasta]]
 - [[SAE/Site-E-Commerce/Communication/Communication|Communication]]
-- [[Base de Données]]
+- [[Base-de-Données]]
+- [[Analyse des besoin]]
+- [[Qualité-de-dev]]
