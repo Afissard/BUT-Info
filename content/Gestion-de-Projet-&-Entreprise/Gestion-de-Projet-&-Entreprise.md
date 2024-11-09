@@ -10,3 +10,5 @@ tags:
 # Index Gestion-de-Projet-&-Entreprise
 - Droit
 	- [[Droit-&-Justice]]
+- Entreprise & autre
+	- [[Management-&-Gestion]]
