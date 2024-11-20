@@ -6,3 +6,5 @@ tags:
   - Mathématiques
 ---
 # Index Mathématiques
+- [[Probabilités]]
+- [[Cryptographie]]

@@ -5,4 +5,13 @@ description:
 tags:
 ---
 # Index Développement-Web
-- [[td1]]
+- todo
+# Connections au podman
+
+```bash
+# à faire à la main potentiement
+podman unshare
+cd $(podman container mount web)
+cd ./var/www/html/
+code . --no-sandbox --user-data-dir /home/sacha/Documents/webdev-php/
+```
