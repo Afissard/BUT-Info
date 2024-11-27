@@ -1,8 +1,9 @@
 import math
 
-def bezout(a,b):
-    if not(a>b):
-        return ValueError
+def bezout(a,b): # algo d'euclide étendu
+    # if not(a>b):
+    # if (a<=b):
+    #     return ValueError
     
     u0, u1, v0, v1 = 1, 0, 0, 1
     
@@ -22,6 +23,6 @@ def bezout(a,b):
 if __name__ == "__main__":
     print(bezout(3315, 154))
 
-    for i in range(1, 10):
-        for j in range(1, 10):
-            print(bezout(i,j))
+    # for i in range(1, 10):
+    #     for j in range(1, 10):
+    #         print(bezout(i,j))

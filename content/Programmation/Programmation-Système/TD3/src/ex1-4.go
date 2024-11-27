@@ -5,11 +5,14 @@ import (
 	"sync"
 )
 
-var res int
+var res int // toujours le même problème, le waitgroup n'y change rien
 var w sync.WaitGroup
+var mu sync.Mutex
 
 // calcule n puissance m
 func puissance(n, m int) {
+	mu.Lock()
+	defer mu.Unlock() // est éxécuter au return
 	res = 1
 	for i := 0; i < m; i++ {
 		res *= n

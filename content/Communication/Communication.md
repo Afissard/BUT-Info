@@ -1,6 +1,6 @@
 ---
 title: Communication
-draft: false
+draft: true
 description: 
 tags:
   - Communication

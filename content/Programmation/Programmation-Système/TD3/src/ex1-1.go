@@ -20,3 +20,7 @@ func main() {
 	}
 
 }
+
+/*
+pas de race condition <=> pas de goroutine
+*/

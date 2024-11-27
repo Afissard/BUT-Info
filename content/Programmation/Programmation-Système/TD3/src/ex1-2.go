@@ -29,3 +29,8 @@ func main() {
 
 	w.Wait()
 }
+
+/*
+Si i et j étais passé en parametre avec des pointeurs, il y aurais une race condition, mais dans
+ce cas la, seule la valeur est passé, il n'y a donc aucun problème.
+*/
