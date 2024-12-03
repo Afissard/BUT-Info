@@ -2,7 +2,7 @@ from exo1 import correction_list_prime as getPrimeUntil
 from exo2 import bezout as euclide
 from data_exo5 import *
 import random
-from math import gcd
+from math import gcd, sqrt
 
 # démonstration td : pour tout g E[2;p-1], g^(p-1) === 1[p]
 # slide cour petit theorème de Fermat : 1 ≡a^(p−1)[p]
@@ -57,7 +57,7 @@ def logDiscret(g, y, p):
     
     return None  # Si aucun x trouvé
 
-def Shanks():
+def Shanks(g, y, p):
     """
     Ecrire une fonction, avec l’algorithme de Shanks des pas de bébé, pas de géant
     - Soit s = 1 + ⌊√p⌋
@@ -68,6 +68,9 @@ def Shanks():
     - Trouver une occurrence commune gr0 et y.g−k0s respectivement dans les listes L1 et L2
     - x = r0 + k0.s est une solution
     """
+    s = 1+sqrt(p)
+    temp = g**(-s)
+
     return None
 
 def testLogDiscret():

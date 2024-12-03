@@ -1,0 +1,9 @@
+[
+  {"ID":0,"Priority":10,"Duration":23,"Arrival":5},
+  {"ID":1,"Priority":8,"Duration":7,"Arrival":0},
+  {"ID":2,"Priority":5,"Duration":21,"Arrival":2},
+  {"ID":3,"Priority":4,"Duration":18,"Arrival":4},
+  {"ID":4,"Priority":3,"Duration":5,"Arrival":1},
+  {"ID":5,"Priority":2,"Duration":1,"Arrival":3},
+  {"ID":6,"Priority":1,"Duration":35,"Arrival":6}
+]
