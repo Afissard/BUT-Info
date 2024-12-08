@@ -40,3 +40,10 @@ Nos couleurs sont simple, le noir et le blanc offre une lisibilité aisé et sty
 ### Clients
 - Les geeks
 - les travailleurs (télétravail & co-worker)
+# Sponsoring
+Sponsoring du *Code Jam*, T-Pose s'offre de fournir ses locaux aux participants ainsi que bien entendus un accès gratuit à ses différentes boisson.
+Le sponsoring serais illustré par des affichage sur le site web, mais aussi, par un affichage physique, mais aussi sur le site même du Code-Jam mais aussi les réseaux sociaux.
+On donne un prix aux gagnants.
+
+durée : sur 5 ans
+bénéfices : visibilité, notamment chez les jeunes

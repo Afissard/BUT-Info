@@ -26,4 +26,4 @@ puis rédaction avec les 3(+1) paragraphes
 - Paragraphe 2 : Mettez en avant vos qualités personnelles et expériences qui correspondent aux attentes de l’entreprise.
 - Conclusion : Confirmez votre intérêt, proposez un entretien, et terminez avec une formule de politesse adaptée.
 # Dans le cas d'une candidature spontané
-???
+cf [[Exercice Candidature spontanée.pdf]] 
