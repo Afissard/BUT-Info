@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"fc06654d437b94d1","type":"text","text":"Esteem needs","x":260,"y":420,"width":250,"height":60},
+		{"id":"495922ac368ec0d5","type":"text","text":"self actualizing needs","x":260,"y":580,"width":250,"height":80},
+		{"id":"e820e931d70957bf","type":"text","text":"Physiological needs","x":260,"y":-120,"width":250,"height":80},
+		{"id":"14fa5f461e0c7e64","type":"text","text":"Security needs","x":260,"y":80,"width":250,"height":60},
+		{"id":"9af32966edfe2873","type":"text","text":"Social needs","x":260,"y":260,"width":250,"height":60},
+		{"id":"b4676494b016dd9e","type":"text","text":"biological needs","x":620,"y":-70,"width":250,"height":60},
+		{"id":"a5af439c2b475b23","type":"text","text":"instinct","x":620,"y":-240,"width":250,"height":60},
+		{"id":"c0a545e02dee57da","type":"text","text":"drink","x":980,"y":-160,"width":250,"height":60},
+		{"id":"02d8e89f1802feb1","type":"text","text":"eat","x":980,"y":-100,"width":250,"height":60},
+		{"id":"f65f27186832bb7d","type":"text","text":"sleep","x":980,"y":-10,"width":250,"height":60},
+		{"id":"0cb575608d3fa17c","type":"text","text":"breath","x":980,"y":-330,"width":250,"height":60},
+		{"id":"5218b4fee031f469","type":"text","text":"sexual reproduction","x":980,"y":-270,"width":280,"height":60},
+		{"id":"18510f02b5539901","type":"text","text":"feel safe","x":-100,"y":80,"width":250,"height":60},
+		{"id":"967a2a777e6d55af","type":"text","text":"money","x":-420,"y":80,"width":250,"height":60},
+		{"id":"16a982034e282e9d","type":"text","text":"health\n","x":-420,"y":-10,"width":250,"height":60},
+		{"id":"525f7e28e8b7cd17","x":-420,"y":160,"width":250,"height":60,"type":"text","text":"shelter"}
+	],
+	"edges":[
+		{"id":"9ed55705da838fd1","fromNode":"e820e931d70957bf","fromSide":"bottom","toNode":"14fa5f461e0c7e64","toSide":"top"},
+		{"id":"71888928b693c8a3","fromNode":"14fa5f461e0c7e64","fromSide":"bottom","toNode":"9af32966edfe2873","toSide":"top"},
+		{"id":"2670d7ef750a2e61","fromNode":"9af32966edfe2873","fromSide":"bottom","toNode":"fc06654d437b94d1","toSide":"top"},
+		{"id":"516660bd985d7dd7","fromNode":"fc06654d437b94d1","fromSide":"bottom","toNode":"495922ac368ec0d5","toSide":"top"},
+		{"id":"2f56e8469df65dd4","fromNode":"e820e931d70957bf","fromSide":"right","toNode":"a5af439c2b475b23","toSide":"left"},
+		{"id":"370d2aee3f28e8a7","fromNode":"e820e931d70957bf","fromSide":"right","toNode":"b4676494b016dd9e","toSide":"left"},
+		{"id":"c15cc596d0d50d19","fromNode":"b4676494b016dd9e","fromSide":"right","toNode":"c0a545e02dee57da","toSide":"left"},
+		{"id":"a988a801e7c1a136","fromNode":"b4676494b016dd9e","fromSide":"right","toNode":"02d8e89f1802feb1","toSide":"left"},
+		{"id":"a1c6c0f66d2b3dc2","fromNode":"a5af439c2b475b23","fromSide":"right","toNode":"0cb575608d3fa17c","toSide":"left"},
+		{"id":"220b05a52c768044","fromNode":"b4676494b016dd9e","fromSide":"right","toNode":"f65f27186832bb7d","toSide":"left"},
+		{"id":"52b2174a23e78a02","fromNode":"a5af439c2b475b23","fromSide":"right","toNode":"5218b4fee031f469","toSide":"left"},
+		{"id":"f547f12b01524aed","fromNode":"a5af439c2b475b23","fromSide":"right","toNode":"c0a545e02dee57da","toSide":"left"},
+		{"id":"03e210d618562af0","fromNode":"a5af439c2b475b23","fromSide":"right","toNode":"02d8e89f1802feb1","toSide":"left"},
+		{"id":"0de2fb4b7a5aa89e","fromNode":"14fa5f461e0c7e64","fromSide":"left","toNode":"18510f02b5539901","toSide":"right"},
+		{"id":"23c2b2562f1532c9","fromNode":"18510f02b5539901","fromSide":"left","toNode":"16a982034e282e9d","toSide":"right"},
+		{"id":"23a9161600cc8eef","fromNode":"18510f02b5539901","fromSide":"left","toNode":"967a2a777e6d55af","toSide":"right"},
+		{"id":"3ee9750a9285884c","fromNode":"18510f02b5539901","fromSide":"left","toNode":"525f7e28e8b7cd17","toSide":"right"}
+	]
+}

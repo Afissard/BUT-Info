@@ -1,0 +1,1 @@
+Le complémentaire de E dans Ω, noté Ē est l'ensemble **Ē = {x ∈ Ω | x ∉ E}**

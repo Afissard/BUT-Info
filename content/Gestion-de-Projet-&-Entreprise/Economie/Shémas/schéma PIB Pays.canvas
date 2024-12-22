@@ -1,0 +1,37 @@
+{
+	"nodes":[
+		{"id":"cc92a81f3e0fab66","type":"text","text":"Produit du bois = 200$","x":-80,"y":-120,"width":310,"height":60,"color":"1"},
+		{"id":"c0e19bcae174f543","type":"text","text":"CI = 0$","x":280,"y":-120,"width":160,"height":60,"color":"1"},
+		{"id":"79b458e26b26b0f0","type":"text","text":"VA : 200 - 0 = 200$","x":480,"y":-120,"width":280,"height":60,"color":"1"},
+		{"id":"835d5059bed6eeb0","type":"text","text":"E1 : Secteur primaire","x":-400,"y":-120,"width":260,"height":60,"color":"1"},
+		{"id":"5fbf7d80a6f47496","type":"text","text":"CI = 200$","x":280,"y":60,"width":160,"height":60,"color":"2"},
+		{"id":"4a25a758f884ffff","type":"text","text":"VA : 1000 - 200 = 800$","x":480,"y":60,"width":280,"height":60,"color":"2"},
+		{"id":"d4b21fda17ddb255","type":"text","text":"Produit des meubles = 1000$","x":-80,"y":60,"width":310,"height":60,"color":"2"},
+		{"id":"2610aa12181f9d80","type":"text","text":"E2 : Secteur secondaire","x":-400,"y":60,"width":260,"height":60,"color":"2"},
+		{"id":"0442ab30ec02d81b","type":"text","text":"CI = 1000$","x":280,"y":240,"width":160,"height":60,"color":"3"},
+		{"id":"ae6de5e93a820de0","type":"text","text":"VA : 3000 - 1000 = 2000$","x":480,"y":240,"width":280,"height":60,"color":"3"},
+		{"id":"da265945be609f68","type":"text","text":"Vente de meuble = 3000$","x":-80,"y":240,"width":310,"height":60,"color":"3"},
+		{"id":"de7357202f856b75","type":"text","text":"E3 : Secteur tertiaire","x":-400,"y":240,"width":260,"height":60,"color":"3"},
+		{"id":"6f5e21a78cadbc01","type":"text","text":"# Un pays :  avec 3 entreprises","x":-720,"y":-280,"width":360,"height":100,"color":"4"},
+		{"id":"3b6976da0499dfeb","type":"text","text":"# PIB = Somme( VA = 300 - Production Nationale )","x":880,"y":45,"width":800,"height":90,"color":"5"}
+	],
+	"edges":[
+		{"id":"a0c84ff752a9cfcb","fromNode":"6f5e21a78cadbc01","fromSide":"bottom","toNode":"835d5059bed6eeb0","toSide":"left"},
+		{"id":"5831dbc68e9959df","fromNode":"6f5e21a78cadbc01","fromSide":"bottom","toNode":"2610aa12181f9d80","toSide":"left"},
+		{"id":"679764697ceab2d4","fromNode":"6f5e21a78cadbc01","fromSide":"bottom","toNode":"de7357202f856b75","toSide":"left"},
+		{"id":"e9f4dbca7c0a080d","fromNode":"835d5059bed6eeb0","fromSide":"right","toNode":"cc92a81f3e0fab66","toSide":"left"},
+		{"id":"6e1c3494dadba394","fromNode":"cc92a81f3e0fab66","fromSide":"right","toNode":"c0e19bcae174f543","toSide":"left"},
+		{"id":"a1a53b5ce456d4d6","fromNode":"c0e19bcae174f543","fromSide":"right","toNode":"79b458e26b26b0f0","toSide":"left"},
+		{"id":"3511b04e00889187","fromNode":"79b458e26b26b0f0","fromSide":"right","toNode":"3b6976da0499dfeb","toSide":"left"},
+		{"id":"8c001aac2de6dfbc","fromNode":"4a25a758f884ffff","fromSide":"right","toNode":"3b6976da0499dfeb","toSide":"left"},
+		{"id":"8f6854237a687d38","fromNode":"ae6de5e93a820de0","fromSide":"right","toNode":"3b6976da0499dfeb","toSide":"left"},
+		{"id":"d9b90cf3fe77f185","fromNode":"2610aa12181f9d80","fromSide":"right","toNode":"d4b21fda17ddb255","toSide":"left"},
+		{"id":"54f38f86cd6a0e9e","fromNode":"de7357202f856b75","fromSide":"right","toNode":"da265945be609f68","toSide":"left"},
+		{"id":"5ee264f3324481a5","fromNode":"da265945be609f68","fromSide":"right","toNode":"0442ab30ec02d81b","toSide":"left"},
+		{"id":"fb6421f2b0cfa4cf","fromNode":"0442ab30ec02d81b","fromSide":"right","toNode":"ae6de5e93a820de0","toSide":"left"},
+		{"id":"618def4632d2e34f","fromNode":"d4b21fda17ddb255","fromSide":"right","toNode":"5fbf7d80a6f47496","toSide":"left"},
+		{"id":"3c812b2cc2c25ddd","fromNode":"5fbf7d80a6f47496","fromSide":"right","toNode":"4a25a758f884ffff","toSide":"left"},
+		{"id":"1e5cd734819fe8fb","fromNode":"cc92a81f3e0fab66","fromSide":"bottom","toNode":"5fbf7d80a6f47496","toSide":"top"},
+		{"id":"260e87f9bc2569ee","fromNode":"d4b21fda17ddb255","fromSide":"bottom","toNode":"0442ab30ec02d81b","toSide":"top"}
+	]
+}

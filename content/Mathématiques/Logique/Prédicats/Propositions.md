@@ -1,0 +1,1 @@
+Un énoncé ayant un sens et dont on peut dire avec certitude qu'il est soit vrai, soit faut.

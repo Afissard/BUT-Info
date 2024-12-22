@@ -1,0 +1,1 @@
+Soit *R* une relation définie sur E, *R* est dite symétrique lorsque **∀a, ∀b, a*R*b ⇒ a = b**

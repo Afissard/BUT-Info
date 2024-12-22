@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"74cb240e06147048","type":"text","text":"# Besoins illimités des Homme\n","x":100,"y":-340,"width":360,"height":95,"color":"2"},
+		{"id":"a7e5f5ae775f97a4","type":"text","text":"Expression de besoin","x":100,"y":-210,"width":360,"height":60,"color":"2"},
+		{"id":"411ba2f9546c5b32","type":"text","text":"# Ressources rare\n## 3 facteurs de productions\n- Financières (capitale)\n- Humaines (travail)\n- Naturel (matières premières et énergie)","x":-400,"y":-405,"width":340,"height":320,"color":"4"},
+		{"id":"6e5d05c2cb19a043","type":"text","text":"**Combinaison des facteurs de production => Offre de biens et services**","x":-400,"y":-40,"width":340,"height":120,"color":"4"},
+		{"id":"a8e17cfa3d4a266e","type":"text","text":"Demande de bien et ressources","x":100,"y":-100,"width":360,"height":60,"color":"2"},
+		{"id":"3cbacd28ef151eb5","type":"text","text":"# 3 adaptations :\n- Spontané\n\t- Libéralisme : l'état n'intervient pas, uniquement gendarme\n- Régulé\n\t- Etat providence : l'Etat n'intervient qu'en temps de crise avec 4 actions possible :\n\t\t- Augmentation des salaires\n\t\t- Réduction des taxes\n\t\t- Réduction des crédit (taux d'emprunt)\n\t\t- Politique de grands travaux (créer une demande de travail pour les entreprise)\n- Planifié\n\t- L'Etat contrôle l'économie, exemple plan quinquennial de l'URSS ou l'économie Chinoise","x":-400,"y":160,"width":900,"height":420,"color":"1"}
+	],
+	"edges":[
+		{"id":"f14906a3f16a75e1","fromNode":"411ba2f9546c5b32","fromSide":"right","toNode":"74cb240e06147048","toSide":"left"},
+		{"id":"9a9d3ccc3e22c2d2","fromNode":"74cb240e06147048","fromSide":"left","toNode":"411ba2f9546c5b32","toSide":"right"},
+		{"id":"02095b766cdc024c","fromNode":"74cb240e06147048","fromSide":"bottom","toNode":"a7e5f5ae775f97a4","toSide":"top"},
+		{"id":"7cc15a28edec7863","fromNode":"a7e5f5ae775f97a4","fromSide":"bottom","toNode":"a8e17cfa3d4a266e","toSide":"top"},
+		{"id":"dcb5e5d688df563c","fromNode":"411ba2f9546c5b32","fromSide":"bottom","toNode":"6e5d05c2cb19a043","toSide":"top"},
+		{"id":"43f8173f4486cb7d","fromNode":"6e5d05c2cb19a043","fromSide":"right","toNode":"a8e17cfa3d4a266e","toSide":"left"},
+		{"id":"52496980c8e99980","fromNode":"a8e17cfa3d4a266e","fromSide":"bottom","toNode":"3cbacd28ef151eb5","toSide":"top"},
+		{"id":"195438d7a9c95817","fromNode":"6e5d05c2cb19a043","fromSide":"bottom","toNode":"3cbacd28ef151eb5","toSide":"top"}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"fc0601260a6c9780","type":"group","x":-800,"y":-500,"width":1760,"height":1080,"color":"6","label":"Projet Appassionato"},
+		{"id":"12d098151cbe294d","type":"group","x":-920,"y":680,"width":2080,"height":438,"color":"5","label":"ENVIRONEMENT"},
+		{"id":"1974b3058fed0db2","type":"text","text":"# Risques\nInterne\n\n- retard dans les délais de livraison\n\n- dépassement de budget  \n\nExterne  \n\n- piratage des données\n\n- fournisseurs non fiable\n\n- utilisateurs insatisfait\n\n- flux d'utilisateurs trop important (DDOS)","x":-900,"y":700,"width":420,"height":398},
+		{"id":"3d1716fdab3d10de","type":"text","text":"# Influences & Contraintes\n- Le projet doit respecter un délai serré de 3 mois pour être réalisé.\n\n- Les fonctionnalités principales doivent êtres fonctionnels\n\n- Trouver un service de livraison sérieux qui peut livrer en temps et en heure.\n\n- S’assurer que les serveurs sont sécurisées","x":-412,"y":700,"width":675,"height":240},
+		{"id":"729bba8002cd51e9","type":"text","text":"# Apports\nsponsoring, publicité, cf dossier de com","x":800,"y":700,"width":340,"height":240},
+		{"id":"8627fbec07e57752","type":"text","text":"# Retombées\n- Économique -> gain d'argent\n- Visibilité publique -> ont se fais connaître","x":340,"y":700,"width":420,"height":240},
+		{"id":"80f8b02973f7b77b","type":"text","text":"# Structures & Moyens\n- **Ressources Humaines** : équipe de développement (front/back), designer, QA, chef de projet, consultant sécurité, légalité et marketing.\n- **Technique** : serveur de production, outils de développement (phpstorm, ...) et design (figma, adobe ...)\n- **Organisationnel** : synchronization des stock avec le magasin, gestion de commande, integration des paiements\n- **Financier** : on a un budget ?","x":300,"y":-65,"width":637,"height":320},
+		{"id":"25ab67885a110fab","type":"text","text":"# Contrôle\n- **Critère** :\n\t- Le site est-il fonctionnel ?\n\t- Le processus de vente est conforme ?\n\t- Design accessible (déficience visuel) et attractif\n- **Suivi** : Tests, validations, retour d'expérience des utilisateurs.","x":-780,"y":-347,"width":490,"height":295},
+		{"id":"50eadccb4b4892ca","type":"text","text":"# Résultats\nUn site de vente en ligne d'instrument de musique prêt à l'utilisation pour des client en France et dans le monde, conforme aux exigence légal & accessible","x":-772,"y":170,"width":360,"height":240},
+		{"id":"2cc30893276eaefe","type":"text","text":"# Ajustement\n- Pouvoir décalé le lancement de fonctionnalité incomplète\n- Augmentation de nos ressources si nous venons à en manqué (extension du budget)\n- Ajustement du design de l'UX selon le retour des utilisateurs","x":-294,"y":-40,"width":462,"height":270},
+		{"id":"ea1e5773f87fce43","type":"text","text":"# Objectifs\nCréer un site de E-Commerce de vente d'instruments de musique & accessoire lié. L'objectif est de touché une clientèle national voir international tout en répondant aux exigence légale (RGPD, etc)","x":-112,"y":-347,"width":450,"height":240},
+		{"id":"773033026b0799e4","type":"text","text":"# Entité Directrice\nThéo Phan","x":-27,"y":-480,"width":280,"height":80},
+		{"id":"6d7b271c1b206d55","type":"text","text":"# Actions\n- Préparation : analyse, documentation, création de maquette\n- Développement Frontend/Backend\n- Tests : QA, sécurité, conformité légal\n- Lancement : déploiement en production, préparation pour le support client\n- Maintenance : correction de bug, mise à jour des fonctionnalité","x":-217,"y":290,"width":677,"height":270}
+	],
+	"edges":[
+		{"id":"556adb331dd2aeb6","fromNode":"773033026b0799e4","fromSide":"bottom","toNode":"ea1e5773f87fce43","toSide":"top"},
+		{"id":"ad7f7a6539ef307a","fromNode":"ea1e5773f87fce43","fromSide":"left","toNode":"25ab67885a110fab","toSide":"right"},
+		{"id":"ef983cfc3e2a721c","fromNode":"80f8b02973f7b77b","fromSide":"top","toNode":"ea1e5773f87fce43","toSide":"right"},
+		{"id":"8bc5a2a8dc17dc66","fromNode":"80f8b02973f7b77b","fromSide":"left","toNode":"2cc30893276eaefe","toSide":"right"},
+		{"id":"44119e4bf72ea500","fromNode":"25ab67885a110fab","fromSide":"bottom","toNode":"2cc30893276eaefe","toSide":"left"},
+		{"id":"9ba7d03ab68dc6b8","fromNode":"25ab67885a110fab","fromSide":"bottom","toNode":"50eadccb4b4892ca","toSide":"top"},
+		{"id":"a0b97b7d5e40e5b7","fromNode":"6d7b271c1b206d55","fromSide":"left","toNode":"50eadccb4b4892ca","toSide":"bottom"},
+		{"id":"efd0a3e4ccd80db6","fromNode":"2cc30893276eaefe","fromSide":"bottom","toNode":"6d7b271c1b206d55","toSide":"top"},
+		{"id":"19a51b9b843844cb","fromNode":"80f8b02973f7b77b","fromSide":"bottom","toNode":"6d7b271c1b206d55","toSide":"right"},
+		{"id":"1997ee4a7826c42b","fromNode":"1974b3058fed0db2","fromSide":"top","toNode":"50eadccb4b4892ca","toSide":"left"},
+		{"id":"9e6e433059280a14","fromNode":"3d1716fdab3d10de","fromSide":"top","toNode":"6d7b271c1b206d55","toSide":"bottom"},
+		{"id":"bfd6546635d8c83e","fromNode":"6d7b271c1b206d55","fromSide":"bottom","toNode":"8627fbec07e57752","toSide":"top"},
+		{"id":"7845627b98fd724d","fromNode":"729bba8002cd51e9","fromSide":"top","toNode":"80f8b02973f7b77b","toSide":"right"},
+		{"id":"451141e87eb678c9","fromNode":"2cc30893276eaefe","fromSide":"top","toNode":"ea1e5773f87fce43","toSide":"bottom"}
+	]
+}

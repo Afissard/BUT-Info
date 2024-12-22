@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"1479f190a8a2aa5b","type":"text","text":"Window : Regions","x":-200,"y":-240,"width":250,"height":60},
+		{"id":"7b92f56cad065917","type":"text","text":"Grid","x":-200,"y":-100,"width":250,"height":60},
+		{"id":"6b10b67869ba59e9","type":"text","text":"flow Pane\nbackground-color : PINK","x":-340,"y":100,"width":340,"height":100},
+		{"id":"6987dd46d2f13317","type":"text","text":"buttons 1,2,3,4,5 ...","x":-465,"y":280,"width":250,"height":80},
+		{"id":"1f0cff26ca43074d","type":"text","text":"button \"<\"","x":-200,"y":400,"width":250,"height":60},
+		{"id":"aa89911e33bd77dd","type":"text","text":"button \"^\"","x":65,"y":400,"width":250,"height":60},
+		{"id":"17fdde96a50f822b","type":"text","text":"button \"activation\"","x":340,"y":400,"width":250,"height":80},
+		{"id":"d562b352b290ae92","type":"text","text":"button \">\"","x":620,"y":400,"width":250,"height":60},
+		{"id":"62987afdb678d18f","type":"text","text":"border Pane","x":215,"y":100,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"9777ef0dea74cde2","fromNode":"7b92f56cad065917","fromSide":"top","toNode":"1479f190a8a2aa5b","toSide":"bottom"},
+		{"id":"f4248f68922970e8","fromNode":"6b10b67869ba59e9","fromSide":"top","toNode":"7b92f56cad065917","toSide":"bottom","label":"left"},
+		{"id":"419162c752d7bd08","fromNode":"62987afdb678d18f","fromSide":"top","toNode":"7b92f56cad065917","toSide":"bottom","label":"right"},
+		{"id":"35c824af2060b943","fromNode":"6987dd46d2f13317","fromSide":"top","toNode":"6b10b67869ba59e9","toSide":"bottom"},
+		{"id":"3066d280fd76978f","fromNode":"1f0cff26ca43074d","fromSide":"top","toNode":"62987afdb678d18f","toSide":"bottom","label":"left"},
+		{"id":"70c984643b2f2e54","fromNode":"aa89911e33bd77dd","fromSide":"top","toNode":"62987afdb678d18f","toSide":"bottom","label":"top"},
+		{"id":"9196bcdbc6e39a82","fromNode":"17fdde96a50f822b","fromSide":"top","toNode":"62987afdb678d18f","toSide":"bottom","label":"center"},
+		{"id":"9d5e5295e9925c21","fromNode":"d562b352b290ae92","fromSide":"top","toNode":"62987afdb678d18f","toSide":"bottom","label":"right"}
+	]
+}

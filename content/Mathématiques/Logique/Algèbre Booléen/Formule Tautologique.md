@@ -1,0 +1,1 @@
+Une **Tautologie** est une formule dont la valeur de vérité est Vrai, quelle que soit la valeur de vérité de ses variables.

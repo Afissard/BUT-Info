@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"id":"61bbcdb7c0781eb9","type":"text","text":"Pain","x":-205,"y":120,"width":250,"height":60},
+		{"id":"314b39236ce1cad8","type":"text","text":"Livraison","x":-30,"y":240,"width":250,"height":60},
+		{"id":"63e3739dd39fc2ce","type":"text","text":"Boisson Chaude","x":-600,"y":120,"width":250,"height":60},
+		{"id":"dbdcaac43b21c23e","type":"text","text":"Préparer café","x":-410,"y":240,"width":250,"height":60},
+		{"id":"5b1b69dc70fbc89b","type":"text","text":"Confiture","x":170,"y":120,"width":250,"height":60},
+		{"id":"e5edad5fc31d0740","type":"text","text":"Remplir les paniers","x":365,"y":240,"width":250,"height":60},
+		{"id":"15b4bc2ce6b1db11","type":"text","text":"Œufs poché","x":560,"y":120,"width":250,"height":60},
+		{"id":"15f90dc27d4d3725","type":"text","text":"Cuisiner les œufs","x":760,"y":240,"width":250,"height":60},
+		{"id":"a9df275327656070","type":"text","text":"Préparer thé","x":-410,"y":320,"width":250,"height":60},
+		{"id":"545f3864843ebfb2","type":"text","text":"Préparer chocolat chaud","x":-410,"y":410,"width":250,"height":90},
+		{"id":"5e90cc8a45a8c65f","type":"text","text":"Viennoiseries","x":-960,"y":120,"width":250,"height":60},
+		{"id":"8e8a6f93139be6a6","type":"text","text":"Produits","x":-205,"y":-120,"width":250,"height":60},
+		{"id":"09fc0f1c36ed1480","type":"text","text":"Préparer ingrédients","x":-800,"y":240,"width":250,"height":60},
+		{"id":"a08b551226d9be73","type":"text","text":"Faire pates","x":-800,"y":320,"width":250,"height":60},
+		{"id":"54ad87ff81babd59","type":"text","text":"Former viennoiseries","x":-800,"y":410,"width":250,"height":60},
+		{"id":"1e15b7a0e43c706b","type":"text","text":"Cuire","x":-800,"y":500,"width":250,"height":60},
+		{"id":"d91c54208944ffd4","type":"text","text":"Remplir les paniers","x":-30,"y":410,"width":250,"height":60},
+		{"id":"28e94448c7bf51f1","type":"text","text":"Trancher / préparer","x":-30,"y":320,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"575ea0bd7f16966c","fromNode":"8e8a6f93139be6a6","fromSide":"bottom","toNode":"63e3739dd39fc2ce","toSide":"top"},
+		{"id":"f0802d84f5091b9c","fromNode":"8e8a6f93139be6a6","fromSide":"bottom","toNode":"61bbcdb7c0781eb9","toSide":"top"},
+		{"id":"6d95c8f58accf37b","fromNode":"8e8a6f93139be6a6","fromSide":"bottom","toNode":"5b1b69dc70fbc89b","toSide":"top"},
+		{"id":"38169822176ecd7b","fromNode":"8e8a6f93139be6a6","fromSide":"bottom","toNode":"15b4bc2ce6b1db11","toSide":"top"},
+		{"id":"9b2214849a5d210a","fromNode":"63e3739dd39fc2ce","fromSide":"bottom","toNode":"dbdcaac43b21c23e","toSide":"left"},
+		{"id":"ee9b4f28eceb2d8e","fromNode":"61bbcdb7c0781eb9","fromSide":"bottom","toNode":"314b39236ce1cad8","toSide":"left"},
+		{"id":"52b891c239572af5","fromNode":"61bbcdb7c0781eb9","fromSide":"bottom","toNode":"d91c54208944ffd4","toSide":"left"},
+		{"id":"5666acd5f8fffbd6","fromNode":"5b1b69dc70fbc89b","fromSide":"bottom","toNode":"e5edad5fc31d0740","toSide":"left"},
+		{"id":"7bfa327f2261893c","fromNode":"15b4bc2ce6b1db11","fromSide":"bottom","toNode":"15f90dc27d4d3725","toSide":"left"},
+		{"id":"c0acc4c50b001363","fromNode":"63e3739dd39fc2ce","fromSide":"bottom","toNode":"a9df275327656070","toSide":"left"},
+		{"id":"5c4b438876382758","fromNode":"63e3739dd39fc2ce","fromSide":"bottom","toNode":"545f3864843ebfb2","toSide":"left"},
+		{"id":"7feff777b9798ad1","fromNode":"8e8a6f93139be6a6","fromSide":"bottom","toNode":"5e90cc8a45a8c65f","toSide":"top"},
+		{"id":"b7a572673549335b","fromNode":"5e90cc8a45a8c65f","fromSide":"bottom","toNode":"09fc0f1c36ed1480","toSide":"left"},
+		{"id":"ff10e54a935c01ae","fromNode":"5e90cc8a45a8c65f","fromSide":"bottom","toNode":"a08b551226d9be73","toSide":"left"},
+		{"id":"331e8fd2e1b84999","fromNode":"5e90cc8a45a8c65f","fromSide":"bottom","toNode":"54ad87ff81babd59","toSide":"left"},
+		{"id":"1dc4c0afd375d2b2","fromNode":"5e90cc8a45a8c65f","fromSide":"bottom","toNode":"1e15b7a0e43c706b","toSide":"left"},
+		{"id":"8d4b0845a7dcc1f7","fromNode":"61bbcdb7c0781eb9","fromSide":"bottom","toNode":"28e94448c7bf51f1","toSide":"left"}
+	]
+}

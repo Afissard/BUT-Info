@@ -47,3 +47,5 @@ On donne un prix aux gagnants.
 
 durée : sur 5 ans
 bénéfices : visibilité, notamment chez les jeunes
+# Evénement d'entreprise
+Recherche d'événement comme la Art-to-Play ou la PGW (ou l'[Ankama Convention](https://www.dofus.com/fr/mmorpg/actualites/news/1719261-ankama-convention-retour))...

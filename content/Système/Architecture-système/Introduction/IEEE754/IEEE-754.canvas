@@ -1,0 +1,34 @@
+{
+	"nodes":[
+		{"id":"2a5e775e1a000d8a","type":"text","text":"Bit de signe","x":-365,"y":-20,"width":165,"height":60},
+		{"id":"12773f2ee96b88e7","type":"text","text":"Exposant","x":-200,"y":-20,"width":165,"height":60},
+		{"id":"33a3d9d924073bcc","type":"text","text":"**IEEE 754**","x":-530,"y":-20,"width":165,"height":60},
+		{"id":"2608de82052113e5","type":"text","text":"Mantisse","x":-35,"y":-20,"width":165,"height":60},
+		{"id":"2d2ba4434f2d44fa","type":"text","text":"0","x":-365,"y":100,"width":165,"height":80},
+		{"id":"e1b6f81f9292cc04","type":"text","text":"1000 0010","x":-200,"y":100,"width":165,"height":80},
+		{"id":"76acdffa500ad78c","type":"text","text":"0100 0000 ...","x":-35,"y":100,"width":165,"height":80},
+		{"id":"edb378b8c8be3bdf","type":"text","text":"Exemple avec 10<sub>10</sub>, simple précision (32 bits) normalisé :","x":-680,"y":100,"width":315,"height":80},
+		{"id":"8da37b45f494e010","type":"text","text":"Norme créer pour encoder tout nombres flottant en simple (32 bits) ou double (64 bits) précision.\nCette norme inclues deux mode d'écriture : normalisé et dénormalisé (utilisé pour plus de précision sur l'interval ]-1; 1\\[, plus précisément nombre plus proche de 0 en normalisé : \\[-1.0\\*2<sup>-126</sup>; 1.0\\*2<sup>-126</sup>] (base 2) ).\n\nSi vous comprenez pas allez ici : https://www.wikihow.com/Convert-a-Number-from-Decimal-to-IEEE-754-Floating-Point-Representation\net ici : [https://www.youtube.com/watch?v=WZUPNXsusOA](https://www.youtube.com/watch?v=WZUPNXsusOA \"https://www.youtube.com/watch?v=WZUPNXsusOA\")","x":-1200,"y":-420,"width":500,"height":380},
+		{"id":"d69d4553053fb978","type":"text","text":"**Exceptions ssi exposant = 0xFF & :**\n- **mantisse ≠ 0 -> NAN (Not A Number)**\n- **signe = 0 & mantisse = 0 -> +∞**\n- **signe = 1 & mantisse = 0 -> -∞**","x":-1160,"y":-20,"width":420,"height":160},
+		{"id":"02b66472b9bf5904","type":"text","text":"Exp = 127 + 3\nExp = 130\n-> 130<sub>10</sub> = 1000 0010<sub>2</sub>","x":-1040,"y":180,"width":273,"height":100},
+		{"id":"54cbd33f284772de","type":"text","text":"1","x":-365,"y":280,"width":165,"height":80},
+		{"id":"6d4256a2a5ee900b","type":"text","text":"0000 0000","x":-200,"y":280,"width":165,"height":80},
+		{"id":"42d9427ba7b30c80","type":"text","text":"001 ... 0000","x":-35,"y":280,"width":165,"height":80},
+		{"id":"8c359d14e95d09d7","type":"text","text":"Exemple avec -0,125<sub>10</sub>, simple précision (32 bits) dénormalisé:","x":-680,"y":280,"width":315,"height":80},
+		{"id":"288e92092c41e83e","type":"text","text":"Toujours 1 pour simple ou double précision ainsi qu'écriture normalisé ou dénormalisé.\n0 :  positif\n1 : négatif","x":-603,"y":-360,"width":280,"height":200},
+		{"id":"e3c1afacf6068139","type":"text","text":"10<sub>10</sub> = 1010<sub>2</sub>\n1010<sub>2</sub> = *... 0000* 1010<sub>2</sub>\nEcriture scientifique : (1)010 *00 ... 0*","x":200,"y":200,"width":345,"height":120},
+		{"id":"06f428dcb188734e","type":"text","text":"Simple précision : 23 bits\nDouble précision : 52 bits\n\n**Ecriture normalisé :**\nCorrespond à l'écriture scientifique d'un nombre (ex : 2,85<sup>3</sup> = 2850) mais en binaire. Pour cela on retire tout les 0 de poids fort, ainsi que le premier 1 qui est implicite puisque nécessaire à l'encodage du nombre.\n\n**Ecriture dénormalisé :**\nEcriture scientifique, mais cette fois ci le premier 1 n'est pas retiré\n","x":180,"y":-220,"width":520,"height":360},
+		{"id":"70a34fdc7801a7f2","type":"text","text":"**Ecriture normalisé :**\nSimple precision : 8 bits\nSe calcule tel que : Exp = 127 (biais) + nbr_après_virgule_binaire\n\nDouble précision : 11 bits\nSe calcule tel que : Exp = 1023 (biais) - nbr_après_virgule_binaire\n\n**Ecriture dénormalisé :**\nLa taille de l'exposant est la même qu'en écriture normalisé (simple ou double précision) mais tout les bits sont à 0 et le biais à -126, en double precision le biais est donc de -1022.","x":-275,"y":-590,"width":645,"height":340},
+		{"id":"0dadc7052512cfb4","type":"text","text":"Exposant à 0","x":-406,"y":400,"width":167,"height":60}
+	],
+	"edges":[
+		{"id":"0d584a533f2b70af","fromNode":"70a34fdc7801a7f2","fromSide":"bottom","toNode":"12773f2ee96b88e7","toSide":"top"},
+		{"id":"3f041e12d93da76b","fromNode":"288e92092c41e83e","fromSide":"bottom","toNode":"2a5e775e1a000d8a","toSide":"top"},
+		{"id":"f2fc37d78c0282c0","fromNode":"8da37b45f494e010","fromSide":"right","toNode":"33a3d9d924073bcc","toSide":"left"},
+		{"id":"d8727afba4b95e5d","fromNode":"06f428dcb188734e","fromSide":"left","toNode":"2608de82052113e5","toSide":"top"},
+		{"id":"1a28275c9e688319","fromNode":"02b66472b9bf5904","fromSide":"right","toNode":"e1b6f81f9292cc04","toSide":"bottom"},
+		{"id":"69b2892bc22e22c3","fromNode":"e3c1afacf6068139","fromSide":"left","toNode":"76acdffa500ad78c","toSide":"bottom"},
+		{"id":"9c37163da2aefed4","fromNode":"d69d4553053fb978","fromSide":"right","toNode":"33a3d9d924073bcc","toSide":"left"},
+		{"id":"dbb397da4cad5344","fromNode":"0dadc7052512cfb4","fromSide":"right","toNode":"6d4256a2a5ee900b","toSide":"bottom"}
+	]
+}

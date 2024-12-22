@@ -1,0 +1,1 @@
+Soient E et F deux ensembles, on dit que E = F si E ⊂ F et F ⊂ E.

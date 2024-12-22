@@ -1,0 +1,1 @@
+Soit *R* une relation définie sur E, *R* est dite transitive lorsque (a*R*b b*R*c) ⇒ a*R*c

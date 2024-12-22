@@ -1,0 +1,1 @@
+Un projet est une réponse apporté à une demande élaboré pour satisfaire les besoins d'un maitre d'ouvrage.

@@ -1,0 +1,3 @@
+blablabli, blablablo
+Je suis un fichier qui contient le chiffre 1.
+Et même plusieurs fois : 1, 1, 1.

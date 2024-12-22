@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"ee8d38c7ff96db8e","x":160,"y":19,"width":160,"height":52,"type":"text","text":"ENTREPRISE"},
+		{"id":"300de06ce727b764","x":360,"y":-10,"width":250,"height":110,"type":"text","text":"- produit finis\n- marchandise\n- services"},
+		{"id":"f1d426221a3a1b99","x":-125,"y":-20,"width":250,"height":130,"type":"text","text":"- Capital\n- travail\n- matière première\n- services"}
+	],
+	"edges":[
+		{"id":"d58d6d17a898551f","fromNode":"f1d426221a3a1b99","fromSide":"right","toNode":"ee8d38c7ff96db8e","toSide":"left"},
+		{"id":"67bfbb45a20b3447","fromNode":"ee8d38c7ff96db8e","fromSide":"right","toNode":"300de06ce727b764","toSide":"left"},
+		{"id":"64e09d6580162e9b","fromNode":"f1d426221a3a1b99","fromSide":"bottom","toNode":"300de06ce727b764","toSide":"bottom","label":"Transformation"}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"9ceba798402d4c55","type":"text","text":"augmentation réel du revenu","x":160,"y":-90,"width":320,"height":60,"color":"6"},
+		{"id":"5b02626ffa9ea8b7","type":"text","text":"augmentation à prix constant du revenu","x":160,"y":0,"width":320,"height":65,"color":"6"},
+		{"id":"00e8562ef3f6c69a","type":"text","text":"Augmentation en volume","x":160,"y":100,"width":320,"height":60,"color":"6"},
+		{"id":"20fbdf2c0c98a9f4","type":"text","text":"# Pouvoir d'achat :\nQuantité de bien que l'on peut acheté par rapport à une période précédente compte tenu de l'évolution de son revenu et des prix","x":-300,"y":-90,"width":360,"height":250,"color":"1"},
+		{"id":"71189eff9a3df372","type":"text","text":"# Equation pouvoir d'achat\n```\n( Indice nominal revenus / indice des prix ) \\*100 - 100\n```","x":580,"y":-49,"width":500,"height":163,"color":"4"}
+	],
+	"edges":[
+		{"id":"fe8db8c31087079c","fromNode":"20fbdf2c0c98a9f4","fromSide":"right","toNode":"9ceba798402d4c55","toSide":"left"},
+		{"id":"07decafa6d244911","fromNode":"20fbdf2c0c98a9f4","fromSide":"right","toNode":"5b02626ffa9ea8b7","toSide":"left"},
+		{"id":"59d0f724878df8e3","fromNode":"20fbdf2c0c98a9f4","fromSide":"right","toNode":"00e8562ef3f6c69a","toSide":"left"},
+		{"id":"3835ab84b5089b75","fromNode":"9ceba798402d4c55","fromSide":"right","toNode":"71189eff9a3df372","toSide":"left"},
+		{"id":"e6a8c5a3c362cec4","fromNode":"5b02626ffa9ea8b7","fromSide":"right","toNode":"71189eff9a3df372","toSide":"left"},
+		{"id":"bb0a23491df952a9","fromNode":"00e8562ef3f6c69a","fromSide":"right","toNode":"71189eff9a3df372","toSide":"left"}
+	]
+}

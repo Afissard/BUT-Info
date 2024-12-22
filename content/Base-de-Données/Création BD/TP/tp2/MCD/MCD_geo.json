@@ -1,0 +1,37 @@
+{
+  "width": 476,
+  "height": 304,
+  "cx": [
+    [ "PROMO", 143 ],
+    [ "INSCRIT", 233 ],
+    [ "ETUDIANT", 47 ],
+    [ "CHOIX", 143 ],
+    [ "MODULE", 233 ],
+    [ "RESPONSABLE", 344 ],
+    [ "PROF", 445 ],
+    [ "GRP_TD", 143 ],
+    [ "INCLUS", 233 ]
+  ],
+  "cy": [
+    [ "PROMO", 34 ],
+    [ "INSCRIT", 34 ],
+    [ "ETUDIANT", 152 ],
+    [ "CHOIX", 152 ],
+    [ "MODULE", 152 ],
+    [ "RESPONSABLE", 152 ],
+    [ "PROF", 152 ],
+    [ "GRP_TD", 270 ],
+    [ "INCLUS", 270 ]
+  ],
+  "shift": [
+    [ "INSCRIT,ETUDIANT,0", 0 ],
+    [ "INSCRIT,PROMO,0", 0 ],
+    [ "CHOIX,ETUDIANT,0", 0 ],
+    [ "CHOIX,MODULE,0", 0 ],
+    [ "RESPONSABLE,PROF,0", 0 ],
+    [ "RESPONSABLE,MODULE,0", 0 ],
+    [ "INCLUS,ETUDIANT,0", 0 ],
+    [ "INCLUS,GRP_TD,0", 0 ]
+  ],
+  "ratio": []
+}

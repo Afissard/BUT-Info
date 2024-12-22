@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"e892030634a8618a","x":-220,"y":20,"width":250,"height":60,"type":"text","text":"ESN : Entreprise de Service du Numérique (ex SSII)"},
+		{"id":"1b3bc6bf2719f9e0","x":-205,"y":-120,"width":220,"height":60,"type":"text","text":"Prestataire informatique"},
+		{"id":"fc179e9a055134f5","x":-205,"y":160,"width":220,"height":60,"type":"text","text":"MOE : maitrise d'euvre"},
+		{"id":"fc366c34d93067cf","x":80,"y":20,"width":220,"height":60,"type":"text","text":"Entreprise utilisatrice (banque, etc)"},
+		{"id":"74bc3d4a4a79c81e","x":130,"y":-120,"width":120,"height":60,"type":"text","text":"Client"},
+		{"id":"67e3df19161818c4","x":80,"y":280,"width":220,"height":60,"type":"text","text":"Besoin spécifique dans un cahier des charges"},
+		{"id":"eefdab4edaf571b2","x":-192,"y":280,"width":195,"height":60,"type":"text","text":"Solution Spécifique (logiciel)"},
+		{"id":"c1d093cfc08ae7fc","x":100,"y":160,"width":200,"height":60,"type":"text","text":"MOA : maitre d'ouvrage"}
+	],
+	"edges":[
+		{"id":"e0ea2e6da73e7c96","fromNode":"1b3bc6bf2719f9e0","fromSide":"bottom","toNode":"e892030634a8618a","toSide":"top","label":"ou"},
+		{"id":"a0f96e7aa31a90b1","fromNode":"e892030634a8618a","fromSide":"bottom","toNode":"fc179e9a055134f5","toSide":"top","label":"ou"},
+		{"id":"6112dbfea1473efe","fromNode":"74bc3d4a4a79c81e","fromSide":"left","toNode":"1b3bc6bf2719f9e0","toSide":"right"},
+		{"id":"422554b668eb551b","fromNode":"1b3bc6bf2719f9e0","fromSide":"right","toNode":"74bc3d4a4a79c81e","toSide":"left"},
+		{"id":"101f445145f5811c","fromNode":"74bc3d4a4a79c81e","fromSide":"bottom","toNode":"fc366c34d93067cf","toSide":"top","label":"ou"},
+		{"id":"865d99c2eb97fc22","fromNode":"fc366c34d93067cf","fromSide":"bottom","toNode":"c1d093cfc08ae7fc","toSide":"top","label":"ou"},
+		{"id":"304d0f57f1e8710e","fromNode":"c1d093cfc08ae7fc","fromSide":"bottom","toNode":"67e3df19161818c4","toSide":"top"},
+		{"id":"08bf3d8534784726","fromNode":"67e3df19161818c4","fromSide":"bottom","toNode":"eefdab4edaf571b2","toSide":"bottom"},
+		{"id":"699b1659ca563366","fromNode":"fc179e9a055134f5","fromSide":"bottom","toNode":"eefdab4edaf571b2","toSide":"top"}
+	]
+}

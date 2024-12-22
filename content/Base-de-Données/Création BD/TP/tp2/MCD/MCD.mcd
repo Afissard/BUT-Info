@@ -1,0 +1,11 @@
+PROMO: annee
+Inscrit, 1N ETUDIANT, 11 PROMO
+
+ETUDIANT: nom, prenom, naissance, adresse, bac, annee_bac
+Choix, NN ETUDIANT, 1N MODULE
+MODULE : matiere
+Responsable, 11 PROF, 1N MODULE
+PROF : nom
+
+GRP_TD: id
+Inclus, 1N ETUDIANT, 11 GRP_TD

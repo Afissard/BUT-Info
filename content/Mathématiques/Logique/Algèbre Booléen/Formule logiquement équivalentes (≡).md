@@ -1,0 +1,2 @@
+Soit deux formules F1(p1, ..., pn) et F2(p1, ..., pn), on dit que F1 et F2 sont logiquement équivalentes si quelle que soit la valuation des variables, les valeurs de vérité de F1 et F2 sont égales.
+On note alors F1 ≡ F2

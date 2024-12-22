@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"abf551e56ca4acb6","type":"text","text":"# Personnel \n- Salaire + prime","x":-620,"y":80,"width":260,"height":180,"color":"6"},
+		{"id":"ba556f439ba3059a","type":"text","text":"# Administration \n- L'Etat : impôts et taxes\n- Organisme sociaux : cotisation sociales\n- collectivité territorial : impôts locaux","x":-320,"y":80,"width":290,"height":245,"color":"5"},
+		{"id":"ab938d141e119d48","type":"text","text":"# Apporteur de capitaux\n- Associés : Actionnaire\n- Préteurs : Banque (prêts)","x":20,"y":80,"width":320,"height":215,"color":"3"},
+		{"id":"0a68e2ec13d7c3a9","type":"text","text":"# l'Entreprise\n- L'entrepreneur individuel","x":400,"y":80,"width":320,"height":123,"color":"2"},
+		{"id":"002349b71e530582","type":"text","text":"## Revenu du capital","x":20,"y":440,"width":320,"height":80,"color":"3"},
+		{"id":"c32d56edc56479ab","type":"text","text":"## Recette de l'Etat","x":-320,"y":430,"width":290,"height":80,"color":"5"},
+		{"id":"6b887decac575f12","type":"text","text":"## Revenu du travail","x":-660,"y":430,"width":300,"height":80,"color":"6"},
+		{"id":"fecb44e1973d41ca","type":"text","text":"# Valeur ajouté = 800 $\n(Revenus)","x":-200,"y":-280,"width":380,"height":120,"color":"4"},
+		{"id":"8bc74b8ac550ffd8","type":"text","text":"# La répartition de la richesse\nhttps://www.ifop.com/publication/les-francais-et-la-repartition-de-la-richesse-au-sein-des-entreprises/","x":-733,"y":-280,"width":373,"height":230,"color":"1"},
+		{"id":"882b272797693a3e","type":"text","text":"# Profit\nPart des richesse qui revient à l'entrepreneur (et l'entreprise) après avoir rémunérer tout les participants :\n- les Participants\n- l'Administration\n- les Capitaux","x":640,"y":235,"width":520,"height":275,"color":"1"},
+		{"id":"be5fde9e51450e06","type":"text","text":"## Revenu de l'entreprise ou de l'entrepreuneur individuel","x":340,"y":560,"width":320,"height":180,"color":"2"}
+	],
+	"edges":[
+		{"id":"f024601337c9b4f1","fromNode":"fecb44e1973d41ca","fromSide":"bottom","toNode":"abf551e56ca4acb6","toSide":"top","label":"1"},
+		{"id":"722daf0bab16bcc5","fromNode":"fecb44e1973d41ca","fromSide":"bottom","toNode":"ba556f439ba3059a","toSide":"top","label":"2"},
+		{"id":"ed3b6e009461259a","fromNode":"fecb44e1973d41ca","fromSide":"bottom","toNode":"ab938d141e119d48","toSide":"top","label":"3"},
+		{"id":"06f47d643491d7ba","fromNode":"fecb44e1973d41ca","fromSide":"bottom","toNode":"0a68e2ec13d7c3a9","toSide":"top","label":"4"},
+		{"id":"2c7617f5bdeba4a3","fromNode":"ab938d141e119d48","fromSide":"bottom","toNode":"002349b71e530582","toSide":"top"},
+		{"id":"9382c71a0ba154b3","fromNode":"abf551e56ca4acb6","fromSide":"bottom","toNode":"6b887decac575f12","toSide":"top"},
+		{"id":"e9fab647d3dbd719","fromNode":"ba556f439ba3059a","fromSide":"bottom","toNode":"c32d56edc56479ab","toSide":"top"},
+		{"id":"e21cf2c58121809b","fromNode":"8bc74b8ac550ffd8","fromSide":"right","toNode":"fecb44e1973d41ca","toSide":"left"},
+		{"id":"52b5e1fd7a4d7475","fromNode":"0a68e2ec13d7c3a9","fromSide":"bottom","toNode":"be5fde9e51450e06","toSide":"top"},
+		{"id":"5ec6604a9fcad647","fromNode":"882b272797693a3e","fromSide":"bottom","toNode":"be5fde9e51450e06","toSide":"right"},
+		{"id":"0b170d47a3346ee1","fromNode":"0a68e2ec13d7c3a9","fromSide":"right","toNode":"882b272797693a3e","toSide":"top"}
+	]
+}

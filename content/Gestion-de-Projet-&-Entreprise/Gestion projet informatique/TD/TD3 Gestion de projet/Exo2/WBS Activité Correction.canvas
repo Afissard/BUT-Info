@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"7ce272351e7f7c93","x":-180,"y":-220,"width":250,"height":60,"type":"text","text":"Activité"},
+		{"id":"f35707ec14f8ba92","x":-420,"y":-100,"width":250,"height":60,"type":"text","text":"Disposé vaisselle"},
+		{"id":"b0a75c40a1b5ac76","x":-140,"y":-100,"width":250,"height":60,"type":"text","text":"Allumer machines"},
+		{"id":"6ba68139eec88904","x":160,"y":-100,"width":250,"height":60,"type":"text","text":"Préparer les aliments"},
+		{"id":"1ef0ccc7419e5b14","x":460,"y":-100,"width":250,"height":60,"type":"text","text":"Cuire"},
+		{"id":"001cde689ba23d39","x":760,"y":-100,"width":250,"height":60,"type":"text","text":"Servir"},
+		{"id":"1c9e98312dfd4349","x":-295,"y":20,"width":250,"height":60,"type":"text","text":"Thé"},
+		{"id":"0fb4e1bae8b076ea","x":-295,"y":120,"width":250,"height":60,"type":"text","text":"Café"},
+		{"id":"72dd1a54d8bd28af","x":-295,"y":220,"width":250,"height":60,"type":"text","text":"Chocolat"},
+		{"id":"87ae72c3afab7800","x":35,"y":20,"width":250,"height":60,"type":"text","text":"machine à café"},
+		{"id":"c979899437e17b20","x":35,"y":120,"width":250,"height":60,"type":"text","text":"Disposé oeuf chaud"},
+		{"id":"0884934b1d1c1c70","x":510,"y":220,"width":250,"height":60,"type":"text","text":"etc"}
+	],
+	"edges":[
+		{"id":"0bb03c6f2195a6df","fromNode":"f35707ec14f8ba92","fromSide":"bottom","toNode":"1c9e98312dfd4349","toSide":"left"},
+		{"id":"6ecfa73bbc3bc9fe","fromNode":"f35707ec14f8ba92","fromSide":"bottom","toNode":"0fb4e1bae8b076ea","toSide":"left"},
+		{"id":"eb160b0478ddafea","fromNode":"f35707ec14f8ba92","fromSide":"bottom","toNode":"72dd1a54d8bd28af","toSide":"left"},
+		{"id":"5d52b7f9c95b9932","fromNode":"b0a75c40a1b5ac76","fromSide":"bottom","toNode":"87ae72c3afab7800","toSide":"left"},
+		{"id":"a35a1020a3bc66f1","fromNode":"b0a75c40a1b5ac76","fromSide":"bottom","toNode":"c979899437e17b20","toSide":"left"}
+	]
+}

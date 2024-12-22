@@ -1,0 +1,23 @@
+Hello , ladys and gentlemen
+
+# 1 Introduce the chart/graph
+
+Today Let's have a look at this graph which shows us the percentage Axe of 15 to 24 years old who say the world is getting better  with each generation and the percentage Axe of the 40+ years old  who say the world is getting better separate with a diagonal line.
+
+# 2 Describe the main elements of the visual
+
+We can see many country on this graph at different position like  indonesia between 75% and 100%
+or Mali between 25% and 50%, as we can see there is an important number of country  betwen 25% and 75 %
+
+# 3 Hight Light interesting details, make comments 
+
+Let's focus our attention on the left part of the graph because there is a lot of country where the young population is more optimistic than the elder population.
+
+TODO
+
+# 4 Analyze interpret
+
+We can identificate a few factors that may influence these result :
+- The first one is geographic : in the developing countries, where the average age of the population is younger, there will be more positive answer from this young population than the elder one.
+- The second is more society related : in general, the elder population have more exeperience and lived more thing. This factors will push the oldest to say the world was better before, because of memory distortion but also because nowadays information sources (TV, Radio, etc) tends to cover bad news more than good ones.
+We should analyse the situation over a long period of time with the same persons and analyse the evolution of the results, notably by doing some parrallele with event that may influant there answer.

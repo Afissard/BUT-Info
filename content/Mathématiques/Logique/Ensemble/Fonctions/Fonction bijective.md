@@ -1,0 +1,1 @@
+Soit f une fonction de A vers B. On dit que f est bijective lorsqu'elle est à la fois [[Fonction injective]] et [[Fonction surjective]]. En logique cela ce traduit par : **∀y ∈ B, ∃x ∈ A x unique f(x) = y**

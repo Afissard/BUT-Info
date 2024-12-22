@@ -1,0 +1,2 @@
+Une formule est dite **satisfiable** lorsqu'il existe une valuation de ses variable qui rende la formule vraie.
+Une formule est dite **insatisfaisable** lorsque qu'il n'existe pas de valuation de ses variables qui la rende vrai : elle est tout le temps fausse, dit aussi que c'est une **contradiction**.

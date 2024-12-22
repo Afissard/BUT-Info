@@ -1,0 +1,1 @@
+pour obtenir les résultat montré sur les images, il faut modifier la variable pref-size, et le style avec le background color, le padding, border, etc

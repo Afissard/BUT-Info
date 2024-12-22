@@ -1,0 +1,1 @@
+E et F deux ensembles, on dit que E et F sont disjoint si E ∩ F = ∅

@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"108ff5a442a2d7d9","x":-120,"y":20,"width":250,"height":60,"type":"text","text":"Maitre d'hotel"},
+		{"id":"23487fba66a261e5","x":5,"y":-180,"width":250,"height":60,"type":"text","text":"Activité"},
+		{"id":"56e29dedda42d40e","x":80,"y":140,"width":250,"height":60,"type":"text","text":"Place les clients"},
+		{"id":"b6e4f642fa66daa6","x":-560,"y":20,"width":250,"height":60,"type":"text","text":"Cuisiniers"},
+		{"id":"884f980d3f0e93f4","x":-370,"y":140,"width":250,"height":80,"type":"text","text":"Remplis les panier de pain"},
+		{"id":"0cec89406f362747","type":"text","text":"Remplis les panier de confiture","x":-370,"y":260,"width":250,"height":80},
+		{"id":"47b884177d2309f0","x":-370,"y":360,"width":250,"height":60,"type":"text","text":"Cuisine les œufs"},
+		{"id":"8c8bbbd609c64046","x":330,"y":20,"width":250,"height":60,"type":"text","text":"Serveur"},
+		{"id":"e53545796759ebb6","x":760,"y":20,"width":250,"height":60,"type":"text","text":"Gérant"},
+		{"id":"75e928d7cc0639ea","x":960,"y":120,"width":250,"height":80,"type":"text","text":"Réception de la livraison"},
+		{"id":"9c4e47447fd2e8f9","x":510,"y":140,"width":250,"height":60,"type":"text","text":"Sert les clients"},
+		{"id":"1d8cb0454f5ae51d","x":510,"y":240,"width":250,"height":60,"type":"text","text":"Gestion des boissons"},
+		{"id":"720d2f46b1b88625","x":-370,"y":440,"width":250,"height":80,"type":"text","text":"Cuisine les viennoiseries"},
+		{"id":"0040b67bd0156d61","x":510,"y":340,"width":250,"height":60,"type":"text","text":"Gestion du pain"},
+		{"id":"2efd877425a5f5ed","x":510,"y":450,"width":250,"height":90,"type":"text","text":"gestion des confitures"},
+		{"id":"b2184dbbd0d435a6","x":510,"y":580,"width":250,"height":60,"type":"text","text":"Gestion couvert"},
+		{"id":"6dd665d1ef4239a8","x":80,"y":240,"width":250,"height":60,"type":"text","text":"Aide le serveur"}
+	],
+	"edges":[
+		{"id":"dc21238dbbdf68d1","fromNode":"23487fba66a261e5","fromSide":"bottom","toNode":"b6e4f642fa66daa6","toSide":"top"},
+		{"id":"ac9bbfbe522bfb0b","fromNode":"23487fba66a261e5","fromSide":"bottom","toNode":"108ff5a442a2d7d9","toSide":"top"},
+		{"id":"d10369678f4f90df","fromNode":"23487fba66a261e5","fromSide":"bottom","toNode":"8c8bbbd609c64046","toSide":"top"},
+		{"id":"eb271d4ebcadee3b","fromNode":"23487fba66a261e5","fromSide":"bottom","toNode":"e53545796759ebb6","toSide":"top"},
+		{"id":"355aee6cc1e28c4d","fromNode":"e53545796759ebb6","fromSide":"bottom","toNode":"75e928d7cc0639ea","toSide":"left"},
+		{"id":"eb1a6ac85813140e","fromNode":"108ff5a442a2d7d9","fromSide":"bottom","toNode":"56e29dedda42d40e","toSide":"left"},
+		{"id":"1de0a252a2a43624","fromNode":"b6e4f642fa66daa6","fromSide":"bottom","toNode":"884f980d3f0e93f4","toSide":"left"},
+		{"id":"5910b75fce33d49c","fromNode":"b6e4f642fa66daa6","fromSide":"bottom","toNode":"0cec89406f362747","toSide":"left"},
+		{"id":"6b1c59e04a942bbc","fromNode":"b6e4f642fa66daa6","fromSide":"bottom","toNode":"47b884177d2309f0","toSide":"left"},
+		{"id":"537d10d360d8103d","fromNode":"8c8bbbd609c64046","fromSide":"bottom","toNode":"9c4e47447fd2e8f9","toSide":"left"},
+		{"id":"219bee5920f499d8","fromNode":"8c8bbbd609c64046","fromSide":"bottom","toNode":"1d8cb0454f5ae51d","toSide":"left"},
+		{"id":"0a8638658fa73d67","fromNode":"b6e4f642fa66daa6","fromSide":"bottom","toNode":"720d2f46b1b88625","toSide":"left"},
+		{"id":"5020abb4eb7af1a3","fromNode":"8c8bbbd609c64046","fromSide":"bottom","toNode":"0040b67bd0156d61","toSide":"left"},
+		{"id":"f3ba322f13288563","fromNode":"8c8bbbd609c64046","fromSide":"bottom","toNode":"2efd877425a5f5ed","toSide":"left"},
+		{"id":"bc91e8ef8ab5a19a","fromNode":"8c8bbbd609c64046","fromSide":"bottom","toNode":"b2184dbbd0d435a6","toSide":"left"},
+		{"id":"1faadc9cbb3c93ec","fromNode":"108ff5a442a2d7d9","fromSide":"bottom","toNode":"6dd665d1ef4239a8","toSide":"left"}
+	]
+}

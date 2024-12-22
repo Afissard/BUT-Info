@@ -1,0 +1,1 @@
+Soit *R* une relation définie sur E, *R* est dite réflexive lorsque **∀a ∈ E, a*R*a**

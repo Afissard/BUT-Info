@@ -1,0 +1,1 @@
+Soit *R* une relation définie sur E, *R* est dite anti-symétrique lorsque **(a*R*b ∧ b*R*a) ⇒ a = b**

@@ -33,4 +33,4 @@ sudo systemctl start httpd.service
 sudo systemctl restart httpd.service
 sudo systemctl stop httpd.service
 ```
-site ici : http://localhost/webdev/
+site ici : http://localhost/webdev/ ou juste localhost

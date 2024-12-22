@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"fcfa371e9fed6484","type":"text","text":"gérer la porte","x":60,"y":220,"width":250,"height":60},
+		{"id":"aa79bec886765ba0","x":-190,"y":400,"width":250,"height":60,"type":"text","text":"Chauffer"},
+		{"id":"fcb97242d91de390","x":280,"y":400,"width":250,"height":60,"type":"text","text":"Démarer la cuisson"},
+		{"id":"2e9d8f65e50a880a","x":460,"y":560,"width":250,"height":60,"type":"text","text":"Régler la puissance"},
+		{"id":"827c2c57475d7ddb","x":60,"y":560,"width":250,"height":60,"type":"text","text":"Régler le temps"}
+	],
+	"edges":[
+		{"id":"44e985afb35ebae1","fromNode":"aa79bec886765ba0","fromSide":"top","toNode":"fcfa371e9fed6484","toSide":"bottom","label":"include"},
+		{"id":"6a379bd53be353d4","fromNode":"fcb97242d91de390","fromSide":"top","toNode":"fcfa371e9fed6484","toSide":"bottom","label":"include"},
+		{"id":"7520aee1e923b958","fromNode":"aa79bec886765ba0","fromSide":"right","toNode":"fcb97242d91de390","toSide":"left","label":"inlcude"},
+		{"id":"1a83fab3ebe4d720","fromNode":"fcb97242d91de390","fromSide":"bottom","toNode":"2e9d8f65e50a880a","toSide":"top","label":"include"},
+		{"id":"4ad07c3dd8ccfa42","fromNode":"fcb97242d91de390","fromSide":"bottom","toNode":"827c2c57475d7ddb","toSide":"top","label":"include"}
+	]
+}

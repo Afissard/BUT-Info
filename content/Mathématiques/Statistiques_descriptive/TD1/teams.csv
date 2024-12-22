@@ -1,0 +1,732 @@
+﻿ID;Name;League;LeagueId;Overall;Attack;Midfield;Defence;TransferBudget;DomesticPrestige;IntPrestige;Players;StartingAverageAge;AllTeamAverageAge
+1;Arsenal;English Premier League (1);13;80;83;79;79;80000000;7;7;33;24.7;23.6
+2;Aston Villa;English Premier League (1);13;77;77;77;77;37500000;2;2;29;24.2;24.0
+1808;Brighton & Hove Albion;English Premier League (1);13;75;75;76;76;36000000;2;1;33;25.6;23.6
+1796;Burnley;English Premier League (1);13;76;75;76;77;27000000;3;1;33;27.4;25.1
+5;Chelsea;English Premier League (1);13;82;82;84;82;85000000;8;7;29;26.0;24.7
+1799;Crystal Palace;English Premier League (1);13;76;77;75;75;30000000;3;2;33;28.6;26.8
+7;Everton;English Premier League (1);13;79;81;79;80;51000000;6;5;33;26.8;23.9
+144;Fulham;English Premier League (1);13;75;74;75;74;16500000;9;1;33;24.4;24.1
+8;Leeds United;English Premier League (1);13;76;78;76;75;16500000;9;1;33;25.1;23.7
+95;Leicester City;English Premier League (1);13;80;80;81;79;45000000;6;6;32;25.7;24.4
+9;Liverpool;English Premier League (1);13;85;86;83;80;90000000;9;10;33;25.9;24.6
+10;Manchester City;English Premier League (1);13;85;85;86;83;176000000;10;9;31;25.3;24.2
+11;Manchester United;English Premier League (1);13;82;83;82;82;177000000;8;7;33;24.4;24.0
+13;Newcastle United;English Premier League (1);13;76;77;75;74;30000000;4;3;33;26.9;25.4
+1794;Sheffield United;English Premier League (1);13;73;71;74;73;20000000;2;1;33;26.6;24.4
+17;Southampton;English Premier League (1);13;76;77;77;76;35000000;4;3;31;26.1;23.3
+18;Tottenham Hotspur;English Premier League (1);13;82;89;82;81;75000000;8;7;33;26.8;24.4
+109;West Bromwich Albion;English Premier League (1);13;73;74;74;72;18400000;9;1;30;25.6;25.8
+19;West Ham United;English Premier League (1);13;78;79;79;77;35000000;4;4;33;27.7;24.8
+110;Wolverhampton Wanderers;English Premier League (1);13;79;77;81;78;45000000;5;4;33;25.4;23.1
+69;AS Monaco;French Ligue 1 (1);16;78;79;77;77;34600000;8;6;28;24.0;23.1
+1819;AS Saint-Ã‰tienne;French Ligue 1 (1);16;73;74;74;73;12500000;6;3;33;25.0;23.3
+1530;Angers SCO;French Ligue 1 (1);16;75;75;75;74;5600000;4;1;33;27.7;25.1
+110569;Dijon FCO;French Ligue 1 (1);16;71;73;71;70;4600000;2;1;29;25.4;23.6
+59;FC Girondins de Bordeaux;French Ligue 1 (1);16;74;74;73;72;10400000;6;3;27;25.9;24.9
+217;FC Lorient;French Ligue 1 (1);16;71;71;71;70;5200000;8;1;30;25.7;26.0
+68;FC Metz;French Ligue 1 (1);16;72;70;70;73;5900000;1;1;31;25.2;23.1
+71;FC Nantes;French Ligue 1 (1);16;73;71;74;74;8800000;5;2;33;24.9;24.0
+65;LOSC Lille;French Ligue 1 (1);16;78;78;78;78;14000000;7;4;30;25.4;22.6
+70;Montpellier HSC;French Ligue 1 (1);16;75;80;76;73;8800000;6;2;28;26.3;23.9
+224;NÃ®mes Olympique;French Ligue 1 (1);16;73;71;73;73;4800000;3;1;33;25.0;23.9
+72;OGC Nice;French Ligue 1 (1);16;76;77;74;73;10400000;7;3;27;23.4;22.3
+66;Olympique Lyonnais;French Ligue 1 (1);16;78;79;79;77;43900000;8;6;28;24.9;22.9
+219;Olympique de Marseille;French Ligue 1 (1);16;77;77;76;76;14000000;8;5;32;26.4;23.4
+73;Paris Saint-Germain;French Ligue 1 (1);16;84;87;82;82;130000000;10;9;32;27.4;24.8
+76;RC Strasbourg Alsace;French Ligue 1 (1);16;74;75;73;74;8100000;4;1;29;26.2;24.9
+64;Racing Club de Lens;French Ligue 1 (1);16;73;72;75;73;7800000;9;1;31;26.8;23.6
+378;Stade Brestois 29;French Ligue 1 (1);16;73;72;73;72;5900000;1;1;29;23.8;24.2
+74;Stade Rennais FC;French Ligue 1 (1);16;76;75;76;76;12200000;7;3;27;24.6;23.3
+379;Stade de Reims;French Ligue 1 (1);16;73;73;73;74;7000000;5;1;29;24.6;22.2
+31;1. FC KÃ¶ln;German 1. Bundesliga (1);19;74;74;74;72;12500000;4;3;31;26.0;23.5
+1831;1. FC Union Berlin;German 1. Bundesliga (1);19;73;75;72;73;6500000;2;1;29;27.3;25.5
+169;1. FSV Mainz 05;German 1. Bundesliga (1);19;73;72;73;73;9200000;4;3;29;25.8;24.1
+32;Bayer 04 Leverkusen;German 1. Bundesliga (1);19;79;78;78;78;39000000;7;6;31;25.3;23.3
+22;Borussia Dortmund;German 1. Bundesliga (1);19;81;87;81;81;60000000;9;8;32;25.0;23.5
+23;Borussia MÃ¶nchengladbach;German 1. Bundesliga (1);19;79;78;79;80;25000000;7;5;33;26.4;24.1
+159;DSC Arminia Bielefeld;German 1. Bundesliga (1);19;72;72;72;71;2300000;1;1;27;25.3;24.4
+1824;Eintracht Frankfurt;German 1. Bundesliga (1);19;77;79;77;75;25000000;6;5;28;25.1;24.0
+100409;FC Augsburg;German 1. Bundesliga (1);19;74;73;74;74;9500000;4;3;31;26.3;24.7
+21;FC Bayern MÃ¼nchen;German 1. Bundesliga (1);19;84;92;85;82;100000000;10;10;23;26.2;25.3
+34;FC Schalke 04;German 1. Bundesliga (1);19;74;74;75;72;20000000;6;5;33;26.4;24.6
+166;Hertha BSC;German 1. Bundesliga (1);19;76;77;76;75;60000000;6;4;33;25.7;23.4
+112172;RB Leipzig;German 1. Bundesliga (1);19;80;78;81;80;50000000;8;7;29;24.6;23.1
+25;SC Freiburg;German 1. Bundesliga (1);19;74;75;75;73;10500000;3;3;27;25.3;24.1
+38;SV Werder Bremen;German 1. Bundesliga (1);19;74;73;74;75;12000000;5;3;30;25.6;23.6
+10029;TSG 1899 Hoffenheim;German 1. Bundesliga (1);19;76;75;77;76;28000000;6;5;33;25.1;24.7
+36;VfB Stuttgart;German 1. Bundesliga (1);19;73;74;73;72;20000000;3;4;33;23.8;23.1
+175;VfL Wolfsburg;German 1. Bundesliga (1);19;78;78;78;77;40000000;6;5;29;24.9;24.3
+39;Atalanta;Italian Serie A (1);31;79;82;79;78;28000000;6;3;27;27.2;25.2
+112026;Benevento;Italian Serie A (1);31;72;72;71;72;5600000;1;1;27;28.0;26.4
+189;Bologna;Italian Serie A (1);31;74;75;75;73;15000000;4;2;30;25.6;24.8
+1842;Cagliari;Italian Serie A (1);31;75;76;73;73;10000000;4;1;29;27.1;25.2
+110734;Crotone;Italian Serie A (1);31;71;72;68;70;4500000;1;1;28;27.4;26.3
+110374;Fiorentina;Italian Serie A (1);31;76;78;76;75;25000000;6;5;27;26.7;25.9
+110556;Genoa;Italian Serie A (1);31;74;72;74;74;8500000;3;2;32;29.4;25.9
+206;Hellas Verona;Italian Serie A (1);31;74;76;75;73;8000000;3;1;29;26.8;24.3
+44;Inter;Italian Serie A (1);31;82;83;81;83;99500000;9;7;24;26.0;27.9
+45;Juventus;Italian Serie A (1);31;83;87;81;83;105000000;10;10;26;27.8;26.0
+46;Lazio;Italian Serie A (1);31;80;82;80;79;39000000;7;6;30;29.9;26.6
+47;Milan;Italian Serie A (1);31;79;81;78;80;37000000;7;7;27;25.0;24.2
+48;Napoli;Italian Serie A (1);31;80;82;80;80;56000000;9;7;23;26.4;26.4
+50;Parma;Italian Serie A (1);31;74;74;74;73;8000000;4;2;33;28.3;25.6
+52;Roma;Italian Serie A (1);31;78;79;77;76;46000000;8;7;33;26.4;24.8
+1837;Sampdoria;Italian Serie A (1);31;75;76;75;73;12000000;4;3;26;27.8;26.5
+111974;Sassuolo;Italian Serie A (1);31;75;79;77;72;13500000;4;3;29;26.4;25.4
+110741;Spezia;Italian Serie A (1);31;70;70;70;67;2800000;1;1;31;25.9;24.9
+54;Torino;Italian Serie A (1);31;76;76;74;77;15500000;5;4;29;26.7;24.8
+55;Udinese;Italian Serie A (1);31;75;76;75;72;8000000;4;3;28;27.2;26.4
+448;Athletic Club de Bilbao;Spain Primera Division (1);53;79;80;78;79;18500000;6;6;31;27.7;24.7
+240;AtlÃ©tico Madrid;Spain Primera Division (1);53;83;85;82;83;68600000;9;9;30;27.6;24.7
+479;CA Osasuna;Spain Primera Division (1);53;76;76;77;75;4800000;7;1;31;27.6;26.4
+1968;CÃ¡diz CF;Spain Primera Division (1);53;73;75;73;72;2000000;5;1;33;28.6;26.0
+463;Deportivo AlavÃ©s;Spain Primera Division (1);53;76;77;74;76;4400000;3;1;32;28.7;25.2
+468;Elche CF;Spain Primera Division (1);53;73;72;73;72;1700000;2;1;31;27.7;25.2
+241;FC Barcelona;Spain Primera Division (1);53;83;84;82;81;180500000;10;10;33;25.4;23.6
+1860;Getafe CF;Spain Primera Division (1);53;77;77;78;77;8300000;5;3;32;26.6;24.4
+110832;Granada CF;Spain Primera Division (1);53;78;77;78;77;7600000;7;1;33;29.3;25.4
+1853;Levante UD;Spain Primera Division (1);53;76;79;76;75;9300000;3;1;33;27.4;25.7
+450;RC Celta;Spain Primera Division (1);53;75;80;75;75;11800000;5;4;33;26.6;23.8
+449;Real Betis;Spain Primera Division (1);53;78;79;79;78;16100000;5;2;33;29.4;25.8
+243;Real Madrid;Spain Primera Division (1);53;85;84;86;84;188500000;10;10;33;28.2;24.2
+457;Real Sociedad;Spain Primera Division (1);53;79;81;81;77;15800000;5;3;33;25.6;24.0
+462;Real Valladolid CF;Spain Primera Division (1);53;75;76;76;74;3100000;2;1;33;27.6;26.3
+467;SD Eibar;Spain Primera Division (1);53;76;76;75;74;6500000;4;1;29;28.6;26.4
+110839;SD Huesca;Spain Primera Division (1);53;73;73;73;73;2100000;2;1;33;27.2;25.7
+481;Sevilla FC;Spain Primera Division (1);53;81;80;81;82;34500000;7;7;28;27.4;26.4
+461;Valencia CF;Spain Primera Division (1);53;77;77;78;77;60000000;8;6;33;24.3;23.6
+483;Villarreal CF;Spain Primera Division (1);53;80;82;79;79;32900000;8;7;33;27.4;25.5
+111019;Argentinos Juniors;Argentina Primera DivisiÃ³n Â (1);353;71;71;71;72;2800000;6;5;28;27.6;25.3
+110394;Arsenal de SarandÃ­;Argentina Primera DivisiÃ³n Â (1);353;67;68;68;68;2100000;3;5;28;29.4;26.2
+111708;AtlÃ©tico TucumÃ¡n;Argentina Primera DivisiÃ³n Â (1);353;69;70;69;68;2900000;6;3;28;28.8;26.1
+1877;Boca Juniors;Argentina Primera DivisiÃ³n Â (1);353;76;76;73;75;30000000;10;9;28;28.0;25.8
+112965;Central CÃ³rdoba;Argentina Primera DivisiÃ³n Â (1);353;67;68;68;65;2100000;1;1;28;25.6;26.4
+111707;Club AtlÃ©tico Aldosivi;Argentina Primera DivisiÃ³n Â (1);353;67;66;67;69;500000;1;1;28;27.4;26.2
+110404;Club AtlÃ©tico Banfield;Argentina Primera DivisiÃ³n Â (1);353;69;65;70;65;4099999;5;4;28;24.8;23.6
+110406;Club AtlÃ©tico ColÃ³n;Argentina Primera DivisiÃ³n Â (1);353;71;71;71;70;4000000;5;3;28;28.0;24.6
+111711;Club AtlÃ©tico HuracÃ¡n;Argentina Primera DivisiÃ³n Â (1);353;68;68;68;68;4800000;7;4;28;25.0;24.1
+110395;Club AtlÃ©tico LanÃºs;Argentina Primera DivisiÃ³n Â (1);353;70;74;71;69;7500000;8;7;28;25.6;22.2
+112670;Club AtlÃ©tico Talleres;Argentina Primera DivisiÃ³n Â (1);353;71;72;69;72;5200000;6;4;28;25.2;23.2
+111710;Defensa y Justicia;Argentina Primera DivisiÃ³n Â (1);353;72;74;71;71;3200000;6;2;28;25.6;24.6
+101083;Estudiantes de La Plata;Argentina Primera DivisiÃ³n Â (1);353;70;69;72;69;5000000;7;7;27;27.6;24.6
+101084;Gimnasia y Esgrima La Plata;Argentina Primera DivisiÃ³n Â (1);353;68;69;68;68;3200000;2;3;28;26.6;24.6
+111706;Godoy Cruz;Argentina Primera DivisiÃ³n Â (1);353;67;67;68;67;5000000;4;4;28;24.3;23.8
+110093;Independiente;Argentina Primera DivisiÃ³n Â (1);353;72;73;74;71;12000000;9;8;28;26.2;24.5
+110396;Newell's Old Boys;Argentina Primera DivisiÃ³n Â (1);353;71;70;69;71;4000000;7;6;28;28.6;26.2
+110581;Patronato;Argentina Primera DivisiÃ³n Â (1);353;67;65;66;66;1700000;2;1;28;27.4;26.3
+101085;Racing Club;Argentina Primera DivisiÃ³n Â (1);353;73;71;74;73;9500000;9;7;28;27.6;25.9
+1876;River Plate;Argentina Primera DivisiÃ³n Â (1);353;76;76;76;75;15500000;10;9;28;25.9;26.8
+110580;Rosario Central;Argentina Primera DivisiÃ³n Â (1);353;70;72;70;67;5000000;7;5;28;27.4;24.5
+1013;San Lorenzo de Almagro;Argentina Primera DivisiÃ³n Â (1);353;72;73;71;71;8500000;9;8;28;28.6;26.0
+111716;UniÃ³n de Santa Fe;Argentina Primera DivisiÃ³n Â (1);353;69;70;68;68;3000000;3;1;28;24.4;23.5
+101088;VÃ©lez Sarsfield;Argentina Primera DivisiÃ³n Â (1);353;73;74;73;73;5300000;8;7;28;25.4;24.1
+111393;Adelaide United;Australian Hyundai A-League (1);351;64;66;64;65;2000000;4;3;25;27.1;23.7
+111395;Brisbane Roar;Australian Hyundai A-League (1);351;62;63;63;61;2000000;6;4;23;26.3;24.0
+111396;Central Coast Mariners;Australian Hyundai A-League (1);351;61;64;61;60;2000000;1;3;24;25.9;23.1
+114604;Macarthur FC;Australian Hyundai A-League (1);351;63;63;60;63;2000000;1;1;25;28.0;24.2
+112224;Melbourne City FC;Australian Hyundai A-League (1);351;65;68;64;65;2000000;8;3;23;26.1;24.3
+111397;Melbourne Victory;Australian Hyundai A-League (1);351;62;67;61;61;2000000;9;5;25;27.3;23.6
+111398;Newcastle Jets;Australian Hyundai A-League (1);351;61;60;60;63;2000000;3;1;23;25.7;24.3
+111399;Perth Glory;Australian Hyundai A-League (1);351;65;66;65;63;2000000;5;2;25;30.3;26.4
+111400;Sydney FC;Australian Hyundai A-League (1);351;67;69;67;67;2000000;10;5;25;30.4;26.2
+111766;Wellington Phoenix;Australian Hyundai A-League (1);351;65;65;64;63;2000000;3;1;25;25.4;24.2
+112427;Western Sydney Wanderers;Australian Hyundai A-League (1);351;64;64;67;60;2000000;7;5;25;24.8;25.0
+114023;Western United FC;Australian Hyundai A-League (1);351;65;67;65;62;2000000;1;1;25;28.3;25.2
+111821;FC Admira Wacker MÃ¶dling;Austrian Football Bundesliga (1);80;65;67;63;65;2900000;2;1;27;23.6;24.7
+191;FC Red Bull Salzburg;Austrian Football Bundesliga (1);80;73;75;72;73;20700000;10;6;25;24.6;22.7
+256;FK Austria Wien;Austrian Football Bundesliga (1);80;67;69;66;68;7700000;6;5;26;23.4;23.8
+252;LASK Linz;Austrian Football Bundesliga (1);80;71;71;70;71;6900000;9;5;27;25.9;24.3
+15009;SCR Altach;Austrian Football Bundesliga (1);80;65;65;66;66;2900000;4;2;27;26.6;25.1
+254;SK Rapid Wien;Austrian Football Bundesliga (1);80;70;72;68;70;5200000;8;5;27;24.1;24.1
+209;SK Sturm Graz;Austrian Football Bundesliga (1);80;68;67;70;67;5200000;7;4;27;24.2;22.9
+112075;SKN St. PÃ¶lten;Austrian Football Bundesliga (1);80;65;66;64;65;2700000;3;1;26;24.4;23.2
+780;SV Ried;Austrian Football Bundesliga (1);80;65;66;65;65;3300000;3;1;27;26.4;23.9
+2017;TSV Hartberg;Austrian Football Bundesliga (1);80;66;67;66;65;2500000;2;1;27;26.8;25.3
+15040;WSG Tirol;Austrian Football Bundesliga (1);80;65;66;65;65;2900000;1;1;26;25.1;24.0
+111822;Wolfsberger AC;Austrian Football Bundesliga (1);80;68;68;69;67;4400000;5;4;27;26.2;24.0
+675;Beerschot AC;Belgian Jupiler Pro League (1);4;68;70;69;68;5000000;3;1;26;26.8;24.9
+231;Club Brugge KV;Belgian Jupiler Pro League (1);4;75;75;76;74;25900000;10;5;28;26.0;23.3
+674;KAA Gent;Belgian Jupiler Pro League (1);4;72;73;73;70;15800000;9;5;28;26.6;24.9
+2013;KAS Eupen;Belgian Jupiler Pro League (1);4;69;70;69;69;3600000;2;1;28;26.7;25.0
+673;KRC Genk;Belgian Jupiler Pro League (1);4;73;75;71;73;17400000;8;5;22;23.2;22.1
+1750;KSV Cercle Brugge;Belgian Jupiler Pro League (1);4;68;67;69;67;5400000;1;2;28;23.4;23.0
+100081;KV Kortrijk;Belgian Jupiler Pro League (1);4;69;68;70;69;4500000;4;2;28;25.3;24.0
+110724;KV Mechelen;Belgian Jupiler Pro League (1);4;69;68;69;68;4800000;5;4;28;25.1;23.8
+682;KV Oostende;Belgian Jupiler Pro League (1);4;68;69;69;68;3900000;2;1;26;22.6;23.4
+100087;Oud-Heverlee Leuven;Belgian Jupiler Pro League (1);4;69;73;70;69;6000000;4;1;28;25.8;25.2
+229;RSC Anderlecht;Belgian Jupiler Pro League (1);4;72;73;72;71;14300000;9;5;28;21.6;21.4
+230;Royal Antwerp FC;Belgian Jupiler Pro League (1);4;72;75;72;73;20800000;8;5;28;26.4;25.8
+111560;Royal Excel Mouscron;Belgian Jupiler Pro League (1);4;68;69;67;67;3800000;2;1;28;27.3;24.9
+15005;SV Zulte-Waregem;Belgian Jupiler Pro League (1);4;68;71;69;66;6000000;5;4;27;26.4;23.1
+680;Sint-Truidense VV;Belgian Jupiler Pro League (1);4;68;70;67;68;4800000;5;3;28;26.4;24.5
+670;Sporting de Charleroi;Belgian Jupiler Pro League (1);4;71;71;72;71;6500000;5;4;28;26.6;26.1
+232;Standard de LiÃ¨ge;Belgian Jupiler Pro League (1);4;72;71;72;71;12700000;8;5;28;21.6;23.2
+110913;Waasland-Beveren;Belgian Jupiler Pro League (1);4;67;70;67;67;2900000;1;1;28;23.7;23.5
+112119;AtlÃ©tico Clube Goianiense;Campeonato Brasileiro SÃ©rie A (1);7;71;70;71;73;810000;2;2;20;24.0;24.0
+1035;AtlÃ©tico Mineiro;Campeonato Brasileiro SÃ©rie A (1);7;75;81;75;75;19000000;7;7;20;25.4;25.6
+1598;Bahia;Campeonato Brasileiro SÃ©rie A (1);7;71;69;71;71;3600000;4;3;20;23.3;24.8
+517;Botafogo;Campeonato Brasileiro SÃ©rie A (1);7;69;67;69;71;4300000;6;4;20;28.4;27.6
+111059;CearÃ¡ Sporting Club;Campeonato Brasileiro SÃ©rie A (1);7;72;75;71;73;1800000;2;2;20;26.6;25.6
+1039;Club Athletico Paranaense;Campeonato Brasileiro SÃ©rie A (1);7;72;74;71;72;6200000;5;4;20;25.4;24.8
+1041;Corinthians;Campeonato Brasileiro SÃ©rie A (1);7;73;72;72;74;16900000;8;7;20;25.8;25.8
+111044;Coritiba;Campeonato Brasileiro SÃ©rie A (1);7;70;70;70;69;2200000;6;3;20;23.3;25.4
+1043;Flamengo;Campeonato Brasileiro SÃ©rie A (1);7;76;77;75;75;42400000;10;7;20;26.2;26.6
+567;Fluminense;Campeonato Brasileiro SÃ©rie A (1);7;72;70;73;72;4099999;9;4;20;25.8;25.6
+111052;Fortaleza;Campeonato Brasileiro SÃ©rie A (1);7;71;70;71;72;1600000;2;1;20;24.7;24.2
+111042;GoiÃ¡s;Campeonato Brasileiro SÃ©rie A (1);7;69;70;69;69;2900000;4;3;20;25.1;24.8
+1629;GrÃªmio;Campeonato Brasileiro SÃ©rie A (1);7;74;75;72;75;7000000;8;8;20;27.3;25.8
+1048;Internacional;Campeonato Brasileiro SÃ©rie A (1);7;74;71;75;75;7700000;7;6;20;24.7;24.6
+115199;OceÃ¢nico FC;Campeonato Brasileiro SÃ©rie A (1);7;67;66;66;68;1100000;1;1;20;26.2;25.6
+383;Palmeiras;Campeonato Brasileiro SÃ©rie A (1);7;74;74;76;74;20500000;8;6;20;26.9;26.8
+112472;RB Bragantino;Campeonato Brasileiro SÃ©rie A (1);7;72;72;73;74;5400000;1;1;20;24.7;24.8
+1053;Santos;Campeonato Brasileiro SÃ©rie A (1);7;73;74;72;73;6500000;7;8;20;26.2;25.8
+598;SÃ£o Paulo;Campeonato Brasileiro SÃ©rie A (1);7;75;78;75;76;11200000;9;6;20;27.3;27.6
+112533;CD Antofagasta;Chilian Campeonato Nacional (1);335;66;68;66;64;2300000;4;1;26;24.4;24.6
+110978;CD Cobresal;Chilian Campeonato Nacional (1);335;65;66;64;63;1600000;4;2;22;29.9;26.6
+111327;CD Huachipato;Chilian Campeonato Nacional (1);335;64;59;65;65;3700000;4;3;27;23.9;21.7
+111328;CD Palestino;Chilian Campeonato Nacional (1);335;69;70;67;68;2400000;6;4;26;29.4;26.7
+110975;Universidad CatÃ³lica;Chilian Campeonato Nacional (1);335;71;72;69;70;8500000;10;6;30;26.6;25.1
+112535;UniÃ³n La Calera;Chilian Campeonato Nacional (1);335;68;68;67;67;1600000;3;1;25;27.0;25.1
+111768;Beijing Sinobo Guoan FC;Chinese Super League (1);2012;69;73;71;67;30500000;7;4;28;28.1;26.6
+112165;Chongqing Dangdai Lifan FC SWM Team;Chinese Super League (1);2012;60;60;60;54;5200000;2;1;28;27.6;25.4
+112378;Dalian YiFang FC;Chinese Super League (1);2012;63;76;63;63;12300000;5;1;28;26.6;24.4
+111839;Guangzhou Evergrande Taobao FC;Chinese Super League (1);2012;70;73;70;68;22700000;10;7;28;29.8;25.6
+112429;Guangzhou R&F FC;Chinese Super League (1);2012;64;57;66;61;7600000;5;4;26;27.6;26.6
+112978;Hebei China Fortune FC;Chinese Super League (1);2012;62;60;62;62;4200000;3;1;28;26.7;25.1
+111779;Henan Jianye FC;Chinese Super League (1);2012;66;71;65;64;4800000;4;2;28;28.3;26.4
+112162;Jiangsu Suning FC;Chinese Super League (1);2012;62;62;64;61;9300000;7;4;18;26.1;27.0
+112961;Qingdao Huanghai F.C.;Chinese Super League (1);2012;61;55;61;60;7600000;5;6;28;31.1;27.6
+111724;Shandong Luneng TaiShan FC;Chinese Super League (1);2012;68;59;70;65;8300000;6;3;28;27.9;26.7
+110955;Shanghai Greenland Shenhua FC;Chinese Super League (1);2012;69;72;70;64;13100000;5;3;28;30.3;29.0
+112540;Shanghai SIPG FC;Chinese Super League (1);2012;68;68;72;65;21700000;2;5;28;27.8;25.9
+111773;Shenzhen FC;Chinese Super League (1);2012;66;70;65;63;8199999;4;1;25;28.3;26.4
+112985;Shijiazhuang Ever Bright F.C.;Chinese Super League (1);2012;63;63;62;61;2100000;2;1;28;28.7;27.1
+111774;Tianjin TEDA FC;Chinese Super League (1);2012;60;61;56;61;6600000;4;2;28;26.9;25.7
+112541;Wuhan Zall;Chinese Super League (1);2012;66;71;63;68;4600000;1;1;28;28.4;26.6
+101099;AmÃ©rica de Cali;Colombian Liga PostobÃ³n (1);336;66;63;66;64;2200000;6;5;24;24.6;23.3
+101100;AtlÃ©tico Nacional;Colombian Liga PostobÃ³n (1);336;68;67;70;67;9000000;10;9;20;27.6;25.0
+111722;Deportes Tolima;Colombian Liga PostobÃ³n (1);336;68;67;68;66;3000000;6;5;26;26.0;26.0
+101102;Deportivo Cali;Colombian Liga PostobÃ³n (1);336;66;71;64;67;7000000;8;7;24;26.4;23.2
+111723;Deportivo Pasto;Colombian Liga PostobÃ³n (1);336;64;63;64;64;2500000;6;2;20;28.4;26.3
+101104;Independiente Santa Fe;Colombian Liga PostobÃ³n (1);336;64;65;64;63;7200000;7;5;20;25.6;24.2
+101101;Junior FC;Colombian Liga PostobÃ³n (1);336;70;70;70;67;5000000;9;7;28;28.8;26.1
+112523;La Equidad;Colombian Liga PostobÃ³n (1);336;65;65;67;63;2000000;4;2;21;26.4;25.2
+211;Dinamo Zagreb;Croatian Prva HNL (1);317;73;74;74;72;11600000;10;4;28;24.7;24.2
+266;SK Slavia Praha;Czech Republic Gambrinus Liga (1);319;75;75;75;75;6000000;10;4;27;24.2;25.1
+267;Sparta Praha;Czech Republic Gambrinus Liga (1);319;73;73;73;70;7200000;9;4;28;24.3;24.4
+110468;Viktoria PlzeÅˆ;Czech Republic Gambrinus Liga (1);319;72;72;73;71;6600000;9;4;22;26.4;26.2
+1446;AC Horsens;Danish Superliga (1);1;63;62;63;64;1800000;2;1;25;24.4;23.6
+820;Aalborg BK;Danish Superliga (1);1;66;64;68;66;2700000;7;1;22;26.1;23.8
+271;Aarhus GF;Danish Superliga (1);1;68;66;70;67;3000000;6;1;26;24.6;23.4
+269;BrÃ¸ndby IF;Danish Superliga (1);1;68;69;69;67;5600000;9;2;27;24.6;22.8
+819;FC KÃ¸benhavn;Danish Superliga (1);1;72;72;71;68;10300000;10;4;27;25.3;25.4
+1516;FC Midtjylland;Danish Superliga (1);1;70;69;72;70;9600000;10;3;24;25.1;23.6
+1788;FC NordsjÃ¦lland;Danish Superliga (1);1;65;63;65;63;2800000;7;1;27;20.4;19.6
+15001;Lyngby BK;Danish Superliga (1);1;64;63;62;64;1600000;1;1;27;26.2;23.6
+272;Odense Boldklub;Danish Superliga (1);1;66;67;65;66;2600000;6;1;27;26.7;24.3
+1786;Randers FC;Danish Superliga (1);1;65;63;64;65;2000000;5;1;27;25.9;22.8
+1447;SÃ¸nderjyskE;Danish Superliga (1);1;65;65;64;65;2000000;4;1;24;26.2;23.8
+822;Vejle Boldklub;Danish Superliga (1);1;64;59;64;64;1500000;1;1;27;24.7;23.7
+110981;Barcelona Sporting Club;Ecuadorian Serie A (1);2018;69;66;68;70;4900000;9;4;26;26.4;26.1
+110984;Emelec;Ecuadorian Serie A (1);2018;67;67;67;66;2500000;9;1;26;27.6;25.7
+113723;Guayaquil City;Ecuadorian Serie A (1);2018;64;65;65;61;1800000;6;3;23;24.8;24.0
+112908;Independiente del Valle;Ecuadorian Serie A (1);2018;68;67;71;65;1900000;4;2;24;25.2;23.4
+110986;LDU Quito;Ecuadorian Serie A (1);2018;69;69;68;67;2200000;4;2;26;26.6;24.8
+114578;MacarÃ¡;Ecuadorian Serie A (1);2018;63;64;63;63;1500000;5;3;21;25.7;24.8
+110987;SD Aucas;Ecuadorian Serie A (1);2018;63;66;60;63;1600000;2;1;23;26.7;22.9
+1932;Barnsley;English League Championship (2);14;68;68;68;69;3500000;1;1;30;23.6;21.6
+88;Birmingham City;English League Championship (2);14;70;69;70;71;5000000;4;1;30;27.6;24.9
+3;Blackburn Rovers;English League Championship (2);14;71;71;71;70;7500000;5;1;30;24.3;23.4
+1943;Bournemouth;English League Championship (2);14;74;72;75;71;36500000;2;1;30;25.0;23.5
+1925;Brentford;English League Championship (2);14;72;74;72;71;11000000;7;1;30;23.7;22.9
+1919;Bristol City;English League Championship (2);14;70;70;68;70;10000000;7;1;30;25.7;24.9
+1961;Cardiff City;English League Championship (2);14;71;71;71;69;9000000;7;1;30;26.6;24.9
+1800;Coventry City;English League Championship (2);14;68;67;70;69;1700000;6;1;30;24.1;23.4
+91;Derby County;English League Championship (2);14;70;68;70;69;9200000;8;1;30;26.6;23.9
+1939;Huddersfield Town;English League Championship (2);14;69;68;69;69;6000000;5;1;30;25.2;25.3
+1923;Luton Town;English League Championship (2);14;69;68;68;69;2300000;1;1;30;25.3;25.3
+12;Middlesbrough;English League Championship (2);14;70;70;70;71;8800000;4;1;30;26.4;24.0
+97;Millwall;English League Championship (2);14;70;70;67;70;3800000;4;1;30;25.6;25.4
+1792;Norwich City;English League Championship (2);14;73;76;73;71;20000000;1;1;30;24.2;24.8
+14;Nottingham Forest;English League Championship (2);14;71;71;70;70;16500000;8;1;30;24.1;26.2
+1801;Preston North End;English League Championship (2);14;70;66;71;69;3600000;6;1;29;24.3;25.3
+15;Queens Park Rangers;English League Championship (2);14;69;72;69;69;3600000;3;1;30;26.1;23.9
+1793;Reading;English League Championship (2);14;71;71;72;71;4800000;4;1;30;24.2;22.8
+1797;Rotherham United;English League Championship (2);14;68;68;68;67;1800000;8;1;28;25.9;24.8
+1807;Sheffield Wednesday;English League Championship (2);14;70;69;70;69;5000000;5;1;30;28.9;25.2
+1806;Stoke City;English League Championship (2);14;70;70;70;70;8199999;6;1;30;26.3;24.1
+1960;Swansea City;English League Championship (2);14;71;73;71;72;10200000;6;1;30;26.2;23.9
+1795;Watford;English League Championship (2);14;74;74;74;73;35000000;3;2;30;25.0;25.8
+1933;Wycombe Wanderers;English League Championship (2);14;67;65;66;68;750000;4;1;30;26.3;25.9
+112259;AFC Wimbledon;English League One (3);60;63;64;62;63;500000;2;1;28;23.4;22.2
+110313;Accrington Stanley;English League One (3);60;64;64;64;64;500000;1;1;28;24.9;23.1
+1926;Blackpool;English League One (3);60;65;65;64;65;750000;6;1;28;24.1;23.4
+1962;Bristol Rovers;English League One (3);60;64;64;62;64;750000;4;1;28;24.7;25.0
+15015;Burton Albion;English League One (3);60;64;65;63;65;750000;7;1;28;26.3;25.1
+89;Charlton Athletic;English League One (3);60;66;66;65;64;2800000;2;1;28;24.4;24.9
+121;Crewe Alexandra;English League One (3);60;64;64;65;62;500000;5;1;28;23.7;22.5
+142;Doncaster Rovers;English League One (3);60;65;64;66;62;1300000;7;1;27;23.9;22.2
+112260;Fleetwood Town;English League One (3);60;65;65;64;64;750000;6;1;25;24.8;24.4
+1802;Gillingham;English League One (3);60;64;64;64;64;1000000;5;1;21;26.0;24.6
+1952;Hull City;English League One (3);60;67;68;66;66;4200000;3;1;28;23.0;22.8
+94;Ipswich Town;English League One (3);60;65;66;65;65;2800000;9;1;28;25.4;25.0
+149;Lincoln City;English League One (3);60;65;64;66;64;1300000;7;1;26;21.4;21.8
+1798;Milton Keynes Dons;English League One (3);60;64;65;63;63;1500000;5;1;27;24.6;23.6
+1930;Northampton Town;English League One (3);60;63;62;63;62;1000000;7;1;28;25.3;23.7
+1951;Oxford United;English League One (3);60;65;65;66;65;1000000;6;1;28;24.6;24.0
+1938;Peterborough United;English League One (3);60;66;68;66;66;2000000;8;1;28;25.0;21.8
+1929;Plymouth Argyle;English League One (3);60;64;64;64;63;1300000;9;1;27;22.6;23.2
+1790;Portsmouth;English League One (3);60;66;66;66;65;2000000;9;1;26;25.6;24.4
+1955;Rochdale;English League One (3);60;63;61;63;63;500000;2;1;28;24.1;23.2
+127;Shrewsbury;English League One (3);60;64;64;65;64;750000;5;1;28;25.6;24.2
+106;Sunderland;English League One (3);60;66;68;65;65;5400000;9;2;28;26.0;24.9
+1934;Swindon Town;English League One (3);60;63;62;63;63;750000;7;1;28;27.4;24.7
+1917;Wigan Athletic;English League One (3);60;64;64;64;63;2400000;2;1;28;25.1;23.4
+381;Barrow;English League Two (4);61;61;61;61;61;500000;1;1;28;25.6;25.7
+4;Bolton Wanderers;English League Two (4);61;63;64;63;63;500000;8;1;28;28.3;24.8
+1804;Bradford City;English League Two (4);61;62;62;62;63;1300000;9;1;27;25.1;23.6
+1944;Cambridge United;English League Two (4);61;62;64;63;62;500000;3;1;23;25.8;23.6
+1480;Carlisle United;English League Two (4);61;62;62;63;62;500000;6;1;28;23.4;22.7
+1936;Cheltenham Town;English League Two (4);61;63;62;63;64;500000;5;1;24;26.0;24.2
+1935;Colchester United;English League Two (4);61;62;61;63;62;500000;6;1;28;24.3;22.9
+110890;Crawley Town;English League Two (4);61;62;62;61;62;500000;3;1;28;26.9;25.9
+143;Exeter City;English League Two (4);61;62;64;64;62;750000;6;1;28;22.4;23.5
+561;Forest Green Rovers;English League Two (4);61;62;62;63;62;1000000;7;1;26;23.8;22.3
+92;Grimsby Town;English League Two (4);61;61;60;59;59;500000;2;1;28;24.6;26.0
+112222;Harrogate Town;English League Two (4);61;61;62;61;61;500000;1;1;27;26.4;25.2
+1958;Leyton Orient;English League Two (4);61;62;64;61;61;750000;4;1;27;24.6;24.7
+1940;Mansfield Town;English League Two (4);61;62;60;63;62;1500000;8;1;28;25.4;23.9
+357;Morecambe;English League Two (4);61;62;64;63;61;500000;1;1;24;27.4;26.0
+112254;Newport County;English League Two (4);61;62;60;63;63;750000;5;1;27;25.4;25.3
+1920;Oldham Athletic;English League Two (4);61;62;63;62;61;750000;4;1;28;24.4;23.5
+1928;Port Vale;English League Two (4);61;62;62;63;62;750000;4;1;28;28.4;26.0
+113926;Salford City;English League Two (4);61;63;63;63;64;1500000;8;1;28;25.6;24.7
+1949;Scunthorpe United;English League Two (4);61;62;62;62;61;1000000;8;1;28;24.4;23.5
+1954;Southend United;English League Two (4);61;61;60;61;61;750000;4;1;28;26.4;24.4
+361;Stevenage;English League Two (4);61;62;63;60;62;750000;3;1;28;25.6;24.2
+15048;Tranmere Rovers;English League Two (4);61;62;63;63;62;750000;2;1;28;28.2;24.8
+1803;Walsall;English League Two (4);61;61;61;61;62;750000;7;1;25;23.4;22.9
+100325;HJK Helsinki;Finnish Veikkausliiga (1);322;64;65;64;64;2000000;10;1;28;26.1;23.6
+614;AC Ajaccio;French Ligue 2 (2);17;67;67;68;66;2600000;4;1;29;26.9;25.0
+57;AJ Auxerre;French Ligue 2 (2);17;69;70;69;68;4200000;5;1;25;27.2;25.5
+1823;AS Nancy Lorraine;French Ligue 2 (2);17;65;65;65;65;2800000;5;1;30;23.6;24.0
+1816;Amiens SC;French Ligue 2 (2);17;68;65;67;68;5400000;2;1;30;24.2;22.8
+1813;Chamois Niortais Football Club;French Ligue 2 (2);17;66;68;66;64;3100000;4;1;30;22.6;22.1
+1815;Clermont Foot 63;French Ligue 2 (2);17;67;64;68;68;3200000;4;1;26;27.4;24.4
+294;ESTAC Troyes;French Ligue 2 (2);17;69;68;69;71;3900000;8;1;30;27.4;24.3
+62;En Avant de Guingamp;French Ligue 2 (2);17;68;68;69;69;5200000;9;1;25;26.8;25.6
+112627;FC Chambly Oise;French Ligue 2 (2);17;64;62;63;63;1900000;1;1;30;27.8;26.7
+226;FC Sochaux-MontbÃ©liard;French Ligue 2 (2);17;67;67;66;67;2900000;6;1;30;24.8;23.6
+1805;Grenoble Foot 38;French Ligue 2 (2);17;67;66;68;68;3300000;4;1;27;27.1;25.4
+212;La Berrichonne de ChÃ¢teauroux;French Ligue 2 (2);17;65;64;65;64;2300000;3;1;30;23.8;24.4
+1738;Le Havre AC;French Ligue 2 (2);17;66;67;67;66;4600000;7;1;27;27.0;23.2
+111817;Paris FC;French Ligue 2 (2);17;67;64;67;68;5200000;7;1;30;27.6;23.5
+110321;Pau FC;French Ligue 2 (2);17;65;66;65;65;2000000;1;1;28;25.7;24.3
+111659;Rodez Aveyron Football;French Ligue 2 (2);17;66;68;66;65;2000000;2;1;29;26.0;25.0
+210;Stade Malherbe Caen;French Ligue 2 (2);17;68;69;67;67;3300000;9;1;30;26.2;23.7
+1809;Toulouse Football Club;French Ligue 2 (2);17;69;67;68;70;6000000;3;1;30;24.7;22.6
+111276;USL Dunkerque;French Ligue 2 (2);17;65;65;65;65;2700000;1;1;29;27.1;25.7
+110456;Valenciennes FC;French Ligue 2 (2);17;67;62;67;66;2600000;4;1;26;24.6;23.9
+111235;1. FC Heidenheim 1846;German 2. Bundesliga (2);20;69;71;68;71;2000000;7;1;28;26.0;24.6
+171;1. FC NÃ¼rnberg;German 2. Bundesliga (2);20;69;68;70;68;5400000;8;1;30;24.4;24.3
+110500;Eintracht Braunschweig;German 2. Bundesliga (2);20;67;67;67;66;900000;2;1;28;28.0;25.0
+506;FC Erzgebirge Aue;German 2. Bundesliga (2);20;68;71;69;67;1600000;3;1;27;28.4;25.9
+110329;FC St. Pauli;German 2. Bundesliga (2);20;68;70;68;68;2900000;6;1;30;24.8;23.8
+110197;FC WÃ¼rzburger Kickers;German 2. Bundesliga (2);20;66;65;66;66;725000;1;1;30;26.2;26.1
+110636;Fortuna DÃ¼sseldorf;German 2. Bundesliga (2);20;71;71;71;70;7500000;10;1;30;25.8;24.2
+28;Hamburger SV;German 2. Bundesliga (2);20;71;73;70;71;18000000;9;3;28;26.0;24.0
+485;Hannover 96;German 2. Bundesliga (2);20;70;70;70;71;10000000;8;2;30;26.4;24.7
+576;Holstein Kiel;German 2. Bundesliga (2);20;69;70;73;68;1700000;5;1;27;26.4;25.4
+1832;Karlsruher SC;German 2. Bundesliga (2);20;68;68;69;68;800000;2;1;30;26.7;24.2
+10030;SC Paderborn 07;German 2. Bundesliga (2);20;69;70;69;69;5000000;7;1;30;25.0;24.5
+543;SSV Jahn Regensburg;German 2. Bundesliga (2);20;67;67;67;66;1000000;3;1;27;24.6;24.6
+110502;SV Darmstadt 98;German 2. Bundesliga (2);20;69;71;69;68;3300000;6;1;30;25.0;24.2
+110178;SV Sandhausen;German 2. Bundesliga (2);20;68;69;67;68;1500000;3;1;30;27.4;26.2
+165;SpVgg Greuther FÃ¼rth;German 2. Bundesliga (2);20;69;70;69;69;1900000;5;1;27;24.2;22.7
+160;VfL Bochum 1848;German 2. Bundesliga (2);20;70;70;70;71;3300000;7;1;27;27.6;25.6
+487;VfL OsnabrÃ¼ck;German 2. Bundesliga (2);20;67;67;67;67;520000;4;1;30;26.6;25.4
+29;1. FC Kaiserslautern;German 3. Bundesliga (3);2076;65;66;65;64;750000;7;1;28;24.4;24.6
+110588;1. FC Magdeburg;German 3. Bundesliga (3);2076;63;62;64;63;800000;8;1;28;25.7;25.1
+523;1. FC SaarbrÃ¼cken;German 3. Bundesliga (3);2076;64;64;63;63;1200000;3;1;27;25.4;24.9
+110679;Bayern MÃ¼nchen II;German 3. Bundesliga (3);2076;63;65;64;61;4000000;7;1;28;21.6;20.5
+27;FC Hansa Rostock;German 3. Bundesliga (3);2076;65;65;65;66;650000;7;1;28;27.2;24.8
+111239;FC Ingolstadt 04;German 3. Bundesliga (3);2076;66;68;65;66;4000000;10;1;27;25.6;24.0
+110592;FSV Zwickau;German 3. Bundesliga (3);2076;63;63;63;62;500000;2;1;24;26.8;24.6
+110482;Hallescher FC;German 3. Bundesliga (3);2076;64;67;63;64;640000;6;1;25;24.6;24.1
+167;KFC Uerdingen 05;German 3. Bundesliga (3);2076;64;62;64;65;1300000;8;1;25;26.0;25.2
+1825;MSV Duisburg;German 3. Bundesliga (3);2076;64;66;64;63;800000;8;1;28;26.6;24.9
+110501;SC Verl;German 3. Bundesliga (3);2076;64;65;64;62;1000000;1;1;28;24.9;25.2
+503;SG Dynamo Dresden;German 3. Bundesliga (3);2076;66;66;65;67;2000000;10;1;28;23.6;24.0
+110597;SV Meppen;German 3. Bundesliga (3);2076;64;63;63;64;520000;3;1;27;27.4;25.6
+110532;SV Waldhof Mannheim;German 3. Bundesliga (3);2076;65;65;65;65;500000;3;1;28;23.3;23.8
+492;SV Wehen Wiesbaden;German 3. Bundesliga (3);2076;65;64;65;64;1700000;8;1;26;24.6;23.6
+172;SpVgg Unterhaching;German 3. Bundesliga (3);2076;64;65;64;63;580000;7;1;28;24.1;23.9
+33;TSV 1860 MÃ¼nchen;German 3. Bundesliga (3);2076;65;68;65;66;1000000;4;1;28;25.8;22.9
+114398;TÃ¼rkgÃ¼cÃ¼ MÃ¼nchen;German 3. Bundesliga (3);2076;64;64;63;63;1000000;1;1;28;25.7;24.3
+1829;VfB LÃ¼beck;German 3. Bundesliga (3);2076;62;63;63;62;1000000;1;1;28;26.6;25.5
+110645;Viktoria KÃ¶ln;German 3. Bundesliga (3);2076;65;64;65;64;500000;2;1;28;26.9;25.2
+278;AEK Athens;Greek Super League (1);63;72;73;73;70;12400000;9;5;28;27.0;24.6
+280;Olympiacos CFP;Greek Super League (1);63;76;76;76;72;19000000;10;5;28;26.9;25.8
+393;PAOK;Greek Super League (1);63;73;73;73;72;16800000;9;4;28;26.2;24.7
+1884;Panathinaikos FC;Greek Super League (1);63;71;71;70;69;5300000;7;4;28;26.1;25.3
+650;ADO Den Haag;Holland Eredivisie (1);10;66;65;66;65;5400000;5;1;30;25.4;24.1
+1906;AZ Alkmaar;Holland Eredivisie (1);10;74;74;74;73;9100000;8;3;30;23.9;22.1
+245;Ajax;Holland Eredivisie (1);10;78;80;77;76;29500000;10;7;30;24.2;22.1
+100628;FC Emmen;Holland Eredivisie (1);10;67;69;67;67;3200000;3;1;30;24.6;24.5
+1915;FC Groningen;Holland Eredivisie (1);10;68;66;68;69;7400000;6;2;23;24.1;22.5
+1908;FC Twente;Holland Eredivisie (1);10;68;68;66;67;9200000;6;2;25;23.8;21.7
+1903;FC Utrecht;Holland Eredivisie (1);10;71;71;72;70;15200000;7;2;30;25.4;24.1
+246;Feyenoord;Holland Eredivisie (1);10;75;76;74;75;13800000;9;3;26;25.6;23.9
+634;Fortuna Sittard;Holland Eredivisie (1);10;67;70;68;67;5700000;3;1;26;25.3;24.0
+100634;Heracles Almelo;Holland Eredivisie (1);10;66;66;66;65;4300000;5;1;28;23.0;22.1
+1914;PEC Zwolle;Holland Eredivisie (1);10;67;67;67;67;5700000;5;1;30;24.4;23.0
+247;PSV;Holland Eredivisie (1);10;76;79;76;77;21600000;10;5;30;24.8;22.7
+1905;RKC Waalwijk;Holland Eredivisie (1);10;66;65;66;66;2700000;1;1;28;24.4;23.1
+1913;SC Heerenveen;Holland Eredivisie (1);10;69;72;71;67;6600000;6;2;30;25.3;22.3
+100646;Sparta Rotterdam;Holland Eredivisie (1);10;67;68;67;66;5700000;4;1;28;25.6;24.1
+100651;VVV-Venlo;Holland Eredivisie (1);10;67;69;66;66;2900000;3;1;29;25.4;24.8
+1909;Vitesse;Holland Eredivisie (1);10;70;68;70;71;16399999;7;2;27;24.3;22.3
+1907;Willem II;Holland Eredivisie (1);10;69;70;68;68;4800000;5;1;30;23.3;22.7
+1369;Argentina;International;78;83;86;82;80;0;10;9;23;26.7;26.7
+1415;Australia;International;78;72;71;71;71;0;10;5;23;27.6;27.4
+1322;Austria;International;78;77;81;78;78;0;10;4;23;25.8;26.4
+1325;Belgium;International;78;83;85;83;80;0;10;7;23;28.4;28.2
+111451;Bolivia;International;78;66;59;66;66;0;10;1;23;24.8;25.0
+1370;Brazil;International;78;80;81;80;80;0;10;10;23;24.7;24.9
+1327;Bulgaria;International;78;67;67;68;66;0;10;5;23;27.6;26.8
+1395;Cameroon;International;78;70;72;71;70;0;10;5;23;24.2;23.8
+111455;Canada;International;78;73;73;74;69;0;10;2;23;26.8;26.2
+111459;Chile;International;78;75;74;76;73;0;10;7;23;28.6;25.9
+1413;China PR;International;78;71;74;68;70;0;10;3;23;28.9;28.9
+111109;Colombia;International;78;78;81;79;77;0;10;7;23;26.8;27.4
+1330;Czech Republic;International;78;77;76;76;76;0;10;5;23;27.0;25.9
+111112;CÃ´te d'Ivoire;International;78;76;77;75;76;0;10;6;23;27.1;26.6
+1331;Denmark;International;78;78;76;82;78;0;10;5;23;26.3;26.0
+111465;Ecuador;International;78;73;74;72;75;0;10;5;23;32.6;31.4
+111130;Egypt;International;78;73;78;73;72;0;10;5;23;26.7;27.1
+1318;England;International;78;83;85;83;81;0;10;8;23;25.0;24.1
+1334;Finland;International;78;71;70;71;68;0;10;3;23;28.6;26.9
+1335;France;International;78;85;87;85;82;0;10;10;23;26.8;26.6
+1337;Germany;International;78;84;84;85;84;0;10;10;23;27.0;26.0
+1338;Greece;International;78;74;72;75;72;0;10;6;23;25.4;25.4
+1886;Hungary;International;78;72;72;69;72;0;10;4;23;26.4;27.1
+1341;Iceland;International;78;71;70;71;69;0;10;3;23;29.6;29.6
+111466;India;International;78;60;62;60;60;0;10;1;23;32.4;32.4
+1343;Italy;International;78;82;83;82;82;0;10;9;23;27.6;26.6
+1386;Mexico;International;78;76;78;76;75;0;10;7;23;27.4;26.4
+105035;Netherlands;International;78;82;81;83;83;0;10;8;23;27.4;26.4
+111473;New Zealand;International;78;68;72;66;67;0;10;2;23;25.6;24.5
+110081;Northern Ireland;International;78;70;67;71;71;0;10;2;23;28.1;28.3
+1352;Norway;International;78;76;79;77;74;0;10;3;23;24.8;24.9
+1375;Paraguay;International;78;73;72;74;72;0;10;4;23;26.4;25.7
+111108;Peru;International;78;72;71;73;71;0;10;3;23;28.1;26.5
+1353;Poland;International;78;77;82;74;74;0;10;5;23;27.9;26.0
+1354;Portugal;International;78;83;85;82;82;0;10;8;23;27.4;26.6
+1355;Republic of Ireland;International;78;73;71;72;75;0;10;5;23;28.2;25.9
+1356;Romania;International;78;73;72;74;71;0;10;5;23;26.9;26.2
+1357;Russia;International;78;76;77;76;76;0;10;6;23;28.4;26.6
+1359;Scotland;International;78;75;72;76;76;0;10;4;23;26.4;26.0
+1361;Slovenia;International;78;73;70;73;71;0;10;5;23;26.6;26.3
+111099;South Africa;International;78;71;71;71;71;0;10;4;23;26.8;26.5
+1362;Spain;International;78;84;82;83;82;0;10;9;23;24.9;25.1
+1363;Sweden;International;78;76;78;76;75;0;10;5;23;26.0;26.8
+1364;Switzerland;International;78;78;75;78;77;0;10;5;23;26.1;25.7
+1365;Turkey;International;78;77;79;76;75;0;10;6;23;25.2;24.1
+1387;United States;International;78;74;75;74;72;0;10;6;23;23.0;22.7
+1377;Uruguay;International;78;79;79;79;78;0;10;7;23;30.9;31.3
+111487;Venezuela;International;78;71;74;70;69;0;10;2;23;24.3;25.2
+1367;Wales;International;78;74;77;74;72;0;10;4;23;24.9;24.0
+111811;AC Monza;Italian Serie B (2);32;71;72;67;68;6700000;7;1;28;26.1;26.6
+190;Brescia;Italian Serie B (2);32;69;69;67;69;5200000;7;1;27;25.6;24.6
+192;Chievo Verona;Italian Serie B (2);32;70;69;71;69;4500000;6;2;25;26.6;24.9
+1746;Empoli;Italian Serie B (2);32;69;70;69;68;4500000;10;1;25;24.6;23.9
+347;Lecce;Italian Serie B (2);32;70;70;69;69;6000000;7;1;26;28.4;26.3
+112791;SPAL;Italian Serie B (2);32;69;72;68;68;4500000;8;1;26;25.4;24.4
+101148;Cerezo Osaka;Japanese J. League Division 1 (1);349;68;67;69;67;6900000;7;5;30;28.2;25.6
+101150;FC Tokyo;Japanese J. League Division 1 (1);349;68;70;67;68;10000000;7;5;30;26.0;25.9
+112093;Gamba Osaka;Japanese J. League Division 1 (1);349;68;68;68;70;8700000;8;5;30;27.6;25.6
+112444;Hokkaido Consadole Sapporo;Japanese J. League Division 1 (1);349;66;66;65;68;5200000;4;1;27;26.0;25.6
+101147;Kashima Antlers;Japanese J. League Division 1 (1);349;69;74;68;66;8900000;9;6;30;25.2;24.3
+101145;Kashiwa Reysol;Japanese J. League Division 1 (1);349;67;67;66;66;7700000;7;4;30;25.1;26.0
+111730;Kawasaki Frontale;Japanese J. League Division 1 (1);349;70;73;69;70;9300000;8;5;30;27.7;25.9
+112092;Nagoya Grampus;Japanese J. League Division 1 (1);349;68;68;68;67;8300000;5;3;30;26.6;25.1
+113183;Oita Trinita;Japanese J. League Division 1 (1);349;65;65;64;65;4099999;3;1;30;26.9;25.5
+113160;Sagan Tosu;Japanese J. League Division 1 (1);349;65;63;64;64;4099999;2;1;29;26.4;25.0
+113157;Sanfrecce Hiroshima;Japanese J. League Division 1 (1);349;68;69;66;69;8000000;7;5;30;26.8;25.5
+101149;Shimizu S-Pulse;Japanese J. League Division 1 (1);349;67;67;66;65;4200000;3;1;30;25.3;25.4
+113161;Shonan Bellmare;Japanese J. League Division 1 (1);349;65;66;64;63;3900000;2;2;30;25.3;25.0
+111575;Urawa Red Diamonds;Japanese J. League Division 1 (1);349;69;70;65;70;10200000;9;5;26;26.6;26.5
+112836;Vegalta Sendai;Japanese J. League Division 1 (1);349;65;66;64;65;4300000;4;4;30;27.4;24.6
+101146;Vissel Kobe;Japanese J. League Division 1 (1);349;69;70;70;68;16800000;6;5;29;26.4;24.8
+101151;Yokohama F. Marinos;Japanese J. League Division 1 (1);349;69;68;70;69;10300000;9;4;27;25.9;25.4
+113197;Yokohama FC;Japanese J. League Division 1 (1);349;66;67;63;64;2800000;2;1;30;27.0;27.4
+1476;Busan IPark;Korean K League 1 (1);83;62;65;61;60;3000000;3;2;28;26.1;23.9
+2056;Daegu FC;Korean K League 1 (1);83;65;67;65;64;4300000;8;3;28;27.7;24.9
+982;FC Seoul;Korean K League 1 (1);83;67;68;68;63;5300000;9;7;28;27.4;24.7
+112115;Gangwon FC;Korean K League 1 (1);83;64;67;63;65;3500000;6;1;28;26.0;23.7
+112258;GwangJu FC;Korean K League 1 (1);83;65;66;65;63;1600000;2;1;28;26.0;26.8
+110765;Incheon United FC;Korean K League 1 (1);83;66;66;65;67;2300000;1;2;28;28.3;26.7
+1477;Jeonbuk Hyundai Motors;Korean K League 1 (1);83;70;71;71;68;7100000;10;7;28;28.7;26.2
+1474;Pohang Steelers;Korean K League 1 (1);83;66;64;65;67;3400000;7;5;28;28.7;25.2
+2055;Sangju Sangmu FC;Korean K League 1 (1);83;66;63;64;67;2600000;2;1;28;25.8;24.8
+981;Seongnam FC;Korean K League 1 (1);83;64;64;64;63;2800000;2;2;28;29.3;26.3
+983;Suwon Samsung Bluewings;Korean K League 1 (1);83;67;65;68;67;2800000;8;5;28;25.6;25.4
+1473;Ulsan Hyundai FC;Korean K League 1 (1);83;69;69;69;70;4900000;7;6;28;28.6;26.4
+114577;Always Ready;Liga de FÃºtbol Profesional Boliviano (1);2017;65;64;65;66;1100000;1;1;25;29.2;27.1
+115358;AtlÃ©tico Palmaflor;Liga de FÃºtbol Profesional Boliviano (1);2017;65;65;65;64;1200000;1;1;26;27.4;26.0
+110968;Club BolÃ­var;Liga de FÃºtbol Profesional Boliviano (1);2017;67;68;67;67;3300000;10;5;25;25.3;23.4
+114600;GuabirÃ¡;Liga de FÃºtbol Profesional Boliviano (1);2017;65;67;64;65;1300000;1;1;26;27.2;24.8
+110974;Jorge Wilstermann;Liga de FÃºtbol Profesional Boliviano (1);2017;66;67;66;65;2100000;7;3;30;29.9;26.8
+112667;Nacional PotosÃ­;Liga de FÃºtbol Profesional Boliviano (1);2017;64;66;63;63;1500000;1;1;25;29.1;26.5
+110969;The Strongest;Liga de FÃºtbol Profesional Boliviano (1);2017;67;68;68;66;2400000;8;4;23;29.6;26.9
+112678;AtlÃ©tico de San Luis;Mexican Liga MX (1);341;69;71;68;67;5200000;2;1;30;27.0;24.9
+1879;Club AmÃ©rica;Mexican Liga MX (1);341;73;74;73;73;15300000;10;9;30;26.6;24.8
+101114;Club Atlas;Mexican Liga MX (1);341;71;70;70;69;6500000;3;1;28;26.6;24.8
+110781;Club LeÃ³n;Mexican Liga MX (1);341;73;74;73;72;3600000;8;4;28;27.8;25.6
+101121;Club Necaxa;Mexican Liga MX (1);341;68;68;67;68;9700000;4;4;28;25.3;25.1
+111678;Club Tijuana;Mexican Liga MX (1);341;70;73;68;68;7200000;5;2;23;25.4;24.4
+1878;Cruz Azul;Mexican Liga MX (1);341;74;77;73;73;30100000;9;4;25;28.6;26.5
+1882;Deportivo Toluca;Mexican Liga MX (1);341;70;70;70;70;7500000;5;2;28;28.8;25.8
+113134;FC JuÃ¡rez;Mexican Liga MX (1);341;69;71;69;68;2000000;3;1;29;28.0;26.5
+1880;Guadalajara;Mexican Liga MX (1);341;71;75;72;68;27900000;8;8;29;24.6;24.8
+114899;MazatlÃ¡n FC;Mexican Liga MX (1);341;69;73;67;65;1700000;4;1;29;27.8;25.7
+1032;Monterrey;Mexican Liga MX (1);341;74;75;75;74;24300000;8;9;25;25.9;25.3
+110147;Pachuca;Mexican Liga MX (1);341;71;70;69;72;4900000;6;7;30;26.4;24.8
+110152;Puebla FC;Mexican Liga MX (1);341;68;68;69;64;3700000;2;1;26;26.4;25.2
+110150;QuerÃ©taro;Mexican Liga MX (1);341;67;71;68;65;1300000;1;1;28;27.4;24.9
+110144;Santos Laguna;Mexican Liga MX (1);341;71;70;70;68;9000000;5;4;30;22.9;23.3
+1970;Tigres U.A.N.L.;Mexican Liga MX (1);341;75;77;75;73;20100000;9;7;25;29.8;26.2
+1881;U.N.A.M.;Mexican Liga MX (1);341;71;74;70;70;8500000;6;6;27;25.6;23.9
+1755;Aalesunds FK;Norwegian Eliteserien (1);41;62;63;62;61;1900000;2;1;23;25.6;24.2
+918;FK BodÃ¸/Glimt;Norwegian Eliteserien (1);41;67;62;67;68;2800000;7;1;26;23.0;22.4
+1463;FK Haugesund;Norwegian Eliteserien (1);41;62;65;60;64;1400000;5;1;20;23.4;23.2
+1524;IK Start;Norwegian Eliteserien (1);41;63;62;64;62;1200000;3;1;21;27.7;25.0
+113459;Kristiansund BK;Norwegian Eliteserien (1);41;64;62;64;64;750000;4;1;22;26.2;25.8
+112420;MjÃ¸ndalen IF;Norwegian Eliteserien (1);41;61;62;62;60;1500000;1;1;24;26.9;24.7
+417;Molde FK;Norwegian Eliteserien (1);41;69;70;69;68;5400000;10;2;25;25.1;24.5
+1456;Odds BK;Norwegian Eliteserien (1);41;64;64;63;65;2400000;6;1;23;23.6;23.0
+298;Rosenborg BK;Norwegian Eliteserien (1);41;68;68;69;67;8300000;10;4;21;25.8;24.9
+919;SK Brann;Norwegian Eliteserien (1);41;65;65;65;65;3700000;8;1;24;24.6;24.4
+1757;Sandefjord Fotball;Norwegian Eliteserien (1);41;63;64;63;63;1100000;1;1;26;25.7;23.5
+112199;Sarpsborg 08 FF;Norwegian Eliteserien (1);41;64;62;64;64;2200000;4;2;26;26.6;25.5
+917;StabÃ¦k Fotball;Norwegian Eliteserien (1);41;64;64;62;63;1700000;4;1;24;22.6;22.8
+922;StrÃ¸msgodset IF;Norwegian Eliteserien (1);41;64;64;62;64;2500000;6;1;26;23.7;22.5
+300;Viking FK;Norwegian Eliteserien (1);41;66;67;65;63;2200000;4;1;26;25.7;24.2
+920;VÃ¥lerenga Fotball;Norwegian Eliteserien (1);41;64;63;64;64;2700000;7;1;19;24.1;21.8
+111007;12 de Octubre FC;Paraguayan Primera DivisiÃ³n (1);337;65;68;65;64;1900000;4;3;21;30.8;29.3
+112716;Cerro PorteÃ±o;Paraguayan Primera DivisiÃ³n (1);337;68;70;68;64;3600000;9;5;28;24.6;23.8
+111008;Club Libertad;Paraguayan Primera DivisiÃ³n (1);337;73;69;72;72;3100000;7;2;30;27.1;26.6
+114688;GuaireÃ±a FC;Paraguayan Primera DivisiÃ³n (1);337;66;66;66;66;2300000;1;1;24;30.4;29.2
+112671;Nacional AsunciÃ³n;Paraguayan Primera DivisiÃ³n (1);337;65;63;64;65;2300000;4;2;23;27.4;25.1
+101108;Olimpia AsunciÃ³n;Paraguayan Primera DivisiÃ³n (1);337;71;70;70;69;6000000;10;8;29;28.9;26.3
+114575;River Plate AsunciÃ³n;Paraguayan Primera DivisiÃ³n (1);337;64;63;61;64;1600000;1;1;20;28.0;26.1
+114619;Carlos A. Mannucci;Peruvian Primera DivisiÃ³n (1);2020;65;65;65;65;2600000;2;3;29;26.4;24.3
+111334;Melgar FBC;Peruvian Primera DivisiÃ³n (1);2020;65;65;65;65;1500000;2;1;26;24.8;23.2
+114511;Sport Huancayo;Peruvian Primera DivisiÃ³n (1);2020;65;64;67;64;2200000;3;2;27;28.4;26.7
+111013;Sporting Cristal;Peruvian Primera DivisiÃ³n (1);2020;68;67;68;68;3400000;8;4;23;25.6;23.8
+114617;Universidad TÃ©cnica de Cajamarca;Peruvian Primera DivisiÃ³n (1);2020;66;64;67;64;2500000;2;1;26;26.0;24.7
+111014;Universitario de Deportes;Peruvian Primera DivisiÃ³n (1);2020;67;68;66;66;3500000;9;5;26;28.1;25.6
+110747;Cracovia;Polish T-Mobile Ekstraklasa (1);66;66;66;65;64;2300000;9;3;27;25.0;25.0
+420;GÃ³rnik Zabrze;Polish T-Mobile Ekstraklasa (1);66;65;66;65;64;1500000;5;2;24;23.4;23.0
+110745;Jagiellonia BiaÅ‚ystok;Polish T-Mobile Ekstraklasa (1);66;67;67;66;65;2100000;8;3;27;24.7;24.8
+873;Lech PoznaÅ„;Polish T-Mobile Ekstraklasa (1);66;68;69;69;67;2900000;10;4;27;25.1;23.2
+111091;Lechia GdaÅ„sk;Polish T-Mobile Ekstraklasa (1);66;66;69;65;66;2300000;6;2;26;27.2;24.0
+1871;Legia Warszawa;Polish T-Mobile Ekstraklasa (1);66;69;69;69;66;3300000;10;6;27;27.0;25.0
+111086;Piast Gliwice;Polish T-Mobile Ekstraklasa (1);66;65;65;65;66;1800000;8;4;26;27.4;25.6
+111087;Podbeskidzie Bielsko-BiaÅ‚a;Polish T-Mobile Ekstraklasa (1);66;63;64;62;62;1200000;2;1;26;26.9;25.8
+110746;PogoÅ„ Szczecin;Polish T-Mobile Ekstraklasa (1);66;67;61;67;65;1800000;6;2;27;24.7;24.2
+114326;RakÃ³w CzÄ™stochowa;Polish T-Mobile Ekstraklasa (1);66;66;67;67;66;1500000;4;2;27;25.1;24.4
+114004;Stal Mielec;Polish T-Mobile Ekstraklasa (1);66;63;63;64;63;875000;2;1;27;27.6;25.6
+112511;Warta PoznaÅ„;Polish T-Mobile Ekstraklasa (1);66;63;65;63;62;808000;2;1;27;26.0;24.2
+1873;WisÅ‚a KrakÃ³w;Polish T-Mobile Ekstraklasa (1);66;66;63;64;65;1300000;5;3;27;23.8;25.0
+1569;WisÅ‚a PÅ‚ock;Polish T-Mobile Ekstraklasa (1);66;64;63;64;64;1700000;4;2;27;27.7;25.2
+110749;ZagÅ‚Ä™bie Lubin;Polish T-Mobile Ekstraklasa (1);66;65;57;66;62;2000000;6;3;27;24.9;23.8
+111092;ÅšlÄ…sk WrocÅ‚aw;Polish T-Mobile Ekstraklasa (1);66;65;65;65;61;1800000;7;3;27;25.8;25.7
+1898;Boavista FC;Portuguese Liga ZON SAGRES (1);308;70;70;70;69;2400000;5;1;29;24.3;23.1
+1891;CD Nacional;Portuguese Liga ZON SAGRES (1);308;68;69;68;67;2100000;3;1;28;27.1;25.2
+112516;CD Tondela;Portuguese Liga ZON SAGRES (1);308;68;69;67;70;1800000;2;1;23;27.4;24.4
+1893;Clube Sport MarÃ­timo;Portuguese Liga ZON SAGRES (1);308;69;69;67;68;3900000;6;2;30;26.0;25.5
+1892;FC PaÃ§os de Ferreira;Portuguese Liga ZON SAGRES (1);308;71;71;73;72;2000000;4;1;27;25.6;24.2
+236;FC Porto;Portuguese Liga ZON SAGRES (1);308;78;79;79;77;23000000;10;7;29;27.9;24.9
+112809;FamalicÃ£o;Portuguese Liga ZON SAGRES (1);308;69;70;71;69;5400000;4;1;29;22.4;21.9
+489;Farense;Portuguese Liga ZON SAGRES (1);308;69;67;69;69;1000000;2;1;28;26.6;27.0
+1888;Gil Vicente FC;Portuguese Liga ZON SAGRES (1);308;69;69;69;70;1700000;2;1;26;26.3;24.6
+1900;Moreirense FC;Portuguese Liga ZON SAGRES (1);308;69;71;69;69;2900000;4;1;28;26.0;24.9
+1889;Os Belenenses;Portuguese Liga ZON SAGRES (1);308;69;68;68;70;2200000;5;1;30;25.8;23.6
+10031;Portimonense SC;Portuguese Liga ZON SAGRES (1);308;69;68;70;67;3800000;3;1;29;25.1;24.9
+744;Rio Ave FC;Portuguese Liga ZON SAGRES (1);308;71;71;71;72;2900000;6;2;30;27.3;25.2
+1896;SC Braga;Portuguese Liga ZON SAGRES (1);308;75;74;76;75;14000000;8;3;29;25.7;24.8
+234;SL Benfica;Portuguese Liga ZON SAGRES (1);308;79;77;79;78;25300000;10;7;27;27.2;25.8
+1438;Santa Clara;Portuguese Liga ZON SAGRES (1);308;70;70;69;70;1800000;1;1;26;25.6;25.4
+237;Sporting CP;Portuguese Liga ZON SAGRES (1);308;78;78;81;77;21600000;9;4;30;24.8;23.4
+1887;VitÃ³ria GuimarÃ£es;Portuguese Liga ZON SAGRES (1);308;72;74;71;71;5900000;7;3;29;24.3;23.6
+305;Bohemian FC;Rep. Ireland Airtricity League (1);65;60;59;59;60;530000;7;1;22;21.6;21.5
+422;Cork City;Rep. Ireland Airtricity League (1);65;54;54;55;53;600000;7;2;21;23.9;22.1
+445;Derry City;Rep. Ireland Airtricity League (1);65;57;59;57;58;510000;7;1;25;22.9;22.5
+837;Dundalk;Rep. Ireland Airtricity League (1);65;63;64;63;61;900000;10;2;25;25.2;24.5
+111131;Finn Harps;Rep. Ireland Airtricity League (1);65;58;58;58;58;500000;2;1;25;26.0;24.4
+306;Shamrock Rovers;Rep. Ireland Airtricity League (1);65;63;62;62;63;700000;9;2;22;27.4;25.9
+834;Shelbourne FC;Rep. Ireland Airtricity League (1);65;56;57;56;56;520000;4;1;19;26.4;25.0
+563;Sligo Rovers;Rep. Ireland Airtricity League (1);65;59;53;59;60;515000;5;1;25;23.2;23.5
+423;St. Patrick's Athletic;Rep. Ireland Airtricity League (1);65;60;60;61;60;525000;6;1;23;24.9;22.7
+753;Waterford FC;Rep. Ireland Airtricity League (1);65;57;57;57;57;520000;4;1;25;22.0;22.6
+113391;Academica Clinceni;Romanian Liga I (1);330;64;65;64;64;507000;1;1;27;28.4;26.2
+112847;Astra Giurgiu;Romanian Liga I (1);330;65;65;65;66;1500000;7;4;27;27.2;25.4
+110816;CFR Cluj;Romanian Liga I (1);330;69;68;69;70;3000000;9;5;27;27.8;28.6
+113387;Chindia TÃ¢rgoviÅŸte;Romanian Liga I (1);330;64;64;64;64;808000;2;1;27;24.9;24.7
+100757;Dinamo BucureÅŸti;Romanian Liga I (1);330;65;63;67;64;1200000;4;2;27;28.2;25.4
+100759;FC ArgeÈ™;Romanian Liga I (1);330;63;66;63;63;804000;2;1;27;26.9;26.5
+110752;FC BotoÅŸani;Romanian Liga I (1);330;65;61;66;65;1700000;6;3;27;25.4;25.3
+114147;FC Hermannstadt;Romanian Liga I (1);330;63;62;64;63;1100000;3;1;27;27.9;26.4
+113180;FC Viitorul;Romanian Liga I (1);330;66;63;66;66;2300000;8;4;27;25.6;23.8
+113182;FC Voluntari;Romanian Liga I (1);330;64;64;64;64;1000000;3;3;27;28.0;25.7
+100761;FCSB (Steaua);Romanian Liga I (1);330;68;70;67;68;4000000;10;5;27;23.1;23.6
+112637;Gaz Metan MediaÅŸ;Romanian Liga I (1);330;64;64;65;63;1300000;5;3;27;25.0;24.9
+110815;Politehnica IaÅŸi;Romanian Liga I (1);330;62;59;62;62;1300000;5;2;25;25.8;25.2
+113378;Sepsi OSK;Romanian Liga I (1);330;64;63;64;64;1500000;5;2;27;26.6;25.6
+110750;UTA Arad;Romanian Liga I (1);330;63;63;63;62;937000;2;1;26;25.9;26.0
+308;Universitatea Craiova;Romanian Liga I (1);330;68;69;67;68;2500000;8;4;27;26.3;25.6
+100765;Lokomotiv Moscow;Russian Premier League (1);67;74;73;73;73;15700000;9;4;26;26.6;25.6
+315;PFC CSKA Moscow;Russian Premier League (1);67;74;74;73;73;13100000;10;7;25;23.8;23.3
+100767;Spartak Moscow;Russian Premier League (1);67;75;74;76;74;20000000;10;4;28;24.4;24.3
+113058;Abha Club;Saudi Abdul L. Jameel League (1);350;65;65;66;63;1500000;1;1;27;28.6;25.9
+112387;Al Ahli;Saudi Abdul L. Jameel League (1);350;70;76;70;67;14600000;9;7;30;27.6;26.2
+114143;Al Ain;Saudi Abdul L. Jameel League (1);350;65;62;67;64;2000000;1;1;27;28.2;27.5
+112990;Al Batin;Saudi Abdul L. Jameel League (1);350;65;64;66;63;1300000;1;1;27;27.0;25.8
+112389;Al Faisaly;Saudi Abdul L. Jameel League (1);350;66;67;66;65;2200000;5;2;28;28.0;25.9
+112390;Al Fateh;Saudi Abdul L. Jameel League (1);350;65;67;65;64;3100000;6;4;28;28.0;25.6
+605;Al Hilal;Saudi Abdul L. Jameel League (1);350;73;73;74;72;23600000;10;7;30;29.1;25.8
+607;Al Ittihad;Saudi Abdul L. Jameel League (1);350;69;70;71;67;15000000;8;5;27;27.6;26.0
+112139;Al Nassr;Saudi Abdul L. Jameel League (1);350;70;78;68;69;17200000;10;5;30;26.7;25.5
+112391;Al Qadisiyah;Saudi Abdul L. Jameel League (1);350;64;67;65;64;2000000;2;1;28;27.3;25.4
+112392;Al Raed;Saudi Abdul L. Jameel League (1);350;66;69;66;64;2200000;4;2;28;27.6;26.4
+111674;Al Shabab;Saudi Abdul L. Jameel League (1);350;70;75;72;67;9800000;7;4;27;28.6;26.1
+112393;Al Taawoun;Saudi Abdul L. Jameel League (1);350;66;73;67;65;4300000;6;4;28;27.9;26.5
+112408;Al Wehda;Saudi Abdul L. Jameel League (1);350;67;68;69;65;4400000;5;3;30;27.1;25.6
+113217;Damac FC;Saudi Abdul L. Jameel League (1);350;65;64;64;64;1700000;1;1;30;28.0;26.3
+112096;Ettifaq FC;Saudi Abdul L. Jameel League (1);350;66;66;68;63;3400000;6;3;28;27.0;24.1
+77;Aberdeen;Scottish Premiership (1);50;66;60;67;64;2300000;7;2;26;25.7;23.3
+78;Celtic;Scottish Premiership (1);50;73;75;73;72;14600000;10;4;27;24.4;23.8
+181;Dundee United;Scottish Premiership (1);50;64;65;64;64;800000;5;1;28;25.7;23.1
+184;Hamilton Academical FC;Scottish Premiership (1);50;62;62;62;63;500000;1;1;26;24.7;23.0
+81;Hibernian;Scottish Premiership (1);50;67;68;67;66;3000000;7;1;23;27.1;25.0
+82;Kilmarnock;Scottish Premiership (1);50;64;66;65;63;1500000;6;1;26;28.9;26.1
+621;Livingston FC;Scottish Premiership (1);50;65;65;65;64;650000;3;1;27;26.4;26.3
+83;Motherwell;Scottish Premiership (1);50;65;64;65;62;900000;5;1;28;23.9;25.4
+86;Rangers FC;Scottish Premiership (1);50;74;75;74;75;8300000;9;3;27;27.4;26.3
+631;Ross County FC;Scottish Premiership (1);50;62;63;62;62;600000;2;1;28;25.6;25.5
+100804;St. Johnstone FC;Scottish Premiership (1);50;65;63;65;65;700000;5;1;27;25.9;25.2
+100805;St. Mirren;Scottish Premiership (1);50;64;64;65;63;750000;2;1;22;24.0;24.7
+110929;Kaizer Chiefs;South African Premier Division (1);347;69;71;66;67;2200000;9;6;28;27.2;26.7
+110930;Orlando Pirates;South African Premier Division (1);347;69;70;67;68;2600000;10;5;28;29.6;27.2
+100831;AD AlcorcÃ³n;Spanish Segunda DivisiÃ³n (2);54;67;67;65;67;1600000;6;1;30;29.6;25.5
+1854;Albacete BP;Spanish Segunda DivisiÃ³n (2);54;66;66;67;65;1500000;4;1;26;28.4;25.5
+100852;C.D. CastellÃ³n;Spanish Segunda DivisiÃ³n (2);54;68;68;69;66;1600000;3;1;28;27.1;27.8
+100888;CD LeganÃ©s;Spanish Segunda DivisiÃ³n (2);54;72;72;71;73;4200000;9;1;30;27.0;26.0
+110831;CD Lugo;Spanish Segunda DivisiÃ³n (2);54;67;68;67;66;1600000;5;1;30;26.6;26.0
+110069;CD MirandÃ©s;Spanish Segunda DivisiÃ³n (2);54;67;67;66;68;1500000;4;1;29;22.6;23.0
+260;CD Tenerife;Spanish Segunda DivisiÃ³n (2);54;69;70;69;68;2000000;7;1;30;27.6;25.0
+15021;CE Sabadell FC;Spanish Segunda DivisiÃ³n (2);54;66;68;65;66;1600000;3;1;29;27.4;26.4
+110065;CF Fuenlabrada;Spanish Segunda DivisiÃ³n (2);54;68;67;68;67;1500000;2;1;28;24.6;24.5
+100851;FC Cartagena;Spanish Segunda DivisiÃ³n (2);54;67;68;67;65;1800000;3;1;30;28.8;26.8
+110062;Girona FC;Spanish Segunda DivisiÃ³n (2);54;71;73;69;68;4300000;4;1;29;25.1;23.3
+573;MÃ¡laga CF;Spanish Segunda DivisiÃ³n (2);54;69;69;70;68;9900000;10;2;30;26.4;23.8
+452;RCD Espanyol;Spanish Segunda DivisiÃ³n (2);54;75;75;76;74;6000000;5;2;30;25.4;24.0
+453;RCD Mallorca;Spanish Segunda DivisiÃ³n (2);54;73;72;73;72;2800000;3;1;30;27.6;25.5
+480;Rayo Vallecano;Spanish Segunda DivisiÃ³n (2);54;71;69;71;70;3300000;2;1;30;26.4;24.3
+110827;Real Oviedo;Spanish Segunda DivisiÃ³n (2);54;69;71;69;69;2000000;8;1;30;26.4;24.5
+459;Real Sporting de GijÃ³n;Spanish Segunda DivisiÃ³n (2);54;71;71;70;70;4800000;8;1;30;26.4;23.6
+244;Real Zaragoza;Spanish Segunda DivisiÃ³n (2);54;68;70;67;69;2700000;8;1;30;25.6;24.4
+2023;SD Ponferradina;Spanish Segunda DivisiÃ³n (2);54;68;71;68;67;2000000;6;1;30;26.9;24.8
+1861;UD AlmerÃ­a;Spanish Segunda DivisiÃ³n (2);54;72;74;72;71;10800000;4;1;28;23.6;23.5
+472;UD Las Palmas;Spanish Segunda DivisiÃ³n (2);54;69;70;69;69;6600000;9;1;30;24.9;25.1
+476;UD LogroÃ±Ã©s;Spanish Segunda DivisiÃ³n (2);54;67;68;68;66;1700000;3;1;30;27.9;25.9
+433;AIK;Swedish Allsvenskan (1);56;67;65;68;68;4400000;9;2;24;27.9;26.0
+711;BK HÃ¤cken;Swedish Allsvenskan (1);56;66;64;66;68;3700000;7;1;24;27.1;25.4
+710;DjurgÃ¥rdens IF;Swedish Allsvenskan (1);56;67;66;66;68;4400000;9;1;27;25.1;24.3
+112169;Falkenbergs FF;Swedish Allsvenskan (1);56;61;61;60;61;550000;2;1;22;26.9;24.9
+708;Hammarby IF;Swedish Allsvenskan (1);56;67;66;68;67;4300000;8;1;25;26.4;24.4
+432;Helsingborgs IF;Swedish Allsvenskan (1);56;63;64;62;59;2200000;2;1;21;24.6;25.1
+700;IF Elfsborg;Swedish Allsvenskan (1);56;65;64;67;65;2900000;6;1;25;24.7;22.4
+319;IFK GÃ¶teborg;Swedish Allsvenskan (1);56;68;70;68;67;2400000;7;1;22;29.7;25.9
+702;IFK NorrkÃ¶ping;Swedish Allsvenskan (1);56;66;67;69;64;4700000;8;1;25;24.4;23.3
+113458;IK Sirius;Swedish Allsvenskan (1);56;63;63;63;62;600000;3;1;24;24.8;23.5
+1439;Kalmar FF;Swedish Allsvenskan (1);56;63;64;63;62;1600000;3;1;24;26.0;23.8
+320;MalmÃ¶ FF;Swedish Allsvenskan (1);56;69;69;70;69;8100000;10;4;27;26.4;24.7
+112072;MjÃ¤llby AIF;Swedish Allsvenskan (1);56;61;62;62;59;850000;1;1;25;25.4;23.2
+113743;Varbergs BoIS;Swedish Allsvenskan (1);56;62;62;63;62;650000;1;1;27;24.4;23.9
+705;Ã–rebro SK;Swedish Allsvenskan (1);56;64;64;63;62;2000000;5;1;24;24.7;25.2
+113173;Ã–stersunds FK;Swedish Allsvenskan (1);56;63;62;62;63;1700000;6;2;24;23.7;23.3
+900;BSC Young Boys;Swiss Super League (1);189;72;72;72;72;7900000;9;5;26;24.8;23.9
+896;FC Basel 1893;Swiss Super League (1);189;71;72;71;71;8500000;9;6;27;26.9;24.0
+1862;FC Lausanne-Sport;Swiss Super League (1);189;65;66;66;63;5000000;6;2;27;23.4;21.9
+10032;FC Lugano;Swiss Super League (1);189;67;66;67;66;1900000;3;2;27;27.0;24.9
+897;FC Luzern;Swiss Super League (1);189;68;69;67;67;3600000;5;3;27;24.8;22.5
+110770;FC Sion;Swiss Super League (1);189;67;69;66;66;6600000;7;3;27;26.8;24.7
+898;FC St. Gallen;Swiss Super League (1);189;66;64;71;64;4600000;6;4;27;22.8;21.9
+286;FC Vaduz;Swiss Super League (1);189;62;60;63;63;1800000;2;2;25;25.0;24.2
+894;FC ZÃ¼rich;Swiss Super League (1);189;66;60;67;64;3500000;6;3;27;24.6;24.3
+324;Servette FC;Swiss Super League (1);189;67;68;67;67;3600000;5;3;27;26.6;23.8
+113142;Alanyaspor;Turkish SÃ¼per Lig (1);68;71;71;71;72;3200000;2;1;24;28.4;26.5
+741;Antalyaspor;Turkish SÃ¼per Lig (1);68;70;74;70;68;6600000;5;3;26;28.6;26.3
+101033;Atiker Konyaspor;Turkish SÃ¼per Lig (1);68;69;68;68;70;5200000;6;3;29;26.6;26.3
+749;BB Erzurumspor;Turkish SÃ¼per Lig (1);68;68;71;67;66;1700000;1;1;25;28.8;27.9
+327;BeÅŸiktaÅŸ JK;Turkish SÃ¼per Lig (1);68;74;75;74;73;26500000;10;7;23;27.1;25.0
+1457;Denizlispor;Turkish SÃ¼per Lig (1);68;67;61;68;66;2800000;4;2;26;25.6;25.3
+111117;Fatih KaragÃ¼mrÃ¼k S.K.;Turkish SÃ¼per Lig (1);68;71;72;73;68;1500000;1;1;30;29.0;26.3
+326;FenerbahÃ§e SK;Turkish SÃ¼per Lig (1);68;75;74;76;75;26500000;9;6;29;28.2;26.7
+325;Galatasaray SK;Turkish SÃ¼per Lig (1);68;75;77;73;74;25100000;10;7;30;25.4;25.9
+110776;GaziÅŸehir Gaziantep F.K.;Turkish SÃ¼per Lig (1);68;70;70;70;70;3800000;3;1;28;29.4;27.5
+101025;GenÃ§lerbirliÄŸi SK;Turkish SÃ¼per Lig (1);68;69;71;69;68;3500000;6;3;30;29.4;26.2
+101026;GÃ¶ztepe SK;Turkish SÃ¼per Lig (1);68;69;70;70;68;3700000;4;1;28;27.0;25.3
+101028;Hatayspor;Turkish SÃ¼per Lig (1);68;69;71;70;68;1900000;2;1;24;27.3;26.5
+111339;KasimpaÅŸa SK;Turkish SÃ¼per Lig (1);68;70;72;70;70;4099999;4;3;29;27.0;25.6
+101020;Kayserispor;Turkish SÃ¼per Lig (1);68;70;70;71;68;2300000;4;2;30;28.1;26.7
+101007;MKE AnkaragÃ¼cÃ¼;Turkish SÃ¼per Lig (1);68;70;68;69;70;2900000;6;3;30;26.6;25.3
+101014;Medipol BaÅŸakÅŸehir FK;Turkish SÃ¼per Lig (1);68;74;74;75;73;13200000;8;5;30;27.9;26.9
+101041;Sivasspor;Turkish SÃ¼per Lig (1);68;71;71;72;69;4000000;5;2;25;29.3;28.7
+436;Trabzonspor;Turkish SÃ¼per Lig (1);68;72;74;73;70;13800000;6;5;26;25.6;24.1
+113259;Yeni Malatyaspor;Turkish SÃ¼per Lig (1);68;69;71;68;70;3400000;2;1;28;26.7;25.4
+101037;Ã‡aykur Rizespor;Turkish SÃ¼per Lig (1);68;71;73;69;70;2500000;3;2;30;27.4;26.6
+111701;Al Ain FC;UAE Arabian Gulf League (1);2013;68;75;67;66;13900000;9;6;28;26.4;26.1
+112885;Atlanta United;USA Major League Soccer (1);39;69;72;69;68;38300000;9;4;30;23.4;23.1
+693;Chicago Fire;USA Major League Soccer (1);39;68;72;70;66;27900000;5;1;27;25.9;23.8
+694;Colorado Rapids;USA Major League Soccer (1);39;69;70;71;68;17600000;4;1;30;25.6;24.4
+687;Columbus Crew SC;USA Major League Soccer (1);39;71;72;72;70;18400000;6;2;30;28.1;26.8
+688;DC United;USA Major League Soccer (1);39;70;67;68;66;27500000;5;3;28;25.7;25.0
+113149;FC Cincinnati;USA Major League Soccer (1);39;68;71;68;67;24300000;1;1;28;27.1;24.9
+695;FC Dallas;USA Major League Soccer (1);39;69;67;70;68;19800000;6;2;29;25.4;22.9
+698;Houston Dynamo;USA Major League Soccer (1);39;68;65;69;68;23900000;6;2;30;27.4;24.9
+112893;Inter Miami;USA Major League Soccer (1);39;71;74;71;70;30000000;3;3;28;27.4;25.4
+697;LA Galaxy;USA Major League Soccer (1);39;69;77;70;67;37100000;9;6;30;26.6;24.1
+112996;Los Angeles FC;USA Major League Soccer (1);39;69;73;69;68;36800000;8;2;26;23.4;22.0
+111138;Minnesota United FC;USA Major League Soccer (1);39;71;74;70;70;25400000;3;1;30;26.6;25.9
+111139;Montreal Impact;USA Major League Soccer (1);39;68;69;69;67;19100000;4;4;27;24.9;22.6
+114162;Nashville SC;USA Major League Soccer (1);39;68;69;70;67;18400000;2;2;30;27.6;25.3
+691;New England Revolution;USA Major League Soccer (1);39;68;72;67;66;21600000;5;3;27;25.0;25.4
+112828;New York City FC;USA Major League Soccer (1);39;70;71;69;70;31300000;10;5;29;25.2;23.8
+689;New York Red Bulls;USA Major League Soccer (1);39;68;69;68;67;24700000;8;4;27;21.2;22.2
+112606;Orlando City SC;USA Major League Soccer (1);39;71;69;71;67;25000000;6;5;29;27.0;24.2
+112134;Philadelphia Union;USA Major League Soccer (1);39;70;70;70;69;21300000;4;1;29;25.8;23.6
+111140;Portland Timbers;USA Major League Soccer (1);39;71;72;71;69;31600000;7;3;27;28.6;26.3
+111065;Real Salt Lake;USA Major League Soccer (1);39;68;67;68;67;20900000;6;4;30;25.8;24.8
+111928;San Jose Earthquakes;USA Major League Soccer (1);39;68;70;70;66;23600000;4;2;26;26.4;25.5
+111144;Seattle Sounders FC;USA Major League Soccer (1);39;71;72;73;67;32500000;8;4;27;27.3;25.0
+696;Sporting Kansas City;USA Major League Soccer (1);39;69;71;67;69;27200000;7;2;29;26.9;24.3
+111651;Toronto FC;USA Major League Soccer (1);39;70;68;72;69;31900000;7;4;30;26.4;24.9
+101112;Vancouver Whitecaps FC;USA Major League Soccer (1);39;68;71;69;66;19500000;5;2;28;24.7;23.2
+101047;Dynamo Kyiv;Ukrainian Premier League (1);332;74;70;74;73;12800000;10;6;28;23.8;24.1
+101059;Shakhtar Donetsk;Ukrainian Premier League (1);332;75;71;75;73;16800000;10;7;28;24.2;24.9
+111002;Centro AtlÃ©tico FÃ©nix;Uruguayan Primera DivisiÃ³n (1);338;64;61;63;62;1600000;2;1;20;27.4;25.0
+115536;Cerro Largo;Uruguayan Primera DivisiÃ³n (1);338;62;61;61;63;0;2;1;20;25.9;24.5
+113143;Montevideo City Torque;Uruguayan Primera DivisiÃ³n (1);338;64;63;64;66;0;5;2;20;24.4;23.5
+111325;Nacional de Montevideo;Uruguayan Primera DivisiÃ³n (1);338;71;74;70;68;5400000;10;6;30;24.6;24.3
+101110;PeÃ±arol;Uruguayan Primera DivisiÃ³n (1);338;68;68;69;65;4900000;9;6;24;25.2;24.2
+115535;Rentistas;Uruguayan Primera DivisiÃ³n (1);338;65;61;63;62;100000;5;1;28;23.1;23.4
+110992;AC Mineros de Guayana;Venezuelan Primera DivisiÃ³n (1);2019;59;59;59;59;1300000;10;1;23;25.3;22.4
+114611;Academia Puerto Cabello;Venezuelan Primera DivisiÃ³n (1);2019;62;63;61;60;836000;1;1;26;25.7;23.7
+112916;Aragua FC;Venezuelan Primera DivisiÃ³n (1);2019;62;65;61;61;1400000;1;1;28;26.7;24.9
+112853;Deportivo La Guaira;Venezuelan Primera DivisiÃ³n (1);2019;66;69;66;64;1200000;4;1;25;27.1;25.6
+110990;Deportivo TÃ¡chira;Venezuelan Primera DivisiÃ³n (1);2019;63;65;63;63;1900000;6;4;27;25.4;25.1
+112914;Metropolitanos FC;Venezuelan Primera DivisiÃ³n (1);2019;65;66;65;65;1500000;1;1;27;25.7;24.0

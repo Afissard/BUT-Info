@@ -1,0 +1,1115 @@
+\documentclass[xcolor=table,svgnames,10pt,french]{beamer}
+
+\usepackage{fontspec-luatex}
+\usepackage{polyglossia}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{hhline}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{amsmath,amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tabularx}
+\usepackage{soul}
+\usepackage[binary-units]{siunitx}
+\usepackage[cache=false]{minted}
+\usepackage{tcolorbox}
+
+\usetikzlibrary{arrows,automata,backgrounds,shapes,snakes,patterns,decorations, shapes.arrows, positioning}
+
+\setmainlanguage{french}
+
+\usetheme{metropolis}
+
+\definecolor{maDarkBrown}{HTML}{604c38}
+\definecolor{maDarkTeal}{HTML}{23373b}
+\definecolor{maLightBrown}{HTML}{EB811B}
+\definecolor{maLightGreen}{HTML}{14B03D}
+
+\newenvironment<>{remarque}[1][\undefined]{%
+  \begin{actionenv}#2%
+    \ifx#1\undefined%
+    \def\insertblocktitle{Remarque}%
+    \else%
+    \def\insertblocktitle{Remarque ({\em#1})}%
+    \fi%
+    \par%
+    \mode<presentation>{%
+      \setbeamercolor{block title}{fg=black,bg=maLightGreen!50}
+      \setbeamercolor{block body}{fg=black,bg=maLightGreen!20}
+    }%
+    \usebeamertemplate{block begin}\em}
+  {\par\usebeamertemplate{block end}\end{actionenv}}
+
+
+
+\newcommand{\demo}[0]{%
+  \hfill\begin{tcolorbox}[hbox,colback=maLightGreen!50,colframe=maLightGreen,halign=flushleft]\bf → Démo\end{tcolorbox}}
+
+\hypersetup{
+  colorlinks=true
+}
+
+\title[R2.04]{Ressource R2.04 \\ Communication et fonctionnement bas niveau}
+\subtitle{Cours n°2 \\Le jeu d'instruction x86-64}
+\author[]{Sébastien Faucou}
+\date{version du \today}
+
+\AtBeginSection[]
+{
+  \frame{
+    \frametitle{Plan du cours}
+    \tableofcontents[currentsection, sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame{
+    \frametitle{Plan du cours}
+    \tableofcontents[currentsection, currentsubsection, subsectionstyle=show/shaded/hide]
+  }
+}
+
+
+\AtBeginSubsubsection[]
+{
+  \frame{
+    \frametitle{Plan du cours}
+    \tableofcontents[currentsection, currentsubsection, subsubsectionstyle=show/shaded/hide/hide]
+  }
+}
+
+\begin{document}
+
+\frame{
+  \maketitle
+}
+
+\section{Introduction}
+
+\begin{frame}{le jeu d'instruction x86-64}
+   
+    \begin{block}{x86-64}
+        \begin{itemize}
+            \item Version 64 bits de l'ISA x86, proposée par AMD en 1999, compatible avec les précédentes incarnations 8, 16 et 32 bits de l'ISA Intel.
+                \begin{itemize}
+                    \item De son côté, Intel et HP avaient proposées l'ISA IA-64, incompatible, ce qui a limité fortement sa diffusion.
+                \end{itemize}
+            \item Fait passer un cap à l'ISA x86 : adresses sur 64 bits, augmentation du nombre de registres, meilleur support du calcul flottant, ajout d'instructions vectorielles, etc.
+        \end{itemize}
+    \end{block}
+
+    Aujourd'hui, c'est le jeu d'instruction principal des processeurs Intel et AMD.
+
+    À noter que l'ISA la plus utilisée dans le monde aujourd'hui est sans doute l'ISA A64 de ARM.
+
+\end{frame}
+
+\begin{frame}{Anatomie d'une instruction}
+
+    Comme dans tous les jeux d'instruction, une instruction x86-64est composée (entre autre)
+    \begin{itemize}
+        \item d'un \alert{opcode} : identifie l'opération
+
+            Ex : push, mov, add, call, ret
+
+            \medskip
+
+        \item d'un \alert{format} : indique la taille des données manipulées
+
+            Pour les types entiers : b, w, l, q
+
+            \medskip
+
+        \item d'\alert{opérandes} sources et/ou destinations : constantes, registres, emplacements en mémoire
+
+            Ex : \%rbp, \$16, 8(\%rsp)
+
+    \end{itemize}
+\end{frame}
+
+\section{Les registres et la mémoire}
+
+\subsection{Les registres}
+
+\begin{frame}
+
+    \begin{block}{Fichiers de registres}
+        Mémoire de quelques centaines d'octets, située dans le processeur, et connectée aux unités fonctionnelles.
+        Adressable par mot mémoire, chaque mot disposant d'un nom spécifié dans le jeu d'instruction.
+    \end{block}
+
+    L'ISA x86-64 spécifie :
+    \begin{itemize}
+        \item 16 registres  de 64 bits pour le calcul sur les entiers
+        \item 16 pseudos-registres  de 32 bits pour le calcul sur les entiers\\ → 4 octets de poids faible des registres 64 bits 
+        \item 8 registres de 8 bits pour la compatibilité 8086 → \\ 2 octets de poids faible de certains pseudo-registres 32 bits
+        \item des registres de contrôle ou description de l'état de la machine\\ ne peuvent être utilisés comme source ou cible des instructions
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Noms des registres x86-64}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+        \begin{itemize}
+            \item \texttt{\%rax} (\texttt{\%eax}, \texttt{\%ah}, \texttt{\%al})
+            \item \texttt{\%rbx} (\texttt{\%ebx}, \texttt{\%bh}, \texttt{\%bl})
+            \item \texttt{\%rcx} (\texttt{\%ecx}, \texttt{\%ch}, \texttt{\%cl})
+            \item \texttt{\%rdx} (\texttt{\%edx}, \texttt{\%dh}, \texttt{\%dl})
+            \item \texttt{\%rsi} (\texttt{\%esi})
+            \item \texttt{\%rdi} (\texttt{\%edi})
+            \item \texttt{\%rsp} (\texttt{\%esp}, pointeur de pile)
+            \item \texttt{\%rbp} (\texttt{\%ebp}, pointeur de base )
+        \end{itemize}    
+        \end{column}
+        \begin{column}{.5\textwidth}
+           \begin{itemize}
+               \item \texttt{\%r8} (\texttt{\%r8d})
+               \item \texttt{\%r9} (\texttt{\%r9d})
+               \item \texttt{\%r10} (\texttt{\%r10d})
+               \item \texttt{\%r11} (\texttt{\%r11d})
+               \item \texttt{\%r12} (\texttt{\%r12d})
+               \item \texttt{\%r13} (\texttt{\%r13d})
+               \item \texttt{\%r14} (\texttt{\%r14d})
+               \item \texttt{\%r15} (\texttt{\%r15d})
+           \end{itemize} 
+        \end{column}
+    \end{columns}
+
+    Les micro-architectures modernes ont bien plus de registres et incluent un étage de renommage pour que les programmes accèdent aux registres physiques.
+\end{frame}
+
+\subsection{La mémoire et les modes d'adressage}
+
+\begin{frame}
+    \frametitle{L'espace d'adresage}
+    
+    L'espace d'adressage fait $2^{64}$ octets :  $2^{61}$ mots de 64 bits (8 octets).
+    C'est un espace \alert{virtuel} : la machine n'a pas besoin d'avoir autant de mémoire.
+
+    \medskip
+
+    Les micro-architectures actuelles utilisent seulement les 48 bits de poids faibles, soit 256 tébioctets adressables.
+
+    \medskip
+
+    Les adresses utilisées dans le programme binaire sont virtuelles.
+    L'association entre adresses virtuelles et adresses phyisiques est faite \alert{à l'exécution par le système de mémoire virtuelle} (collaboration système d'exploitation / micro-architecture).
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modes d'adressage}
+
+    Une adresse mémoire peut être utilisée comme opérande source ou cible d'une instruction.
+
+    \medskip
+
+    Plusieurs options possibles :
+    \begin{itemize}
+        \item \alert{adresse absolue} : objets alloués statiquements (code, globales, constantes)
+        \item \alert{adresse relative} au pointeur de pile : objets alloués automatiquement (variables locales)
+        \item \alert{adresse relative} à une adresse contenue en mémoire : objets allouées dynamiquements (variables dynamiques, certaines variables locales)
+    \end{itemize}
+
+    Adresse contenue en mémoire = pointeur !
+\end{frame}
+
+\begin{frame}{Les modes d'adressage}
+
+    Soient $ v \in [0,2^{64}], r, r1, r2 \in Regs, e \in \{1, 2, 4, 8\}$. $M$ (resp. $R$) est un tableau qui représente la mémoire (resp. le fichier de registres).
+
+    \begin{center}
+        \begin{tabular}{lll}
+            \hline
+            Syntaxe & Sémantique & Mode d'adressage \\
+            \hline
+            \hline
+             {\tt v} & $M[v]$ & Absolu \\
+             {\tt (r)} & $M[R[r]]$ & Indirect \\
+             {\tt v(r)} & $M[v + R[r]]$ & Base + déplacement\\
+             {\tt (r1, r2)} & $M[R[r_1] + R[r_2]]$ & Indexé \\
+             {\tt v(r1, r2)} & $M[v + R[r_1] + R[r_2]]$ & Indexé \\
+             {\tt (,r,e)} & $M[R[r] \times e]$ & Indexé avec échelle \\
+             {\tt v(,r,e)} & $M[v + (R[r] \times e)]$ & Indexé avec échelle \\
+             {\tt (r1,r2,e)} & $M[R[r_1] + (R[r_2] \times e)]$ & Indexé avec échelle \\
+             {\tt v(r1,r2,e)} & $M[v+ R[r_1] + (R[r_2] \times e)]$ & Indexé avec échelle \\
+            \hline
+        \end{tabular}
+    \end{center}
+    Note : {\tt \$v} désigne la constante entière \texttt{v}.
+\end{frame}
+
+\begin{frame}{Modes d'adressage : exemples}
+
+Soit l'état partiel de la machine :
+
+\medskip
+
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        \centering
+        $R$ \\
+        \smallskip
+        \begin{tabular}{c|c|}
+            \hhline{~-}
+            \texttt{\%rax} & \texttt{0xff \ldots ffab10} \\
+            \hhline{~-}
+            \texttt{\%rdx} & \texttt{0x4} \\
+            \hhline{~-}
+        \end{tabular}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \centering
+        $M$ \\
+        \smallskip
+        \begin{tabular}{c|c|}
+            \hhline{~-}
+            \texttt{0xff \ldots ffab10} & \texttt{0x1} \\
+            \hhline{~-}
+            \texttt{0xff \ldots ffab18} & \texttt{0x10} \\
+            \hhline{~-}
+            \texttt{0xff \ldots ffab20} & \texttt{0x100} \\
+            \hhline{~-}
+            \texttt{0xff \ldots ffab28} & \texttt{0x1000} \\
+            \hhline{~-}
+            \texttt{0xff \ldots ffab30} & \texttt{0x2} \\
+            \hhline{~-}
+            \texttt{0xff \ldots ffab38} & \texttt{0x20} \\
+            \hhline{~-}
+        \end{tabular}
+
+    \end{column}
+\end{columns}
+
+\bigskip
+
+Complétez le tableau :
+
+\begin{center}
+    \begin{tabular}{|lll|}
+        \hline
+        Expression &
+        Sémantique &
+        Valeur
+        \\
+        \hline
+        \hline
+
+        \texttt{(\%rax)} &
+        $M[R[\%rax]]$ &
+        1
+        \\
+        \hline
+
+        \texttt{0x10(\%rax)}
+        & $M[R[\%rax]+0x10]$
+        &
+        \\
+        \hline
+
+        \texttt{(\%rax, \%rdx)}
+        &
+        &
+        \\
+        \hline
+
+        & $M[R[\%rax] + 2 \times R[\%rdx]]$
+        &
+        \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\end{frame}
+
+\subsection{Déplacer des données}
+
+\begin{frame}
+    \frametitle{Placement des données en mémoire}
+
+    1) Les objets du programmes sont en mémoire.
+
+    Objet = variables, fonctions.
+
+    Le nom donné à l'objet dans le code source est appelé symbole.
+    Chaque symbole est associée à une adresse pour toute sa durée de vie :
+    \begin{itemize}
+        \item à l'édition des liens : symboles statiquements,
+        \item à l'exécution : symboles automatiques et dynamiques.
+    \end{itemize}
+
+    \bigskip
+
+    2) Même avec une ISA CISC, la majorité des opérations agissent uniquement sur les registres.
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Les opérations de copie}
+
+    1) + 2) $\Longrightarrow$ les programmes doivent sans cesse copier les données entre mémoire et registres
+    \begin{itemize}
+        \item un compilateur optimisant minimiser ces mouvements : propagation de constante, association de symbole à des registres, etc.
+    \end{itemize}
+
+    \bigskip
+
+    \begin{itemize}
+        \item \verb|mov src, dst| entre mémoire et registre
+        \item \verb|push reg| ou \verb|pop reg| entre pile et registres
+        \item \verb|push reg| correspond à \verb|sub $8, %rbp| suivi de \verb|mov reg, (%rsp)|
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Les combinaisons source / destination}
+
+    Toutes les combinaisons ne sont pas autorisées.
+
+    \begin{center}
+        \begin{tabular}{|l|l|l|l|l|}
+            \cline{2-5}
+            \multicolumn{1}{l|}{~}
+            & \multicolumn{1}{c|}{\textbf{src}}
+            & \multicolumn{1}{c|}{\textbf{dest}}
+            & \multicolumn{1}{c|}{\textbf{exemple}}
+            & \multicolumn{1}{c|}{\textbf{en C}} \\
+            \hhline{-====}
+
+            \multirow{5}{*}{\texttt{movl}}
+            & \multirow{2}{*}{Constante}
+            & Registre
+            & \texttt{movq \$0xA, \%rax}
+            & %\texttt{tmp = 0xA;}
+            \\
+            \hhline{~~---}
+            &
+            & Mémoire
+            & \texttt{movq \$0xB, (\%rax)}
+            & %\texttt{*ptr = 0xB;}
+            \\
+            \hhline{~====}
+
+
+            & \multirow{2}{*}{Registre}
+            & Registre
+            & \texttt{movq \$rax, \%rdx}
+            & %\texttt{tmp1 = tmp2;}
+            \\
+            \hhline{~~---}
+            &
+            & Mémoire
+            & \texttt{movq \$rdx, (\%rax)}
+            & %\texttt{*ptr = tmp;}
+            \\
+            \hhline{~====}
+
+            & Mémoire
+            & Registre
+            & \texttt{movq (\$rax), \%rdx}
+            & %\texttt{tmp = *ptr;}
+            \\
+            \hline
+
+        \end{tabular}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quand source et destination n'ont pas la même taille}
+
+    Quand source et destination n'ont pas la même taille, deux variantes :
+
+    \begin{itemize}
+        \item \texttt{movs} complète la destination en copiant le bit de poids fort de la source,
+
+        \item \texttt{movz} complète avec des 0.
+    \end{itemize}
+    
+    \medskip
+
+    Notes :
+    \begin{itemize}
+        \item marche seulement si la source est plus petite que la destination
+        \item deux suffixes de taille sont utilisées, p.ex. \texttt{movzbl} ou \texttt{movslq}.
+    \end{itemize}`
+    
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Exemple}
+   
+    \begin{minted}{go}
+func swap (p1 *int32, p2 *int64) {
+    tmp1 := *p1 
+    tmp2 := *p2 
+    *p2 = int64(tmp1)
+    *p1 = int32(tmp2)
+}
+    \end{minted}{go}
+
+    \begin{center}
+        \verb|go build -gcflags='-l'| puis \verb|objdump -d mov > mov.d|
+    \end{center}
+
+    \begin{minted}{gas}
+main.swap:
+  movslq (%rax),%rcx
+  mov    (%rbx),%rdx
+  mov    %rcx,(%rbx)
+  mov    %edx,(%rax)
+  ret
+    \end{minted}{}
+\end{frame}
+
+\section{L'appel de procédures}
+
+\begin{frame}{Appel de procédures, pile, cadre}
+
+    Fonction/procédure du code source → procédure du code machine 
+    \begin{itemize}
+        \item attention, selon le langage, les deux objets peuvent avoir des noms $\neq$
+    \end{itemize}
+
+    \medskip 
+
+    Appel et exécution de procédure dans le code machine utilisent \alert{la pile} :
+    \begin{itemize}
+    \item section dans les adresses hautes de l'espace d'adressage 
+    \item croît vers les adresses basses (le sommet est en bas)
+    \item adresse du sommet : {\tt \%rsp}
+    \item reçoit les \alert{cadres} des procédures au fur et à mesure des appels
+        \begin{itemize}
+            \item Un \structure{cadre} (frame) reçoit les variables locales
+            \item Début du cadre courant : {\tt \%rbp}
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Pile et cadres (2)}
+
+    \verb|main| appelle \verb|f1|, qui appelle \verb|f2|, qui appelle \verb|f3|. 
+
+    \medskip 
+
+\begin{verbatim}
+ -------- <- base de la pile 
+ | main |
+ --------
+ |  f1  |
+ --------
+ |  f2  |
+ -------- <- %rbp (début cadre f3)
+ |  f3  |
+ -------- <- %rsp (sommet)
+\end{verbatim}
+    
+    Une même procédure peut-elle avoir plusieurs cadres \og vivants \fg au même instant dans la pile ?
+\end{frame}
+
+\begin{frame}[fragile]{Principe général de l'appel de procédure}
+
+    Dans l'ABI x86-64, l'appel de procédure repose sur deux opérations :
+
+    Appel : \verb|call symbole|
+    \begin{itemize}
+        \item empile l'adresse de l'insruction suivante 
+        \item charge \verb|%rip| avec l'adresse associée à \verb|symbole|
+    \end{itemize}   
+
+    \medskip
+
+    Retour : \texttt{ret}
+    \begin{itemize}
+        \item dépile vers \verb|%rip|
+        \item l'instruction exécutée juste après est donc celle dont l'adresse a été empilée par \verb|call|
+    \end{itemize}
+
+    \medskip 
+
+    Pourquoi le retour de procédure utilise la pile plutôt qu'un « branchement » vers un symbole ?
+
+\end{frame}
+
+\begin{frame}[fragile]{Illustration : call}
+
+
+\begin{verbatim}
+47aec4:	e8 97 ff ff ff       	call   47ae60 <main.swap>
+\end{verbatim}
+
+\medskip
+
+    {\footnotesize
+\begin{verbatim}
+...110  |            |            ...110 |            |
+...108  |            |<- %rsp     ...108 |            |
+                                  ...100 | 0x47aec9   |  
+                                
+        --------------                   --------------
+   %rsp | ...108     |              %rsp | ...100     |  
+        --------------                   --------------
+   %rip | 0x47aec4   |              %rip | 0x47ae60   |
+        --------------                   --------------
+\end{verbatim}}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Illustration : ret}
+
+\begin{verbatim}
+47ae6b:	c3                   	ret
+\end{verbatim}
+
+\medskip
+
+    {\footnotesize
+\begin{verbatim}
+...110 |            |            ...110 |            |
+...108 |            |            ...108 |            |<- %rsp 
+...100 | 0x47aec9   |<- %rsp        
+
+       --------------                   --------------
+  %rsp | ...100     |              %rsp | ...108     |       
+       --------------                   --------------
+  %rip | 0x47ae6b   |              %rip | 0x47aec9   |
+       --------------                   --------------
+\end{verbatim}}
+
+\end{frame}
+
+\begin{frame}[fragile]{Allocation du cadre}
+
+    Premières instructions d'une procédure (= prologue) :  allocation du cadre
+    \begin{enumerate}
+        \item empile la valeur courante de \verb|%rbp|
+        \item fait pointer \verb|%rbp| sur le nouveau sommet de la pile 
+        \item soustrait à \verb|%rsp| la taille du cadre à allouer (calculée par le compilateur)
+    \end{enumerate}
+
+    \medskip
+
+    Dernières instructions (épilogue) : libération du cadre
+    \begin{enumerate}
+        \item ajoute à \verb|%rsp| la taille du cadre alloué
+        \item dépile \verb|%rbp|
+    \end{enumerate}
+
+    \medskip
+
+    Note : le code optimisé simplifie les choses en n'utilisant pas de pointeur de base.
+\end{frame}
+
+\begin{frame}[fragile]{Illustration : prologue}
+
+\begin{verbatim}
+080484c4 <main.swap>:
+  47ae60:	55                   	push   %rbp
+  47ae61:	48 89 e5             	mov    %rsp,%rbp
+  47ae64:	48 83 ec 10          	sub    $0x10,%rsp
+\end{verbatim}
+
+\medskip
+
+{\footnotesize
+\begin{verbatim}
+  ...108 |            |         ...108 |            | main.main 
+  ...100 | 0x47af09   |<- %rsp  ...100 | 0x47af09   | 
+                                ...0F8 | ...328     |<- %rbp
+                                ...0F0 |            |  main.swap
+                                ...0E8 |            |<- %rsp 
+                            
+         --------------               ---------------
+    %rsp | ...1OO     |          %rsp | ...0E8      |
+         --------------               ---------------
+    %rbp | ...328     |          %rbp | ...0F8      |
+         --------------               ---------------
+    %rip | 0x47ae60   |          %rip | 0x47ae68    |
+         --------------               ---------------
+\end{verbatim}%
+    } %
+\end{frame}
+
+\begin{frame}[fragile]{Illustration : épilogue}
+
+\begin{verbatim}
+  47ae9c:	48 83 c4 10          	add    $0x10,%rsp
+  47aea0:	5d                   	pop    %rbp
+  47aea1:	c3                   	ret
+\end{verbatim}
+
+{\footnotesize
+    \begin{verbatim}
+  ...108 |            |         ...108 |            |
+  ...100 | 0x47af09   |         ...100 | 0x47af09   |<- %rsp
+  ...0F8 | ...328     |<- %rbp         
+  ...0F0 | 0x120      |                               
+  ...0E8 |            |<- %rsp                         
+                                                     
+         --------------                --------------
+    %rsp | ...0E8     |          %rsp  | ...100     |
+         --------------                --------------
+    %rbp | ...0F8     |           %rbp | ...328     |
+         --------------                --------------
+    %rip | 0x47ae9c   |           %rip | 0x47aea1   |
+         --------------                --------------
+ \end{verbatim}}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Passage des paramètres et codes de retour}
+
+    Dans l'ABI x86-64, les paramètre et les codes de retour sont passés
+    \begin{itemize}
+        \item via les registres, en commençant par \verb|%rax| puis \verb|%rbx| puis \ldots 
+        \item au-delà de 10, ils sont passés par la pile
+    \end{itemize}
+
+    \medskip
+
+    En plus de cette convention, plusieurs langage (dont go) assimilent les paramètres à des variables locales
+    \begin{itemize}
+        \item allouées par l'appelant
+        \item mais initialisées et utilisées par l'appelé 
+    \end{itemize}
+
+    \medskip
+
+    En go, les codes de retour sont aussi associés à des locales, allouées, initialisées et utilisées par l'appelé.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Sauvegarde et restauration des registres}
+
+    L'appel de procédure ne doit pas interférer sur l'exécution de la fonction appelante → en dehors des codes de retour, l'état de la machine doit être restauré.
+
+    \medskip
+
+    Si l'appelant à des valeurs utiles dans les registres porteurs des codes de retour → empile avant l'appel, dépile (dans l'ordre inverse) après l'appel 
+
+    \medskip
+
+    Pour les autres registres, c'est à l'appelé de faire le travail : empile juste après le prologue, dépile (dans l'ordre inverse) juste après l'épilogue.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Optimisations}
+
+    Un compilateur optimisant simplifie souvent beaucoup le protocole d'appel :
+
+    \begin{itemize}
+        \item pointeur de base inutile (le compilateur connaît la taille du cadre)
+        \item allocations de locales pour les paramètres / codes de retour le plus souvent inutiles
+
+        \item si aucune locale, aucun cadre alloué
+
+        \item appel supprimé par \textit{inlining} des fonctions dans le code de l'appelant 
+
+        \item instructions supprimées quand c'est possible par propagation des constantes
+    \end{itemize}
+
+    L'analyse d'un code optimisé nécessite d'avoir un esprit « ouvert »
+\end{frame}
+
+\section{Le registre de codes de condition et les instructions conditionnelles}
+
+\begin{frame}
+    \frametitle{Registre de code de conditions}
+
+    Les unités fonctionnelles récoltent des informations sur les résultats.
+
+    Par exemple, pour l'UAL :
+    \begin{itemize}
+        \item résultat nul
+        \item retenue sortante 
+        \item débordement
+        \item parité
+        \item \ldots
+    \end{itemize}
+
+    Ces informations sont accessibles depuis le registre de codes de condition (ou CCR pour \textit{Condition Code Register})
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Le registre RFLAGS}
+
+    Le CCR de l'ISA x86-64 se nomme \texttt{RFLAGS}.
+
+    \medskip
+
+    22 bits utilisés pour stocker des codes de condition (appelées \textit{flag}).
+
+    \medskip
+
+    Principaux flags : \texttt{CF}, \texttt{ZF}, \texttt{PF}, \texttt{OF}, \texttt{SF}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mise à jour de RFLAGS}
+
+    Les bits de \texttt{RFLAGS} sont mis à jour à chaque instruction arithmétique et logique.
+    
+    Les bits non touchés par une opération sont laissés à la valeur précédente.
+
+    x86-64 propose également des opérations « sans destination » qui mettent à jour \texttt{RFLAGS}, par exemple : 
+    \begin{itemize}
+        \item \texttt{cmp a, b} : calcule $b - a$
+        \item \texttt{test a, b} : calcule $a \land b$ (bit à bit)
+        \item \texttt{bt r, n} : copie le nième bit de \texttt{r} dans \texttt{CF}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les conditions de l'ISA x86-64}
+
+    Le jeu d'instruction propose un ensemble de conditions évaluées par lecture de RFLAGS
+
+    \begin{center}
+    \begin{tabular}{l|l|l}
+        Symbole & Nom & Évaluation \\ 
+        \hline 
+        \texttt{a} & above & $\lnot (cf \lor zf)$ \\
+        \texttt{b} & below & $cf$ \\
+        \texttt{g} & greater & $\lnot(sf \oplus of) \land \lnot zf$ \\
+        \texttt{l} & lower & $sf \oplus of$ \\
+        \texttt{e}, \texttt{z} & equal, zero & $zf$ \\
+        \texttt{ge} & greater or equal & $\lnot (sf \oplus of)$ \\
+        \texttt{ne} & not equal & $\lnot zf$ \\
+        \ldots & &  \\
+    \end{tabular}
+    \end{center}
+
+    Quelle est la différence entre \texttt{a} et \texttt{g} ? Entre \texttt{b} et \texttt{l} ?
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les opérations conditionnelles}
+
+    Les conditions sont utilisées par des opérations conditionnelles.
+
+    \begin{block}{Opération conditionnelle}
+        Opération dont le comportement dépend de la valeur d'une condition.
+    \end{block}
+
+    x86-64 propose 2 groupes d'opérations conditionnelles :
+    \begin{itemize}
+        \item \texttt{setxxx r} : $r ← 1$ si \texttt{xxx} et $0$ sinon.
+        \item \texttt{jxxx adr} : saute à l'adresse \texttt{adr} si \texttt{xxx}, ne fait rien sinon.
+        \item \texttt{cmovxxx a, b} : $b ← a$ si \texttt{xxx}.
+    \end{itemize}
+
+\end{frame}
+
+\section{Les sauts et la traduction des structures de contrôle}
+
+\begin{frame}
+    \frametitle{Principe des sauts}
+
+    Par défaut, le processeur exécute les instructions dans l'ordre où elles sont rangées en mémoire.
+    
+    \medskip
+
+    Certaines instructions permettent de changer cet ordre, en modifiant arbitrairement la valeur du pointeur d'instruction.
+    On parle de branchement, ou saut (vocabulaire x86-64).
+
+    \medskip
+
+    Déjà rencontrées : \texttt{call adr} et \texttt{ret}, utilisées pour l'appel de procédure.
+
+    \medskip
+
+    \texttt{jmp} et \texttt{jxxx}, où \texttt{xxx} est une condition.
+    Utilisées pour traduire les structures de contrôle : conditionnelles, boucles.
+
+\end{frame}
+    
+\begin{frame}[fragile]
+    \frametitle{Traduction d'une conditionnelle simple}
+
+
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            {\small
+            \begin{minted}{go}
+func f1(a, b int) (r int) {
+    if a >= b {
+        r = a-b
+    } else {
+        r = b-a
+    }
+    return
+}
+            \end{minted}}
+            Note : le code optimisé utilise \texttt{cmovxxx} et aucun saut. Pourquoi ?
+
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \scriptsize
+            \begin{minted}{gas}
+push   %rbp
+mov    %rsp,%rbp
+sub    $0x8,%rsp
+mov    %rax,0x18(%rsp)
+mov    %rbx,0x20(%rsp)
+movq   $0x0,(%rsp)
+cmp    %rbx,%rax
+jge    47c5e2 
+jmp    47c5eb 
+sub    %rbx,%rax  # 47c5e2 
+mov    %rax,(%rsp)
+jmp    47c5f4 
+sub    %rax,%rbx  # 47c5eb
+mov    %rbx,(%rsp)
+jmp    47c5f4 
+mov    (%rsp),%rax # 47c5f4
+add    $0x8,%rsp
+pop    %rbp
+ret
+           \end{minted} 
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Traduction d'une boucle simple}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            {\small
+            \begin{minted}{go}
+func f2(x  int) (r int) {
+    r = 1
+    for cpt := 1; cpt < x; 
+                cpt+=2 {
+        r *= cpt
+    }
+    return
+}
+            \end{minted}}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \scriptsize
+            \begin{minted}{gas}
+mov    $0x1,%ecx
+mov    $0x1,%edx
+jmp    47c5f7 
+lea    0x2(%rcx),%rbx  # 47c5ec
+imul   %rcx,%rdx
+mov    %rbx,%rcx
+cmp    %rcx,%rax  # 47c5f7
+jg     47c5ec  
+mov    %rdx,%rax
+nop
+ret
+           \end{minted} 
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Traduction d'une conditionnelle complexe}
+
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+    \small
+    \begin{minted}{go}
+func f3(x int) (r int) {
+    x = x % 6
+    switch(x) {
+    case 0:
+        r = 2*x
+    case 1:
+        r = 1/x
+    case 2:
+        r = x*x
+    case 3:
+        r = x/2
+    case 4:
+        r = x+3
+    case 5:
+        r = x-7
+    }
+    return
+}
+    \end{minted}
+       \end{column} 
+        \begin{column}{.5\textwidth}
+            Cf. fichier.
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+\section{Bilan et conclusions}
+
+\begin{frame}{Bilan}
+  
+    Ce qu'on a vu et qui doit maintenant être connu :
+    \begin{itemize}
+        \item Rappel sur la compilation et la création d'exécutable
+        \item Principes de base de l'organisation d'un ordinateur 
+        \item Zoom sur l'unité centrale, notion de registre, d'instruction, d'opérations
+        \item Organisation de la mémoire d'un processus (sections)
+        \item Faire le lien entre code source et programme binaire 
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conclusions}
+
+    Quelques leçons pour la suite de vos études et votre carrière :
+    \begin{itemize}
+        \item Pour optimiser votre code, en premier lieu, faites confiance au compilateur
+        \item Pour bien comprendre la sémantique des langages, il faut penser à la traduction en code machine 
+        \item L'étude approfondie des architectures matérielles et de l'interface matérielle-logicielle est au centre de plusieurs sujets :
+            \begin{itemize}
+                \item performances « avancées »
+                \item cybersécurité
+                \item systèmes d'exploitation 
+                \item informatique temps réel
+                \item \ldots
+            \end{itemize}
+    \end{itemize}
+   
+    Si vous souhaitez approfondir le sujet, il y a quelques ouvrages recommandables à la bibliothèque.
+\end{frame}
+
+%\begin{frame}{Allocation du cadre (4)}
+
+    %Dès le niveau d'optimisation 1, \texttt{\%ebp} n'est plus utilisé pour mémoriser le début du cadre
+
+    %\medskip
+    
+    %Allocation et désallocation se font en manipulant \texttt{\%esp} ( à l'aide des instructions \texttt{add} et \texttt{sub}) 
+
+    %\medskip
+    
+    %La taille du cadre est codée en dur dans le code engendré
+
+    %\medskip
+
+    %Dans certains cas, la taille du cadre change au fur et à mesure de l'exécution de la fonction, selon les besoins
+
+%\end{frame}
+
+%\begin{frame}{Passage de paramètre et code de retour}
+
+    %Les paramètres sont empilés par la procédure appelante juste avant l'appel.
+
+    %\medskip
+
+    %En C, les paramètres sont évalués puis empilés de la droite vers la gauche.
+
+    %\begin{itemize}
+        %\item Pour du code non optimisé, les paramètres sont accédés via \texttt{\%ebp}
+            %\begin{itemize}
+                %\item Après la préparation du cadre, le paramètre de gauche est à l'adresse \texttt{8(\%ebp)}
+            %\end{itemize}
+        %\item Pour du code optimisé, les paramètres sont accédés via \texttt{\%esp}
+            %\begin{itemize}
+                %\item Après la préparation du cadre, le paramètre de gauche est à l'adresse \texttt{c(\%esp)}, où \texttt{c} est égal à la taille du cadre + 4
+            %\end{itemize}
+
+    %\end{itemize}
+   
+    %Par convention, une procédure stocke son code de retour dans le registre \texttt{\%eax}
+%\end{frame}
+
+%\begin{frame}{Sauvegarde des registres}
+
+    %Appelant et appelé ont chacun leur cadre mais partagent les mêmes registres
+    
+    %\medskip
+
+    %\begin{itemize}
+        %\item l'appelant peut vouloir récupérer les registres dans l'état précédent l'appel
+        %\item l'appelé peut vouloir utiliser les registres
+    %\end{itemize}
+
+    %\medskip
+
+    %Qui doit assurer la sauvegarde (en empilant) et la restauration (en dépilant) ? 
+    %L'ABI IA32 coupe la poire en 2 :
+    %\begin{itemize}
+        %\item l'appelant pour : \texttt{\%eax}, \texttt{\%edx}, \texttt{\%ecx}
+        %\item l'appelé pour : \texttt{\%ebx}, \texttt{\%esi}, \texttt{\%edi}
+    %\end{itemize}
+
+%\end{frame}
+
+%\begin{frame}{Récapitulatif}
+
+    %\begin{columns}
+        %\begin{column}{0.5\textwidth}
+            %Appelant :
+            %\begin{enumerate}
+                %\item construire et empiler les paramètres*
+                %\item sauver les registres*
+                %\item appeler la procédure
+                    %\setcounter{enumi}{9}
+                %\item sauver le résultat*
+                %\item restaurer les registres*
+            %\end{enumerate}
+        %\end{column}
+        %\begin{column}{0.5\textwidth}
+            %Appelé :
+            %\begin{enumerate}
+                %\setcounter{enumi}{3}
+                %\item sauver les registres*
+                %\item allouer un cadre*
+                %\item exécuter le code de la procédure
+                %\item désallouer le cadre*
+                %\item restaurer les registres*
+                %\item retourner
+            %\end{enumerate}
+        %\end{column}
+    %\end{columns}
+
+    %\bigskip
+
+    %Les étapes marquées d'une * sont optionnelles
+%\end{frame}
+
+%\begin{frame}[fragile]{Exemples}
+
+%Swap, sans optimisation :
+%\begin{verbatim}
+%$ gcc -fno-pie -fno-pic -no-pie -m32 -ggdb swap.c
+%$ objdump -d a.out > swap0.d
+%\end{verbatim}
+
+%\medskip
+
+%Swap, avec optimisation :
+%\begin{verbatim}
+%$ gcc -fno-pie -fno-pic -no-pie -m32 -ggdb -O1 swap.c
+%$ objdump -d a.out > swap1.d
+%\end{verbatim}
+
+%\medskip
+
+
+%\end{frame}
+
+
+%\section{Les branchements et les structures de contrôle}
+
+\end{document}
