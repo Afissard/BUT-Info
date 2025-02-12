@@ -17,7 +17,7 @@ type: folder_brief_live
 			- [[tas_test.go]]
 			- [[tas.exe]]
 			- [[tas.go]]
-	- [[td1]]
+	- [[Système/Bas Niveau/td/1-pile_tas/td1]]
 - **2-appels_de_fonction**
 	- **src**
 		- [[appelfonctions-noopt-noinline.dump]]
@@ -37,7 +37,7 @@ type: folder_brief_live
 			- [[find_test.go]]
 			- [[go.mod]]
 			- [[main.go]]
-	- [[td3]]
+	- [[Système/Bas Niveau/td/3-boucles_et_conditionnelles/td3]]
 - **4-pointeurs**
 	- **exo2**
 		- [[main.go]]

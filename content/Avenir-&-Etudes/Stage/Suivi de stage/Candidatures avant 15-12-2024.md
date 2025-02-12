@@ -25,3 +25,4 @@ tags:
 - date de candidature : 12/12/2024 
 - site web : https://www.sigma.fr/
 - domaine : développement logiciel
+
